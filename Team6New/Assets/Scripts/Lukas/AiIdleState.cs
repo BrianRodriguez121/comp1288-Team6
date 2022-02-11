@@ -21,8 +21,6 @@ public class AiIdleState : IAiState
 
     public void Update(AiAgent agent)
     {
-        
-
         Vector3 playerDirection = agent.playerTransform.position - agent.transform.position;
 
         if(playerDirection.magnitude > agent.config.maxSightDistance)

@@ -106,8 +106,8 @@ GameObject:
   - component: {fileID: 400008}
   - component: {fileID: 13500000}
   - component: {fileID: 5400000}
-  - component: {fileID: 11400000}
   - component: {fileID: 9600000}
+  - component: {fileID: 8355366495046064466}
   m_Layer: 0
   m_Name: Grenade
   m_TagString: Untagged
@@ -159,23 +159,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fe81c0bd5ee7a84fbe756e7f5089ef6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 100
-  speed: 0
-  initialForce: 1200
-  lifetime: 5
-  explosion: {fileID: 7512054334046634664, guid: 7f80e9e1fbbc1cd41a9301c4ae321407, type: 3}
 --- !u!96 &9600000
 TrailRenderer:
   serializedVersion: 2
@@ -283,3 +266,20 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &8355366495046064466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6ab8c8365131cc4f8238e88b052d894, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 100
+  speed: 0
+  initialForce: 1200
+  lifetime: 5
+  explosion: {fileID: 7512054334046634664, guid: 7f80e9e1fbbc1cd41a9301c4ae321407, type: 3}

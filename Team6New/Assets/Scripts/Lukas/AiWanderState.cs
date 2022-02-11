@@ -24,15 +24,26 @@ public class AiWanderState : IAiState
 
     public void Update(AiAgent agent)
     {
-        timer -= Time.deltaTime;
-        //Debug.Log(timer);
+        //calculates if player can be seen
+        Vector3 playerDirection = agent.playerTransform.position - agent.transform.position;
+        Vector3 agentDirection = agent.transform.forward;
+        playerDirection.Normalize();
+        float dotProduct = Vector3.Dot(playerDirection, agentDirection);
 
-        if (!agent.navMeshAgent.hasPath || timer <= 0.0f)
+        timer -= Time.deltaTime;
+
+        //random location set as destination for agent 
+        if (!agent.navMeshAgent.hasPath || timer <= 0.0f || dotProduct < 0.0f)
         {
             Debug.Log("new navemesh wander location");
             agent.navMeshAgent.SetDestination(agent.RandomNavmeshLocation(agent.config.wanderRadius));
             timer = agent.config.maxWanderTimer;
         }
-    }
 
+        //if player seen change state to chase
+        if (dotProduct > 0.0f)
+        {
+            agent.stateMachine.ChangeState(AiStateId.ChasePlayer);
+        }
+    }
 }
