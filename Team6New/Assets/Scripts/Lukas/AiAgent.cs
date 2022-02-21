@@ -10,12 +10,15 @@ public class AiAgent : MonoBehaviour
     public NavMeshAgent navMeshAgent;
     public AiAgentConfig config;
     public Transform playerTransform;
+    public AiSensor sensor;
 
 
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         stateMachine = new AiStateMachine(this);
+        sensor = GetComponent<AiSensor>();
+
         stateMachine.RegisterState(new AiIdleState());
         stateMachine.RegisterState(new AiWanderState());
         stateMachine.RegisterState(new AiChasePlayerState());
@@ -41,5 +44,19 @@ public class AiAgent : MonoBehaviour
             finalPosition = hit.position;
         }
         return finalPosition;
+    }
+
+    public bool SeenPlayer()
+    {
+        if(sensor.Objects.Count > 0)
+        {
+            foreach(var obj in sensor.Objects){
+                if (obj.layer == 6){
+                    Debug.Log("player seen");
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

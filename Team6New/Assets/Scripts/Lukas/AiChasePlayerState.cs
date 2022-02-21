@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class AiChasePlayerState : IAiState
 {
     float timer = 0.0f;
+    float lostSightPlayer = 0.0f;
 
     public AiStateId GetId()
     {
@@ -14,7 +15,7 @@ public class AiChasePlayerState : IAiState
 
     public void Enter(AiAgent agent)
     {
-        Debug.Log("chase state");
+        lostSightPlayer = 10.0f;
     }
 
     public void Exit(AiAgent agent)
@@ -24,14 +25,27 @@ public class AiChasePlayerState : IAiState
 
     public void Update(AiAgent agent)
     {
+        Debug.Log("chase state");
+
         if (!agent.enabled) { 
             return;
         }
 
         timer -= Time.deltaTime;
+        
+
         if (!agent.navMeshAgent.hasPath)
         {
             agent.navMeshAgent.destination = agent.playerTransform.position;
+        }
+
+        // prevents enemy from walking into player when chasing
+        if(Vector3.Distance(agent.navMeshAgent.nextPosition, agent.playerTransform.position) < agent.config.stoppingDistance)
+        {
+            agent.navMeshAgent.destination = agent.navMeshAgent.nextPosition;
+
+            // once cloase enough agent will continue to look at player
+            agent.navMeshAgent.transform.LookAt(agent.playerTransform);
         }
 
         if (timer < 0.0f)
@@ -46,6 +60,12 @@ public class AiChasePlayerState : IAiState
                 }
             }
             timer = agent.config.maxTimer;
+        }
+
+        if (!agent.SeenPlayer())
+        {
+            agent.stateMachine.ChangeState(AiStateId.Wander);
+            Debug.Log("stopped seeing the player");
         }
     }
 }

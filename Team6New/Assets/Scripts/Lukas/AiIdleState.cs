@@ -30,9 +30,9 @@ public class AiIdleState : IAiState
 
         Vector3 agentDirection = agent.transform.forward;
         playerDirection.Normalize();
-        float dotProduct = Vector3.Dot(playerDirection, agentDirection);
 
-        if(dotProduct > 0.0f)
+
+        if(agent.SeenPlayer())
         {
             agent.stateMachine.ChangeState(AiStateId.ChasePlayer);
         }
