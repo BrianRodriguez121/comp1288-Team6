@@ -17,4 +17,4 @@ MonoBehaviour:
   maxSightDistance: 5
   wanderRadius: 20
   stoppingDistance: 5
-  seePlayerDistance: 5
+  findPlayerTimer: 10

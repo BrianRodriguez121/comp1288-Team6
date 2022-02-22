@@ -6,7 +6,8 @@ using UnityEngine.AI;
 public class AiChasePlayerState : IAiState
 {
     float timer = 0.0f;
-    float lostSightPlayer = 0.0f;
+    float lostSightTimer = 0.0f;
+    bool searchedForPlayer;
 
     public AiStateId GetId()
     {
@@ -15,7 +16,8 @@ public class AiChasePlayerState : IAiState
 
     public void Enter(AiAgent agent)
     {
-        lostSightPlayer = 10.0f;
+        Debug.Log("chase state");
+        lostSightTimer = 10.0f;
     }
 
     public void Exit(AiAgent agent)
@@ -25,14 +27,17 @@ public class AiChasePlayerState : IAiState
 
     public void Update(AiAgent agent)
     {
-        Debug.Log("chase state");
-
         if (!agent.enabled) { 
             return;
         }
 
         timer -= Time.deltaTime;
-        
+
+        if (agent.SeenPlayer())
+        {
+            lostSightTimer = agent.config.findPlayerTimer;
+            searchedForPlayer = false;
+        }
 
         if (!agent.navMeshAgent.hasPath)
         {
@@ -62,10 +67,24 @@ public class AiChasePlayerState : IAiState
             timer = agent.config.maxTimer;
         }
 
+        //if AI loses sight they first search area last seen
         if (!agent.SeenPlayer())
         {
-            agent.stateMachine.ChangeState(AiStateId.Wander);
-            Debug.Log("stopped seeing the player");
+            lostSightTimer -= Time.deltaTime;
+
+            if (!searchedForPlayer)
+            {
+                searchedForPlayer = true;
+                //this makes AI continue to chase player until timer has run out
+                agent.navMeshAgent.destination = agent.playerTransform.position;
+            }
+            
+            if (lostSightTimer <= 0)
+            {
+                searchedForPlayer = false;
+                agent.stateMachine.ChangeState(AiStateId.Wander);
+                Debug.Log("Timer ran out and no longer chasing");
+            }
         }
     }
 }
