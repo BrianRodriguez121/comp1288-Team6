@@ -36,7 +36,7 @@ public class AiWanderState : IAiState
         if (!agent.navMeshAgent.hasPath || timer <= 0.0f)
         {
             int randumNum = Random.Range(0, 5);
-            Debug.Log(randumNum);
+            //Debug.Log(randumNum);
             if(randumNum >= 1)
             {
                 agent.navMeshAgent.SetDestination(agent.RandomNavmeshLocation(agent.config.wanderRadius));

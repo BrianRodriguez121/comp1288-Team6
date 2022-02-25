@@ -37,6 +37,12 @@ public class AiChasePlayerState : IAiState
         {
             lostSightTimer = agent.config.findPlayerTimer;
             searchedForPlayer = false;
+
+            if(Vector3.Distance(agent.transform.position, agent.playerTransform.position)< agent.config.distanceAttackPlayer)
+            {
+
+                agent.stateMachine.ChangeState(AiStateId.Attack);
+            }
         }
 
         if (!agent.navMeshAgent.hasPath)

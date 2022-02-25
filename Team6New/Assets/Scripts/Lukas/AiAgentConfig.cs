@@ -13,4 +13,5 @@ public class AiAgentConfig : ScriptableObject
     internal float maxIdleTimer = 10.0f;
     public float stoppingDistance = 5.0f;
     public float findPlayerTimer = 25.0f;
+    public float distanceAttackPlayer = 25.0f;
 }

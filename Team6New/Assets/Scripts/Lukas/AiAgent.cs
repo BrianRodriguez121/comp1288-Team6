@@ -11,6 +11,7 @@ public class AiAgent : MonoBehaviour
     public AiAgentConfig config;
     public Transform playerTransform;
     public AiSensor sensor;
+    public GameObject attackObject;
 
 
     void Start()
@@ -22,6 +23,7 @@ public class AiAgent : MonoBehaviour
         stateMachine.RegisterState(new AiIdleState());
         stateMachine.RegisterState(new AiWanderState());
         stateMachine.RegisterState(new AiChasePlayerState());
+        stateMachine.RegisterState(new AiAttackState());
         stateMachine.RegisterState(new AiDeathState());
         stateMachine.ChangeState(intialState);
 
@@ -58,5 +60,11 @@ public class AiAgent : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public void SpawnItemTest()
+    {
+        //this is to test for now
+        Instantiate(attackObject);
     }
 }
