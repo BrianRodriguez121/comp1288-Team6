@@ -13,7 +13,7 @@ public class AiWanderState : IAiState
 
     public void Enter(AiAgent agent)
     {
-        Debug.Log("wander state");
+        //Debug.Log("wander state");
     }
 
     public void Exit(AiAgent agent)
@@ -21,14 +21,15 @@ public class AiWanderState : IAiState
 
     }
 
-
     public void Update(AiAgent agent)
     {
         //calculates if player can be seen
+        /*
         Vector3 playerDirection = agent.playerTransform.position - agent.transform.position;
         Vector3 agentDirection = agent.transform.forward;
         playerDirection.Normalize();
         float dotProduct = Vector3.Dot(playerDirection, agentDirection);
+        */
 
         timer -= Time.deltaTime;
 
@@ -47,7 +48,6 @@ public class AiWanderState : IAiState
                 Debug.Log("Ai has went from wander to idle");
                 agent.stateMachine.ChangeState(AiStateId.Idle);
             }
-
         }
 
         if (agent.SeenPlayer())

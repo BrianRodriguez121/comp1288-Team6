@@ -14,6 +14,7 @@ enum STATE
 
 public class EnemyController : MonoBehaviour
 {
+    /*
     public GameObject target;
     public float walkingSpeed;
     public float runningSpeed;
@@ -171,4 +172,5 @@ public class EnemyController : MonoBehaviour
         agent.SetDestination(transform.position);
         Destroy(gameObject, lifetime);
     }
+    */
 }

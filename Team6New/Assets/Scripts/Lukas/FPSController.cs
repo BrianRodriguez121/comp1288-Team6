@@ -19,6 +19,7 @@ public class FPSController : MonoBehaviour
     float curSpeedX;
     float curSpeedY;
     float movementDirectionY;
+    private Health health;
 
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;
@@ -32,6 +33,7 @@ public class FPSController : MonoBehaviour
 
     void Start()
     {
+        health = GetComponent<Health>();
         canMove = true;
         characterController = GetComponent<CharacterController>();
 
@@ -41,6 +43,12 @@ public class FPSController : MonoBehaviour
     }
     void Update()
     {
+        // temporary time scale change, later have UI
+        if (health.currentHealth < 0)
+        {
+            Time.timeScale = 0;
+        }
+
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
         

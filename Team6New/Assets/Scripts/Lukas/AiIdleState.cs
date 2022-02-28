@@ -13,7 +13,7 @@ public class AiIdleState : IAiState
     public void Enter(AiAgent agent)
     {
         timer = agent.config.maxIdleTimer;
-        Debug.Log("idle state");
+        //Debug.Log("idle state");
     }
 
     public void Exit(AiAgent agent)

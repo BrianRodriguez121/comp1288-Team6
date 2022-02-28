@@ -11,14 +11,15 @@ public class AiAgent : MonoBehaviour
     public AiAgentConfig config;
     public Transform playerTransform;
     public AiSensor sensor;
-    public GameObject attackObject;
-
+    public GameObject attackObjectPrefab;
+    public Weapon weaponControl;
 
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         stateMachine = new AiStateMachine(this);
         sensor = GetComponent<AiSensor>();
+        weaponControl = GetComponentInChildren<Weapon>();
 
         stateMachine.RegisterState(new AiIdleState());
         stateMachine.RegisterState(new AiWanderState());
@@ -65,6 +66,10 @@ public class AiAgent : MonoBehaviour
     public void SpawnItemTest()
     {
         //this is to test for now
-        Instantiate(attackObject);
+        Instantiate(attackObjectPrefab);
+    }
+    public void DestroyAgent()
+    {
+        Destroy(gameObject);
     }
 }

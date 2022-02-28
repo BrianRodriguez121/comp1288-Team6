@@ -130,6 +130,5 @@ public class Health : MonoBehaviour
 		dead = true;
 		AiDeathState deathState = agent.stateMachine.GetState(AiStateId.Death) as AiDeathState;
 		agent.stateMachine.ChangeState(AiStateId.Death);
-		Destroy(gameObject);
 	}
 }

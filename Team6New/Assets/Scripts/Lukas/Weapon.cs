@@ -2,6 +2,8 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using System;
+
 public enum FireType
 {
 	Beam,
@@ -12,11 +14,18 @@ public enum Auto
 	Full,
 	Semi
 }
+public enum Holder
+{
+	Player,
+	Ai
+}
+
 
 public class Weapon : MonoBehaviour
 {
 	public FireType type = FireType.Beam;
 	public Auto auto = Auto.Full;
+	public Holder holder = Holder.Player;
 
 	public GameObject weaponModel;						
 	public Transform raycastStartSpot;
@@ -79,11 +88,20 @@ public class Weapon : MonoBehaviour
 
 		if (weaponModel == null)
 			weaponModel = gameObject;
+
 	}
 
 	void Update()
 	{
-		CheckForUserInput();
+		if(holder == Holder.Player)
+        {
+			CheckForUserInput();
+        }
+        else if(holder == Holder.Ai)
+        {
+			//ControlAiInput();
+        }
+		
 
 		if (type == FireType.Beam)
 		{
@@ -97,7 +115,13 @@ public class Weapon : MonoBehaviour
 
 	}
 
-	void CheckForUserInput()
+    public void ControlAiInput()
+    {
+		currentAmmo = ammoCapacity;
+		Launch();
+	}
+
+    void CheckForUserInput()
 	{
 		if (type == FireType.Beam)
 		{
@@ -263,6 +287,9 @@ public class Weapon : MonoBehaviour
 		else
 			GetComponent<AudioSource>().PlayOneShot(dryFireSound);
 	}
+
+	//Currently no plan to have Reload
+	/*
 	void Reload()
 	{
 		currentAmmo = ammoCapacity;
@@ -270,6 +297,7 @@ public class Weapon : MonoBehaviour
 
 		SendMessageUpwards("OnEasyWeaponsReload", SendMessageOptions.DontRequireReceiver);
 	}
+	*/
 
 	public void OnGUI()
 	{
