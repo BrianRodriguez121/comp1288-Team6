@@ -388,6 +388,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 7f06d4a138614ce4983721fff3f1977b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f06d4a138614ce4983721fff3f1977b, type: 3}
 --- !u!4 &228454962 stripped
@@ -428,7 +432,7 @@ MonoBehaviour:
   startBeamWidth: 0.5
   endBeamWidth: 1
   beamPower: 1
-  range: 100
+  range: 5
   ammoCapacity: 12
   shotPerRound: 1
   reloadTime: 1.6

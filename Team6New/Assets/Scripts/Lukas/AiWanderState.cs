@@ -45,7 +45,7 @@ public class AiWanderState : IAiState
             }
             else if(randumNum == 0)
             {
-                Debug.Log("Ai has went from wander to idle");
+                //Debug.Log("Ai has went from wander to idle");
                 agent.stateMachine.ChangeState(AiStateId.Idle);
             }
         }

@@ -55,7 +55,7 @@ public class AiAgent : MonoBehaviour
         {
             foreach(var obj in sensor.Objects){
                 if (obj.layer == 6){
-                    Debug.Log("player seen");
+                    //Debug.Log("player seen");
                     return true;
                 }
             }
