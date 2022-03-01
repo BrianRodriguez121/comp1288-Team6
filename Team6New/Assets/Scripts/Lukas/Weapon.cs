@@ -33,11 +33,8 @@ public class Weapon : MonoBehaviour
 	//Projectile
 	public GameObject projectile;
 	public Transform projectileSpawnSpot;
-
-	private float xOffsetMin  = 0f;
-	private float xOffsetMax  = 3f;
-	private float yOffsetMin  = 0f;
-	private float yOffsetMax  = 3f;
+	//recomended to keep within 0-1
+	public float projectRandomOffset = 0.0f;
 
 	// beam 
 	public bool reflect = true;
@@ -288,9 +285,9 @@ public class Weapon : MonoBehaviour
 					else if (holder == Holder.Ai)
 					{
 						Vector3 spawnRot = projectileSpawnSpot.transform.position;
-						spawnRot = new Vector3 (transform.position.x + UnityEngine.Random.Range(-0.4f, 0.4f), transform.position.y + UnityEngine.Random.Range(-0.4f, 0.4f), transform.position.z);
+						spawnRot = new Vector3(transform.position.x + UnityEngine.Random.Range(-projectRandomOffset, projectRandomOffset),
+							transform.position.y + UnityEngine.Random.Range(-projectRandomOffset, projectRandomOffset), transform.position.z);
 
-						print(projectileSpawnSpot.rotation);
 						GameObject proj = Instantiate(projectile, spawnRot, projectileSpawnSpot.rotation) as GameObject;
 					}
 

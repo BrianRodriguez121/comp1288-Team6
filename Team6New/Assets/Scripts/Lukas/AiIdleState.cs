@@ -13,7 +13,6 @@ public class AiIdleState : IAiState
     public void Enter(AiAgent agent)
     {
         timer = agent.config.maxIdleTimer;
-        //Debug.Log("idle state");
     }
 
     public void Exit(AiAgent agent)
@@ -24,23 +23,13 @@ public class AiIdleState : IAiState
     public void Update(AiAgent agent)
     {
         timer -= Time.deltaTime;
-        /*
-        Vector3 playerDirection = agent.playerTransform.position - agent.transform.position;
 
-        if(playerDirection.magnitude > agent.config.maxSightDistance)
-        {
-            return;
-        }
-
-        Vector3 agentDirection = agent.transform.forward;
-        playerDirection.Normalize();
-        */
         if(timer <= 0)
         {
             agent.stateMachine.ChangeState(AiStateId.Wander);
         }
 
-        if (agent.SeenPlayer())
+        if (agent.SensorDetectPlayer())
         {
             agent.stateMachine.ChangeState(AiStateId.ChasePlayer);
         }

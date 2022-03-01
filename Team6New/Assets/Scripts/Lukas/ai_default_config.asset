@@ -16,5 +16,8 @@ MonoBehaviour:
   maxDistance: 1
   maxSightDistance: 5
   wanderRadius: 20
-  stoppingDistance: 5
+  attackStoppingDistance: 10
   findPlayerTimer: 10
+  distanceAttackPlayer: 30
+  healthRegenPercent: 1.75
+  healthRegenDuration: 0.3

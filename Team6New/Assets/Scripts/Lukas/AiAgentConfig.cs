@@ -14,4 +14,10 @@ public class AiAgentConfig : ScriptableObject
     public float attackStoppingDistance = 15.0f;
     public float findPlayerTimer = 25.0f;
     public float distanceAttackPlayer = 25.0f;
+    
+    //will regen AI health by 75% of current Health
+    public float healthRegenPercent = 1.75f;
+
+    //maxDelta for health increase below 0.5 recomended
+    public float healthRegenDuration = 0.3f;
 }

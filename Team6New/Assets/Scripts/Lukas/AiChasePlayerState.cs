@@ -16,7 +16,6 @@ public class AiChasePlayerState : IAiState
 
     public void Enter(AiAgent agent)
     {
-        //Debug.Log("chase state");
         lostSightTimer = 10.0f;
     }
 
@@ -34,7 +33,7 @@ public class AiChasePlayerState : IAiState
         timer -= Time.deltaTime;
 
         //player seen
-        if (agent.SeenPlayer())
+        if (agent.SensorDetectPlayer())
         {
             lostSightTimer = agent.config.findPlayerTimer;
             searchedForPlayer = false;
@@ -79,7 +78,7 @@ public class AiChasePlayerState : IAiState
         }
 
         //if AI loses sight they first search area last seen
-        if (!agent.SeenPlayer())
+        if (!agent.SensorDetectPlayer())
         {
             lostSightTimer -= Time.deltaTime;
 

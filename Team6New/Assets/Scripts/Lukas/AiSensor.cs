@@ -16,6 +16,7 @@ public class AiSensor : MonoBehaviour
     public LayerMask layers;
     public LayerMask occlusionLayers;
     public List<GameObject> Objects = new List<GameObject>();
+    public List<GameObject> AllHidingSpots = new List<GameObject>();
     Collider[] colliders = new Collider[50];
     Mesh mesh;
     int count;
@@ -42,9 +43,11 @@ public class AiSensor : MonoBehaviour
         count = Physics.OverlapSphereNonAlloc(transform.position, distance, colliders, layers, QueryTriggerInteraction.Collide);
 
         Objects.Clear();
+        AllHidingSpots.Clear();
         for (int i=0; i<count; ++i)
         {
             GameObject obj = colliders[i].gameObject;
+            AllHidingSpots.Add(obj);
             if (IsInSight(obj))
             {
                 Objects.Add(obj);

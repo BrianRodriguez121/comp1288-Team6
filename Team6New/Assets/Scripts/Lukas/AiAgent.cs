@@ -5,14 +5,16 @@ using UnityEngine.AI;
 
 public class AiAgent : MonoBehaviour
 {
+    public float healthRegenAmount; 
+
     public AiStateMachine stateMachine;
     public AiStateId intialState;
     public NavMeshAgent navMeshAgent;
     public AiAgentConfig config;
     public Transform playerTransform;
     public AiSensor sensor;
-    public GameObject attackObjectPrefab;
     public Weapon weaponControl;
+    public Health health;
 
     void Start()
     {
@@ -20,11 +22,13 @@ public class AiAgent : MonoBehaviour
         stateMachine = new AiStateMachine(this);
         sensor = GetComponent<AiSensor>();
         weaponControl = GetComponentInChildren<Weapon>();
+        health = GetComponent<Health>();
 
         stateMachine.RegisterState(new AiIdleState());
         stateMachine.RegisterState(new AiWanderState());
         stateMachine.RegisterState(new AiChasePlayerState());
         stateMachine.RegisterState(new AiAttackState());
+        stateMachine.RegisterState(new AiHidingState());
         stateMachine.RegisterState(new AiDeathState());
         stateMachine.ChangeState(intialState);
 
@@ -34,8 +38,10 @@ public class AiAgent : MonoBehaviour
     void Update()
     {
         stateMachine.Update();
+        print(stateMachine.currentState);
     }
 
+    // find a random location on the navmesh
     public Vector3 RandomNavmeshLocation(float radius)
     {
         Vector3 randomDirection = Random.insideUnitSphere * radius;
@@ -49,11 +55,13 @@ public class AiAgent : MonoBehaviour
         return finalPosition;
     }
 
-    public bool SeenPlayer()
+    //Using AiSensor - checks if Player can be seen
+    public bool SensorDetectPlayer()
     {
         if(sensor.Objects.Count > 0)
         {
-            foreach(var obj in sensor.Objects){
+            foreach(var obj in sensor.Objects)
+            {
                 if (obj.layer == 6){
                     //Debug.Log("player seen");
                     return true;
@@ -63,11 +71,45 @@ public class AiAgent : MonoBehaviour
         return false;
     }
 
-    public void SpawnItemTest()
+    //Using AiSensor - checks if Hiding is within vision circle
+    public bool SensorDetectHiding()
     {
-        //this is to test for now
-        Instantiate(attackObjectPrefab);
+        if(sensor.AllHidingSpots.Count > 0)
+        {
+            foreach(var obj in sensor.AllHidingSpots)
+            {
+                if (obj.layer == 7){
+                    //Debug.Log("player seen");
+                    return true;
+                }
+            }
+        }
+        return false;
     }
+
+    //Returns the Hiding spots seen by AI 
+    //Make calculation of closest spot that player cant see
+    public GameObject DetectHidingPlace()
+    {
+        if (sensor.AllHidingSpots.Count > 0)
+        {
+            foreach (var obj in sensor.AllHidingSpots)
+            {
+                if (obj.layer == 7)
+                {
+                    return obj;
+                }
+            }
+        }
+        return null;
+    }
+
+    //On state exit health regen is calculated once
+    public void HealthRegenCal()
+    {
+        healthRegenAmount = health.currentHealth * config.healthRegenPercent;
+    }
+
     public void DestroyAgent()
     {
         Destroy(gameObject);

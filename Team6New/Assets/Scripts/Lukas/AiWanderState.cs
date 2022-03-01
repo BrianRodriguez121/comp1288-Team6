@@ -13,7 +13,7 @@ public class AiWanderState : IAiState
 
     public void Enter(AiAgent agent)
     {
-        //Debug.Log("wander state");
+
     }
 
     public void Exit(AiAgent agent)
@@ -23,21 +23,14 @@ public class AiWanderState : IAiState
 
     public void Update(AiAgent agent)
     {
-        //calculates if player can be seen
-        /*
-        Vector3 playerDirection = agent.playerTransform.position - agent.transform.position;
-        Vector3 agentDirection = agent.transform.forward;
-        playerDirection.Normalize();
-        float dotProduct = Vector3.Dot(playerDirection, agentDirection);
-        */
-
         timer -= Time.deltaTime;
 
         //random location set as destination for agent 
         if (!agent.navMeshAgent.hasPath || timer <= 0.0f)
         {
+            //random chance for AI to Idle
             int randumNum = Random.Range(0, 5);
-            //Debug.Log(randumNum);
+            Debug.Log(randumNum);
             if(randumNum >= 1)
             {
                 agent.navMeshAgent.SetDestination(agent.RandomNavmeshLocation(agent.config.wanderRadius));
@@ -50,7 +43,7 @@ public class AiWanderState : IAiState
             }
         }
 
-        if (agent.SeenPlayer())
+        if (agent.SensorDetectPlayer())
         {
             agent.stateMachine.ChangeState(AiStateId.ChasePlayer);
         }
