@@ -4869,8 +4869,8 @@ GameObject:
   m_Component:
   - component: {fileID: 400002}
   - component: {fileID: 8200000}
-  - component: {fileID: 114386710563610552}
-  - component: {fileID: 6192963138693680134}
+  - component: {fileID: 2519270747301110465}
+  - component: {fileID: 1024270209976344765}
   m_Layer: 0
   m_Name: Explosion 2
   m_TagString: Untagged
@@ -4992,7 +4992,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &114386710563610552
+--- !u!114 &2519270747301110465
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5001,11 +5001,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 100002}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3058957f4553714bab8771439b4a021, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f76e65fcdc6a36489f00f0bec3896ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 6
---- !u!114 &6192963138693680134
+--- !u!114 &1024270209976344765
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5014,7 +5014,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100002}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97755577ceda1a249a676d738b317baf, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c6c2e5139744eb4080a9dab561f4616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   explosionForce: 14
@@ -5030,7 +5030,7 @@ GameObject:
   m_Component:
   - component: {fileID: 400004}
   - component: {fileID: 10800000}
-  - component: {fileID: 493397296753848262}
+  - component: {fileID: 5816876912684248583}
   m_Layer: 0
   m_Name: Explosion Light
   m_TagString: Untagged
@@ -5114,7 +5114,7 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &493397296753848262
+--- !u!114 &5816876912684248583
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5123,7 +5123,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100004}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3058957f4553714bab8771439b4a021, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f76e65fcdc6a36489f00f0bec3896ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 0.1

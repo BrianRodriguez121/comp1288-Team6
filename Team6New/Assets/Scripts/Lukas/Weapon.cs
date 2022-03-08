@@ -2,6 +2,8 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using System;
+
 public enum FireType
 {
 	Beam,
@@ -12,23 +14,32 @@ public enum Auto
 	Full,
 	Semi
 }
+public enum Holder
+{
+	Player,
+	Ai
+}
+
 
 public class Weapon : MonoBehaviour
 {
 	public FireType type = FireType.Beam;
 	public Auto auto = Auto.Full;
+	public Holder holder = Holder.Player;
 
-	public GameObject weaponModel;						
+	public GameObject weaponModel;
 	public Transform raycastStartSpot;
 
 	//Projectile
 	public GameObject projectile;
 	public Transform projectileSpawnSpot;
+	//recomended to keep within 0-1
+	public float projectRandomOffset = 0.0f;
 
 	// beam 
 	public bool reflect = true;
-	public int maxReflections = 5;                      
-	public string beamTypeName = "laser_beam";         
+	public int maxReflections = 5;
+	public string beamTypeName = "laser_beam";
 	public float maxBeamHeat = 1.0f;    // seconds it will last	
 	public Material beamMaterial;       // material used for beam -particle material
 	private Color beamColor = Color.red;
@@ -56,9 +67,12 @@ public class Weapon : MonoBehaviour
 	public AudioClip reloadSound;
 	public AudioClip dryFireSound;
 
+	[HideInInspector]
+	public bool canShoot;
 
 	void Start()
 	{
+		canShoot = true;
 		currentAmmo = ammoCapacity; // start with full ammo
 
         if (type == FireType.Beam)
@@ -79,11 +93,20 @@ public class Weapon : MonoBehaviour
 
 		if (weaponModel == null)
 			weaponModel = gameObject;
+
 	}
 
 	void Update()
 	{
-		CheckForUserInput();
+		if (holder == Holder.Player && canShoot)
+        {
+			CheckForUserInput();
+        }
+        else if(holder == Holder.Ai)
+        {
+			//ControlAiInput();
+        }
+		
 
 		if (type == FireType.Beam)
 		{
@@ -97,7 +120,13 @@ public class Weapon : MonoBehaviour
 
 	}
 
-	void CheckForUserInput()
+    public void ControlAiInput()
+    {
+		currentAmmo = ammoCapacity;
+		Launch();
+	}
+
+    void CheckForUserInput()
 	{
 		if (type == FireType.Beam)
 		{
@@ -250,8 +279,21 @@ public class Weapon : MonoBehaviour
 				// Instantiate the projectile
 				if (projectile != null)
 				{
-					GameObject proj = Instantiate(projectile, projectileSpawnSpot.position, projectileSpawnSpot.rotation) as GameObject;
-					currentAmmo -= 1;
+					if(holder == Holder.Player)
+                    {
+						GameObject proj = Instantiate(projectile, projectileSpawnSpot.position, projectileSpawnSpot.rotation) as GameObject;
+						currentAmmo -= 1;
+					}
+					//adds random offset to shooting by moving projectile spawn points position
+					else if (holder == Holder.Ai)
+					{
+						Vector3 spawnRot = projectileSpawnSpot.transform.position;
+						spawnRot = new Vector3(transform.position.x + UnityEngine.Random.Range(-projectRandomOffset, projectRandomOffset),
+							transform.position.y + UnityEngine.Random.Range(-projectRandomOffset, projectRandomOffset), transform.position.z);
+
+						GameObject proj = Instantiate(projectile, spawnRot, projectileSpawnSpot.rotation) as GameObject;
+					}
+
 				}
 				else
 				{
@@ -263,6 +305,9 @@ public class Weapon : MonoBehaviour
 		else
 			GetComponent<AudioSource>().PlayOneShot(dryFireSound);
 	}
+
+	//Currently no plan to have Reload
+	/*
 	void Reload()
 	{
 		currentAmmo = ammoCapacity;
@@ -270,6 +315,7 @@ public class Weapon : MonoBehaviour
 
 		SendMessageUpwards("OnEasyWeaponsReload", SendMessageOptions.DontRequireReceiver);
 	}
+	*/
 
 	public void OnGUI()
 	{

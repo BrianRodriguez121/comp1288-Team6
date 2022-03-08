@@ -11,6 +11,7 @@ public class AiDeathState : IAiState
     public void Enter(AiAgent agent)
     {
         Debug.Log("death state entered");
+        agent.DestroyAgent();
     }
 
     public void Exit(AiAgent agent)

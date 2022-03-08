@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AiIdleState : IAiState
 {
+    float timer;
     public AiStateId GetId()
     {
         return AiStateId.Idle;
@@ -11,7 +12,7 @@ public class AiIdleState : IAiState
 
     public void Enter(AiAgent agent)
     {
-        Debug.Log("idle state");
+        timer = agent.config.maxIdleTimer;
     }
 
     public void Exit(AiAgent agent)
@@ -21,20 +22,14 @@ public class AiIdleState : IAiState
 
     public void Update(AiAgent agent)
     {
-        
+        timer -= Time.deltaTime;
 
-        Vector3 playerDirection = agent.playerTransform.position - agent.transform.position;
-
-        if(playerDirection.magnitude > agent.config.maxSightDistance)
+        if(timer <= 0)
         {
-            return;
+            agent.stateMachine.ChangeState(AiStateId.Wander);
         }
 
-        Vector3 agentDirection = agent.transform.forward;
-        playerDirection.Normalize();
-        float dotProduct = Vector3.Dot(playerDirection, agentDirection);
-
-        if(dotProduct > 0.0f)
+        if (agent.SensorDetectPlayer())
         {
             agent.stateMachine.ChangeState(AiStateId.ChasePlayer);
         }

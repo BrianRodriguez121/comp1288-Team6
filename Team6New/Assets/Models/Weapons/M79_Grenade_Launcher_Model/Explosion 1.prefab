@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7512054334047067784}
   - component: {fileID: 7512054334045297482}
-  - component: {fileID: 4299050069296089825}
-  - component: {fileID: 5390431060415206742}
+  - component: {fileID: 8421030343655744615}
+  - component: {fileID: 7096805951879698546}
   m_Layer: 0
   m_Name: Explosion 1
   m_TagString: Untagged
@@ -132,7 +132,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &4299050069296089825
+--- !u!114 &8421030343655744615
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,13 +141,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7512054334046634664}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97755577ceda1a249a676d738b317baf, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c6c2e5139744eb4080a9dab561f4616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   explosionForce: 5
   explosionRadius: 10
   damage: 400
---- !u!114 &5390431060415206742
+--- !u!114 &7096805951879698546
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7512054334046634664}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3058957f4553714bab8771439b4a021, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f76e65fcdc6a36489f00f0bec3896ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 6
@@ -9897,7 +9897,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7512054334047067790}
   - component: {fileID: 7512054334057467786}
-  - component: {fileID: 1076219388330260014}
+  - component: {fileID: 3565823301774136050}
   m_Layer: 0
   m_Name: Explosion Light
   m_TagString: Untagged
@@ -9981,7 +9981,7 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &1076219388330260014
+--- !u!114 &3565823301774136050
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9990,7 +9990,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7512054334046634670}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3058957f4553714bab8771439b4a021, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f76e65fcdc6a36489f00f0bec3896ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 0.1

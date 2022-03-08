@@ -7,6 +7,8 @@ public enum AiStateId
     Idle,
     Wander,
     ChasePlayer,
+    Attack,
+    Hiding,
     Death
 }
 public interface IAiState
