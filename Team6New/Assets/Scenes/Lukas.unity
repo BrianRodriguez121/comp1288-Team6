@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 37974122}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: RayPoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,7 +261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 7f06d4a138614ce4983721fff3f1977b, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 7f06d4a138614ce4983721fff3f1977b, type: 3}
       propertyPath: m_IsActive
@@ -437,7 +437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 7f06d4a138614ce4983721fff3f1977b, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 7f06d4a138614ce4983721fff3f1977b, type: 3}
       propertyPath: m_IsActive
@@ -552,6 +552,7 @@ MonoBehaviour:
   fireSound: {fileID: 0}
   reloadSound: {fileID: 0}
   dryFireSound: {fileID: 0}
+  canShoot: 0
 --- !u!82 &228454965
 AudioSource:
   m_ObjectHideFlags: 0
@@ -683,6 +684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a12c7169dfce4334fa02eabb9f8b75bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  holder: 1
   distance: 50.92
   angle: 30.7
   height: 2.43
@@ -716,6 +718,7 @@ MonoBehaviour:
   sensor: {fileID: 0}
   weaponControl: {fileID: 0}
   health: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!114 &231141969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -897,6 +900,7 @@ MonoBehaviour:
   sensor: {fileID: 0}
   weaponControl: {fileID: 0}
   health: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!114 &263283775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -982,15 +986,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 263283772}
-  m_LocalRotation: {x: -0, y: -0.27022168, z: -0, w: 0.9627982}
-  m_LocalPosition: {x: 86.72, y: 0.77, z: 38.8}
+  m_LocalRotation: {x: -0, y: 0.31928486, z: -0, w: 0.94765884}
+  m_LocalPosition: {x: 40.7, y: 0.77, z: 32.7}
   m_LocalScale: {x: 1.4093451, y: 2, z: 1.217953}
   m_Children:
   - {fileID: 503076170}
   - {fileID: 228454962}
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: -31.355, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 37.239, z: 0}
 --- !u!114 &263283780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1003,6 +1007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a12c7169dfce4334fa02eabb9f8b75bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  holder: 1
   distance: 50.92
   angle: 30.7
   height: 2.43
@@ -1014,11 +1019,16 @@ MonoBehaviour:
   occlusionLayers:
     serializedVersion: 2
     m_Bits: 1
-  Objects: []
+  Objects:
+  - {fileID: 1383302577}
+  - {fileID: 207325443}
+  - {fileID: 1383302577}
   AllHidingSpots:
   - {fileID: 912737874}
+  - {fileID: 1383302577}
   - {fileID: 207325443}
   - {fileID: 981948333}
+  - {fileID: 1383302577}
 --- !u!1 &323886014
 GameObject:
   m_ObjectHideFlags: 0
@@ -1351,7 +1361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7f06d4a138614ce4983721fff3f1977b, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7f06d4a138614ce4983721fff3f1977b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1673,7 +1683,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 912737874}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.3198853, y: -4.10225, z: -17.667461}
+  m_LocalPosition: {x: 18.9, y: -4.10225, z: -5}
   m_LocalScale: {x: 1.4609472, y: 1.4609472, z: 1.4609472}
   m_Children: []
   m_Father: {fileID: 449816895}
@@ -1852,7 +1862,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 981948333}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3301125, y: -4.10225, z: -29.737461}
+  m_LocalPosition: {x: -21.3, y: -4.10225, z: -46.4}
   m_LocalScale: {x: 1.4609472, y: 1.4609472, z: 1.4609472}
   m_Children: []
   m_Father: {fileID: 449816895}
@@ -2000,6 +2010,7 @@ MonoBehaviour:
   fireSound: {fileID: 0}
   reloadSound: {fileID: 0}
   dryFireSound: {fileID: 0}
+  canShoot: 0
 --- !u!82 &1063680931
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2269,6 +2280,7 @@ MonoBehaviour:
   fireSound: {fileID: 0}
   reloadSound: {fileID: 0}
   dryFireSound: {fileID: 0}
+  canShoot: 0
 --- !u!82 &1283548011
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2378,6 +2390,7 @@ GameObject:
   - component: {fileID: 1383302578}
   - component: {fileID: 1383302582}
   - component: {fileID: 1383302579}
+  - component: {fileID: 1383302583}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -2440,14 +2453,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1383302577}
-  m_LocalRotation: {x: -0, y: -0.9596287, z: -0, w: -0.2812701}
-  m_LocalPosition: {x: 36.4, y: 1.125, z: 54.8}
+  m_LocalRotation: {x: -0, y: -0.9876652, z: -0, w: 0.15658085}
+  m_LocalPosition: {x: 55, y: 1.125, z: 80.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 963194228}
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: -212.672, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -161.983, z: 0}
 --- !u!114 &1383302582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2460,6 +2473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8961693fcadc62049afde4acb2f812d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sensor: {fileID: 0}
   walkingSpeed: 7.5
   runningSpeed: 11.5
   jumpSpeed: 8
@@ -2468,6 +2482,34 @@ MonoBehaviour:
   lookSpeed: 2
   lookXLimit: 70
   isGrounded: 0
+--- !u!114 &1383302583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383302577}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a12c7169dfce4334fa02eabb9f8b75bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  holder: 0
+  distance: 49.94
+  angle: 63.35
+  height: 2.43
+  meshColor: {r: 0.85882354, g: 0.7612476, b: 0.24705881, a: 0.23529412}
+  scanFrequency: 5
+  layers:
+    serializedVersion: 2
+    m_Bits: 128
+  occlusionLayers:
+    serializedVersion: 2
+    m_Bits: 1
+  Objects:
+  - {fileID: 912737874}
+  - {fileID: 207325443}
+  AllHidingSpots: []
 --- !u!1001 &1483802139
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2489,7 +2531,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e187df54ecf8d4243adf3b2fa8320350, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e187df54ecf8d4243adf3b2fa8320350, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2960,6 +3002,7 @@ MonoBehaviour:
   fireSound: {fileID: 0}
   reloadSound: {fileID: 0}
   dryFireSound: {fileID: 0}
+  canShoot: 0
 --- !u!82 &2081203019
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3065,7 +3108,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2102634472}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: RayPoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

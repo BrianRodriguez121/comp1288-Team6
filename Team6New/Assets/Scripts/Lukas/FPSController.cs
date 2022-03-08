@@ -8,6 +8,9 @@ using UnityEngine.SceneManagement;
 
 public class FPSController : MonoBehaviour
 {
+    public AiSensor sensor;
+    public static List<GameObject> SeenHidingSpots = new List<GameObject>();
+
     public float walkingSpeed = 7.5f;
     public float runningSpeed = 11.5f;
     public float jumpSpeed = 8.0f;
@@ -33,6 +36,7 @@ public class FPSController : MonoBehaviour
 
     void Start()
     {
+        sensor = GetComponent<AiSensor>();
         health = GetComponent<Health>();
         canMove = true;
         characterController = GetComponent<CharacterController>();
@@ -81,6 +85,19 @@ public class FPSController : MonoBehaviour
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+        }
+    }
+
+    public void SensorDetectHiding()
+    {
+        SeenHidingSpots.Clear();
+        if (sensor.AllHidingSpots.Count > 0)
+        {
+            foreach (var obj in sensor.AllHidingSpots)
+            {
+                print(obj);
+                SeenHidingSpots.Add(obj);
+            }
         }
     }
 }

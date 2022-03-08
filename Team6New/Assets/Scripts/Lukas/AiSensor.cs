@@ -3,9 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public enum SensorHolder
+{
+    Player,
+    Ai
+}
+
 [ExecuteInEditMode]
 public class AiSensor : MonoBehaviour
 {
+    public SensorHolder holder = SensorHolder.Ai;
+
     public float distance = 10;
     public float angle = 10;
     public float height = 10;
@@ -44,11 +53,21 @@ public class AiSensor : MonoBehaviour
 
         Objects.Clear();
         AllHidingSpots.Clear();
-        for (int i=0; i<count; ++i)
+        for (int i = 0; i < count; ++i)
         {
             GameObject obj = colliders[i].gameObject;
-            AllHidingSpots.Add(obj);
-            if (IsInSight(obj))
+
+            if (holder == SensorHolder.Ai)
+            {
+                AllHidingSpots.Add(obj);
+
+            }
+
+            if (IsInSight(obj) && holder == SensorHolder.Ai)
+            {
+                Objects.Add(obj);
+            }
+            else if(IsInSight(obj) && holder == SensorHolder.Player)
             {
                 Objects.Add(obj);
             }

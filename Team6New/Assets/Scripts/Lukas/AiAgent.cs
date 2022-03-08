@@ -15,9 +15,11 @@ public class AiAgent : MonoBehaviour
     public AiSensor sensor;
     public Weapon weaponControl;
     public Health health;
+    public FPSController playerController;
 
     void Start()
     {
+        playerController = FindObjectOfType<FPSController>();
         navMeshAgent = GetComponent<NavMeshAgent>();
         stateMachine = new AiStateMachine(this);
         sensor = GetComponent<AiSensor>();
@@ -87,17 +89,27 @@ public class AiAgent : MonoBehaviour
         return false;
     }
 
-    //Returns the Hiding spots seen by AI 
-    //Make calculation of closest spot that player cant see
+    //Returns the closest Hiding spots in radius of the AI 
     public GameObject DetectHidingPlace()
     {
         if (sensor.AllHidingSpots.Count > 0)
         {
+            GameObject bestTarget = null;
+            float closestDistanceSqr = Mathf.Infinity;
+            Vector3 currentPosition = transform.position;
+
             foreach (var obj in sensor.AllHidingSpots)
             {
-                if (obj.layer == 7)
+                if (obj.layer == 7 /*&& !FPSController.SeenHidingSpots.Contains(obj)*/)
                 {
-                    return obj;
+                    Vector3 directionToTarget = obj.transform.position - currentPosition;
+                    float dSqrToTarget = directionToTarget.sqrMagnitude;
+                    if (dSqrToTarget < closestDistanceSqr)
+                    {
+                        closestDistanceSqr = dSqrToTarget;
+                        bestTarget = obj;
+                    }
+                    return bestTarget;
                 }
             }
         }

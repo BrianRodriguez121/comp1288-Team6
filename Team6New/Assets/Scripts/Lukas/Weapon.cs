@@ -27,7 +27,7 @@ public class Weapon : MonoBehaviour
 	public Auto auto = Auto.Full;
 	public Holder holder = Holder.Player;
 
-	public GameObject weaponModel;						
+	public GameObject weaponModel;
 	public Transform raycastStartSpot;
 
 	//Projectile
@@ -38,8 +38,8 @@ public class Weapon : MonoBehaviour
 
 	// beam 
 	public bool reflect = true;
-	public int maxReflections = 5;                      
-	public string beamTypeName = "laser_beam";         
+	public int maxReflections = 5;
+	public string beamTypeName = "laser_beam";
 	public float maxBeamHeat = 1.0f;    // seconds it will last	
 	public Material beamMaterial;       // material used for beam -particle material
 	private Color beamColor = Color.red;
@@ -67,9 +67,12 @@ public class Weapon : MonoBehaviour
 	public AudioClip reloadSound;
 	public AudioClip dryFireSound;
 
+	[HideInInspector]
+	public bool canShoot;
 
 	void Start()
 	{
+		canShoot = true;
 		currentAmmo = ammoCapacity; // start with full ammo
 
         if (type == FireType.Beam)
@@ -95,7 +98,7 @@ public class Weapon : MonoBehaviour
 
 	void Update()
 	{
-		if(holder == Holder.Player)
+		if (holder == Holder.Player && canShoot)
         {
 			CheckForUserInput();
         }
