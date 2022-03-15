@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: d4173a755784ead4fadc217c212d917e, type: 2}
+  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -818,17 +818,17 @@ VisualEffect:
       - m_Value: 0.16
         m_Name: Min size
         m_Overridden: 1
-      - m_Value: 0.1
+      - m_Value: 0.31
         m_Name: Max size
         m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
       m_Array:
-      - m_Value: {x: 50.64244, y: 17.95031, z: 16.630558}
+      - m_Value: {x: 50.64244, y: 8.324794, z: 34.552124}
         m_Name: New AABox_size
         m_Overridden: 1
-      - m_Value: {x: -2.4641738, y: 8.475157, z: 7.815281}
+      - m_Value: {x: -2.4641745, y: 13.287914, z: -1.1455002}
         m_Name: New AABox_center
         m_Overridden: 1
     m_Vector4f:
