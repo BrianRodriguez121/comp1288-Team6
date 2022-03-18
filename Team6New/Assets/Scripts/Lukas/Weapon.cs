@@ -323,8 +323,9 @@ public class Weapon : MonoBehaviour
 		{
 			if (type == FireType.Beam)
 				GUI.Label(new Rect(10, Screen.height - 30, 100, 20), "Heat: " + (int)(beamHeat * 100) + "/" + (int)(maxBeamHeat * 100));
-			if (type == FireType.Projectile)
-				GUI.Label(new Rect(10, Screen.height - 30, 100, 20), "Ammo: " + currentAmmo);
+			
+			else if (type == FireType.Projectile)
+				GUI.Label(new Rect(10, Screen.height - 30, 300, 20), "Ammo: " + currentAmmo);
 		}
 	}
 }

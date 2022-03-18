@@ -12,10 +12,13 @@ public class AiAgent : MonoBehaviour
     public NavMeshAgent navMeshAgent;
     public AiAgentConfig config;
     public Transform playerTransform;
+    Transform agentTransform;
     public AiSensor sensor;
     public Weapon weaponControl;
     public Health health;
     public FPSController playerController;
+
+    public GameObject heatMapPrefab;
 
     void Start()
     {
@@ -35,12 +38,13 @@ public class AiAgent : MonoBehaviour
         stateMachine.ChangeState(intialState);
 
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        agentTransform = GetComponent<Transform>();
     }
 
     void Update()
     {
         stateMachine.Update();
-        print(stateMachine.currentState);
+        //print(stateMachine.currentState);
     }
 
     // find a random location on the navmesh
@@ -124,6 +128,12 @@ public class AiAgent : MonoBehaviour
 
     public void DestroyAgent()
     {
+        if (playerController.heatMap)
+        {
+            GameObject killMark = Instantiate(heatMapPrefab, agentTransform.position, agentTransform.rotation);
+            killMark.transform.parent = playerController.heatMapParent.transform;
+        }
+
         Destroy(gameObject);
     }
 }

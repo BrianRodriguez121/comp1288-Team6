@@ -28,7 +28,7 @@ public class AiAttackState : IAiState
             //agent.SpawnItemTest();
             agent.navMeshAgent.transform.LookAt(agent.playerTransform);
             agent.weaponControl.ControlAiInput();
-            timer = 1.5f;
+            timer = 0.5f;
         }
 
         // prevents enemy from walking into player when chasing
@@ -40,7 +40,7 @@ public class AiAttackState : IAiState
         }
 
         //if to far the AI will go closer to player, can change and improve to find the best place to attack from
-        if (Vector3.Distance(agent.navMeshAgent.nextPosition, agent.playerTransform.position) > 25)
+        if (Vector3.Distance(agent.navMeshAgent.nextPosition, agent.playerTransform.position) > 35)
         {
             agent.navMeshAgent.destination = agent.playerTransform.position;
             // once cloase enough agent will continue to look at player

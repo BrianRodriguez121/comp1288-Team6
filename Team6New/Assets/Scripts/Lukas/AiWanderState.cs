@@ -29,7 +29,7 @@ public class AiWanderState : IAiState
         if (!agent.navMeshAgent.hasPath || timer <= 0.0f)
         {
             //random chance for AI to Idle
-            int randumNum = Random.Range(0, 5);
+            int randumNum = Random.Range(0, 25);
             //Debug.Log(randumNum);
             if(randumNum >= 1)
             {
