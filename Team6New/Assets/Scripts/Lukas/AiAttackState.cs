@@ -21,15 +21,23 @@ public class AiAttackState : IAiState
 
     public void Update(AiAgent agent)
     {
+        //slowed down update speed
+        if (agent.SensorDetectPlayer() )
+        {
+            agent.navMeshAgent.destination = agent.playerTransform.position;
+            agent.weaponControl.ControlAiInput();
+        }
+        /*
+        //regular update
         timer -= Time.deltaTime;
-
         if (agent.SensorDetectPlayer() && timer < 0)
         {
-            //agent.SpawnItemTest();
             agent.navMeshAgent.transform.LookAt(agent.playerTransform);
             agent.weaponControl.ControlAiInput();
             timer = 0.5f;
         }
+        */
+
 
         // prevents enemy from walking into player when chasing
         if (Vector3.Distance(agent.navMeshAgent.nextPosition, agent.playerTransform.position) < agent.config.attackStoppingDistance)

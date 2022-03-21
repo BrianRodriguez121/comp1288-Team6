@@ -70,8 +70,12 @@ public class Weapon : MonoBehaviour
 	[HideInInspector]
 	public bool canShoot;
 
+	private float timerCurrent;
+	private float timerTotal = 0.5f;
+
 	void Start()
 	{
+		timerCurrent = timerTotal;
 		canShoot = true;
 		currentAmmo = ammoCapacity; // start with full ammo
 
@@ -117,16 +121,29 @@ public class Weapon : MonoBehaviour
 			beamColor = colors[colorsIndex];
 			beamColor.a = newAlpha;
 		}
-
+		timerCurrent -= Time.deltaTime;
 	}
 
+	////slowed down update speed
+	public void ControlAiInput()
+    {
+        if (timerCurrent < 0)
+        {
+			currentAmmo = ammoCapacity;
+			Launch();
+			timerCurrent = timerTotal;
+		}
+	}
+
+	/*
+	//regular update
     public void ControlAiInput()
     {
 		currentAmmo = ammoCapacity;
 		Launch();
 	}
-
-    void CheckForUserInput()
+	*/
+	void CheckForUserInput()
 	{
 		if (type == FireType.Beam)
 		{

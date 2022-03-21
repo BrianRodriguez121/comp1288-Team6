@@ -40,15 +40,20 @@ public class AiAgent : MonoBehaviour
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         agentTransform = GetComponent<Transform>();
 
-        //InvokeRepeating(nameof(UpdateMethod), 0.05f, 0.1f);
+        InvokeRepeating(nameof(UpdateMethod), 0.05f, 0.1f);
     }
-
+    /*
     void Update()
     {
         stateMachine.Update();
-        print(stateMachine.currentState);
+        //print(stateMachine.currentState);
     }
-
+    */
+    void UpdateMethod()
+    {
+        stateMachine.Update();
+    }
+    
     // find a random location on the navmesh
     public Vector3 RandomNavmeshLocation(float minRadius, float maxRadius)
     {
