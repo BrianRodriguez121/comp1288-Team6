@@ -309,6 +309,8 @@ public class Weapon : MonoBehaviour
 							transform.position.y + UnityEngine.Random.Range(-projectRandomOffset, projectRandomOffset), transform.position.z);
 
 						GameObject proj = Instantiate(projectile, spawnRot, projectileSpawnSpot.rotation) as GameObject;
+						//setting the layer of the object , AI cant hit each other
+						proj.layer = 8;
 					}
 
 				}

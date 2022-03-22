@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8150533794702364958}
   - component: {fileID: 3709926604170634590}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sensor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   holder: 1
   distance: 62.54
-  angle: 55
+  angle: 85.16
   height: 11
   meshColor: {r: 1, g: 0, b: 0, a: 0.34117648}
   scanFrequency: 5
@@ -56,11 +56,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   Objects: []
-  AllHidingSpots:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  AllHidingSpots: []
 --- !u!1 &6268399791044450560
 GameObject:
   m_ObjectHideFlags: 0
@@ -70,7 +66,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6268399791044450575}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RayPoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +99,7 @@ GameObject:
   - component: {fileID: 6268399792665766826}
   - component: {fileID: 6268399792665766827}
   - component: {fileID: 6268399792665766828}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +197,7 @@ GameObject:
   - component: {fileID: 6268399792896121562}
   - component: {fileID: 6268399792896121560}
   - component: {fileID: 6268399792896121561}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AI
   m_TagString: cIndex_2
   m_Icon: {fileID: 0}
@@ -322,8 +318,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canDie: 1
-  startingHealth: 1000
-  maxHealth: 1000
+  startingHealth: 700
+  maxHealth: 700
   currentHealth: 0
 --- !u!114 &6268399792896121561
 MonoBehaviour:
@@ -494,7 +490,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 7f06d4a138614ce4983721fff3f1977b, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 7f06d4a138614ce4983721fff3f1977b, type: 3}
       propertyPath: m_IsActive
@@ -510,7 +506,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7f06d4a138614ce4983721fff3f1977b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7f06d4a138614ce4983721fff3f1977b, type: 3}
       propertyPath: m_LocalScale.z
@@ -522,7 +518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7f06d4a138614ce4983721fff3f1977b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.19
+      value: 0.019
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7f06d4a138614ce4983721fff3f1977b, type: 3}
       propertyPath: m_LocalPosition.z
