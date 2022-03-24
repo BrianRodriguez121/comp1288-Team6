@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Lukas.unity
+    guid: 37f2ab9ce22d0e048a0a578cc0c2fdac
   m_configObjects: {}

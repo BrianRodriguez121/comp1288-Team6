@@ -12,17 +12,20 @@ public class AiAgent : MonoBehaviour
     public NavMeshAgent navMeshAgent;
     public AiAgentConfig config;
     public Transform playerTransform;
+    Transform agentTransform;
     public AiSensor sensor;
     public Weapon weaponControl;
     public Health health;
     public FPSController playerController;
+
+    public GameObject heatMapPrefab;
 
     void Start()
     {
         playerController = FindObjectOfType<FPSController>();
         navMeshAgent = GetComponent<NavMeshAgent>();
         stateMachine = new AiStateMachine(this);
-        sensor = GetComponent<AiSensor>();
+        sensor = GetComponentInChildren<AiSensor>();
         weaponControl = GetComponentInChildren<Weapon>();
         health = GetComponent<Health>();
 
@@ -35,22 +38,30 @@ public class AiAgent : MonoBehaviour
         stateMachine.ChangeState(intialState);
 
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-    }
+        agentTransform = GetComponent<Transform>();
 
+        InvokeRepeating(nameof(UpdateMethod), 0.05f, 0.1f);
+    }
+    /*
     void Update()
     {
         stateMachine.Update();
-        print(stateMachine.currentState);
+        //print(stateMachine.currentState);
     }
-
-    // find a random location on the navmesh
-    public Vector3 RandomNavmeshLocation(float radius)
+    */
+    void UpdateMethod()
     {
-        Vector3 randomDirection = Random.insideUnitSphere * radius;
+        stateMachine.Update();
+    }
+    
+    // find a random location on the navmesh
+    public Vector3 RandomNavmeshLocation(float minRadius, float maxRadius)
+    {
+        Vector3 randomDirection = Random.insideUnitSphere.normalized * Random.Range(minRadius, maxRadius);
         randomDirection += transform.position;
         NavMeshHit hit;
         Vector3 finalPosition = Vector3.zero;
-        if (NavMesh.SamplePosition(randomDirection, out hit, radius, 1))
+        if (NavMesh.SamplePosition(randomDirection, out hit, maxRadius, 1))
         {
             finalPosition = hit.position;
         }
@@ -124,6 +135,12 @@ public class AiAgent : MonoBehaviour
 
     public void DestroyAgent()
     {
+        if (playerController.heatMap)
+        {
+            GameObject killMark = Instantiate(heatMapPrefab, agentTransform.position, agentTransform.rotation);
+            killMark.transform.parent = playerController.heatMapParent.transform;
+        }
+
         Destroy(gameObject);
     }
 }

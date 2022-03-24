@@ -70,8 +70,12 @@ public class Weapon : MonoBehaviour
 	[HideInInspector]
 	public bool canShoot;
 
+	private float timerCurrent;
+	private float timerTotal = 0.5f;
+
 	void Start()
 	{
+		timerCurrent = timerTotal;
 		canShoot = true;
 		currentAmmo = ammoCapacity; // start with full ammo
 
@@ -117,16 +121,29 @@ public class Weapon : MonoBehaviour
 			beamColor = colors[colorsIndex];
 			beamColor.a = newAlpha;
 		}
-
+		timerCurrent -= Time.deltaTime;
 	}
 
+	////slowed down update speed
+	public void ControlAiInput()
+    {
+        if (timerCurrent < 0)
+        {
+			currentAmmo = ammoCapacity;
+			Launch();
+			timerCurrent = timerTotal;
+		}
+	}
+
+	/*
+	//regular update
     public void ControlAiInput()
     {
 		currentAmmo = ammoCapacity;
 		Launch();
 	}
-
-    void CheckForUserInput()
+	*/
+	void CheckForUserInput()
 	{
 		if (type == FireType.Beam)
 		{
@@ -292,6 +309,8 @@ public class Weapon : MonoBehaviour
 							transform.position.y + UnityEngine.Random.Range(-projectRandomOffset, projectRandomOffset), transform.position.z);
 
 						GameObject proj = Instantiate(projectile, spawnRot, projectileSpawnSpot.rotation) as GameObject;
+						//setting the layer of the object , AI cant hit each other
+						proj.layer = 8;
 					}
 
 				}
@@ -323,8 +342,9 @@ public class Weapon : MonoBehaviour
 		{
 			if (type == FireType.Beam)
 				GUI.Label(new Rect(10, Screen.height - 30, 100, 20), "Heat: " + (int)(beamHeat * 100) + "/" + (int)(maxBeamHeat * 100));
-			if (type == FireType.Projectile)
-				GUI.Label(new Rect(10, Screen.height - 30, 100, 20), "Ammo: " + currentAmmo);
+			
+			else if (type == FireType.Projectile)
+				GUI.Label(new Rect(10, Screen.height - 30, 300, 20), "Ammo: " + currentAmmo);
 		}
 	}
 }

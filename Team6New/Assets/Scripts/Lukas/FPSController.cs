@@ -34,6 +34,13 @@ public class FPSController : MonoBehaviour
     [HideInInspector]
     public bool isGrounded;
 
+    public bool heatMap;
+    public GameObject heatMapPrefabW;
+    public GameObject heatMapParent;
+    public Transform spawnPoint;
+    private float timer = 2.5f;
+    public float timerMax = 2.5f;
+
     void Start()
     {
         sensor = GetComponent<AiSensor>();
@@ -85,6 +92,17 @@ public class FPSController : MonoBehaviour
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+        }
+        
+        if (heatMap)
+        {
+            timer -= Time.deltaTime;
+            if(timer < 0 && heatMap)
+            {
+                timer = timerMax;
+                GameObject movementMark = Instantiate(heatMapPrefabW, spawnPoint.position, spawnPoint.rotation);
+                movementMark.transform.parent = heatMapParent.transform;
+            }
         }
     }
 
