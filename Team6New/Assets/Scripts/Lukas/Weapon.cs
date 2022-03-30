@@ -56,7 +56,7 @@ public class Weapon : MonoBehaviour
 	public float range = 9999.0f;
 
 	// Ammo
-	public int ammoCapacity = 12;
+	public int ammoCapacity = 10;
 	public int shotPerRound = 1;
 	private int currentAmmo;
 	public float reloadTime = 2.0f;
@@ -123,7 +123,7 @@ public class Weapon : MonoBehaviour
 		}
 		timerCurrent -= Time.deltaTime;
 	}
-
+	/*
 	////slowed down update speed
 	public void ControlAiInput()
     {
@@ -133,16 +133,16 @@ public class Weapon : MonoBehaviour
 			Launch();
 			timerCurrent = timerTotal;
 		}
-	}
+	}*/
 
-	/*
+	
 	//regular update
     public void ControlAiInput()
     {
 		currentAmmo = ammoCapacity;
 		Launch();
 	}
-	*/
+	
 	void CheckForUserInput()
 	{
 		if (type == FireType.Beam)
@@ -312,7 +312,6 @@ public class Weapon : MonoBehaviour
 						//setting the layer of the object , AI cant hit each other
 						proj.layer = 8;
 					}
-
 				}
 				else
 				{
@@ -338,13 +337,17 @@ public class Weapon : MonoBehaviour
 
 	public void OnGUI()
 	{
-		if (showCurrentAmmo)
+		if (showCurrentAmmo && gameObject.activeInHierarchy)
 		{
 			if (type == FireType.Beam)
+            {
 				GUI.Label(new Rect(10, Screen.height - 30, 100, 20), "Heat: " + (int)(beamHeat * 100) + "/" + (int)(maxBeamHeat * 100));
-			
+            }
+				
 			else if (type == FireType.Projectile)
+            {
 				GUI.Label(new Rect(10, Screen.height - 30, 300, 20), "Ammo: " + currentAmmo);
+            }
 		}
 	}
 }

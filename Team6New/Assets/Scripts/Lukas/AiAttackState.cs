@@ -21,13 +21,14 @@ public class AiAttackState : IAiState
 
     public void Update(AiAgent agent)
     {
-        //slowed down update speed
-        if (agent.SensorDetectPlayer() )
+        /*
+        //slowed update
+        if (agent.SensorDetectPlayer())
         {
             agent.navMeshAgent.destination = agent.playerTransform.position;
             agent.weaponControl.ControlAiInput();
-        }
-        /*
+        }*/
+        
         //regular update
         timer -= Time.deltaTime;
         if (agent.SensorDetectPlayer() && timer < 0)
@@ -36,7 +37,6 @@ public class AiAttackState : IAiState
             agent.weaponControl.ControlAiInput();
             timer = 0.5f;
         }
-        */
 
 
         // prevents enemy from walking into player when chasing
@@ -48,7 +48,7 @@ public class AiAttackState : IAiState
         }
 
         //if to far the AI will go closer to player, can change and improve to find the best place to attack from
-        if (Vector3.Distance(agent.navMeshAgent.nextPosition, agent.playerTransform.position) > 35)
+        if (Vector3.Distance(agent.navMeshAgent.nextPosition, agent.playerTransform.position) > 40)
         {
             agent.navMeshAgent.destination = agent.playerTransform.position;
             // once cloase enough agent will continue to look at player

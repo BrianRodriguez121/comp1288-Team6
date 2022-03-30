@@ -472,7 +472,7 @@ MonoBehaviour:
   ammoCapacity: 12
   shotPerRound: 1
   reloadTime: 1.6
-  showCurrentAmmo: 1
+  showCurrentAmmo: 0
   fireSound: {fileID: 0}
   reloadSound: {fileID: 0}
   dryFireSound: {fileID: 0}

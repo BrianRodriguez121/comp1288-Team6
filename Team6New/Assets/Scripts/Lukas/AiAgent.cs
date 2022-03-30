@@ -20,6 +20,8 @@ public class AiAgent : MonoBehaviour
 
     public GameObject heatMapPrefab;
 
+    public bool detechHealthChange;
+
     void Start()
     {
         playerController = FindObjectOfType<FPSController>();
@@ -40,15 +42,15 @@ public class AiAgent : MonoBehaviour
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         agentTransform = GetComponent<Transform>();
 
-        InvokeRepeating(nameof(UpdateMethod), 0.05f, 0.1f);
+        //InvokeRepeating(nameof(UpdateMethod), 0.05f, 0.1f);
+        InvokeRepeating(nameof(UpdateMethod), Random.Range(0.01f, 0.09f), 0.1f);
     }
     /*
     void Update()
     {
         stateMachine.Update();
-        //print(stateMachine.currentState);
-    }
-    */
+    }*/
+    
     void UpdateMethod()
     {
         stateMachine.Update();
@@ -143,4 +145,17 @@ public class AiAgent : MonoBehaviour
 
         Destroy(gameObject);
     }
+    /*
+    public void IdleTimer()
+    {
+        if (stateMachine.currentState == AiStateId.Idle)
+        {
+            Invoke(nameof(ChangeState), config.maxIdleTimer);
+        }
+    }
+
+    void ChangeState()
+    {
+        stateMachine.ChangeState(AiStateId.Wander);
+    }*/
 }

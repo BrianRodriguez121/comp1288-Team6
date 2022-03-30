@@ -12,7 +12,7 @@ public class AiHidingState : IAiState
 
     public void Enter(AiAgent agent)
     {
-        //InvokeRepeating(nameof(UpdateMethod), 0.05f, 0.1f);
+        
     }
 
     public void Exit(AiAgent agent)

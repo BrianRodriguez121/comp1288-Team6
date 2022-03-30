@@ -13,12 +13,12 @@ public class AiWanderState : IAiState
 
     public void Enter(AiAgent agent)
     {
-
+        agent.detechHealthChange = true;
     }
 
     public void Exit(AiAgent agent)
     {
-
+        agent.detechHealthChange = false;
     }
 
     public void Update(AiAgent agent)

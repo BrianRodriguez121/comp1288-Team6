@@ -1,8 +1,16 @@
 using UnityEngine;
 using System.Collections;
 
+public enum HealthAttached
+{
+	Enemy,
+	Player
+}
+
 public class Health : MonoBehaviour
 {
+	public HealthAttached healthAttached = HealthAttached.Enemy;
+	
 	public bool canDie = true;					
 	
 	public float startingHealth = 100.0f;		
@@ -12,16 +20,26 @@ public class Health : MonoBehaviour
 	AiAgent agent;
 	private bool dead = false;
 
+	float lastHealthVal;
+
 	void Start()
 	{
 		agent = GetComponent<AiAgent>();
 		currentHealth = startingHealth;
+
+		lastHealthVal = maxHealth;
 	}
 
     private void Update()
     {
 		colorsIndex = Weapon.colorsIndex;
-    }
+
+		if(healthAttached == HealthAttached.Enemy && agent.detechHealthChange && lastHealthVal != currentHealth)
+        {
+			agent.stateMachine.ChangeState(AiStateId.ChasePlayer);
+			lastHealthVal = currentHealth;
+        }
+	}
 
     public void ChangeHealth(float amount)
 	{
@@ -34,7 +52,7 @@ public class Health : MonoBehaviour
 
 			else if (currentHealth > maxHealth)
 				currentHealth = maxHealth;
-		}
+		}/*
 		else if (colorsIndex == 1 && gameObject.tag == "cIndex_1")
 		{
 			currentHealth += amount;
@@ -104,7 +122,7 @@ public class Health : MonoBehaviour
 
 			else if (currentHealth > maxHealth)
 				currentHealth = maxHealth;
-		}
+		}*/
         else
         {
 			currentHealth += amount;
