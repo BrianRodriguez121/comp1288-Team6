@@ -43,19 +43,19 @@ public class AiAgent : MonoBehaviour
         agentTransform = GetComponent<Transform>();
 
         //InvokeRepeating(nameof(UpdateMethod), 0.05f, 0.1f);
-        InvokeRepeating(nameof(UpdateMethod), Random.Range(0.01f, 0.09f), 0.1f);
+        //InvokeRepeating(nameof(UpdateMethod), Random.Range(0.01f, 0.09f), 0.1f);
     }
-    /*
+    
     void Update()
     {
         stateMachine.Update();
-    }*/
-    
+    }
+    /*
     void UpdateMethod()
     {
         stateMachine.Update();
     }
-    
+    */
     // find a random location on the navmesh
     public Vector3 RandomNavmeshLocation(float minRadius, float maxRadius)
     {
