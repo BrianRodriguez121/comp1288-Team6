@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3aebbf72022532c4d92a110b4af81dde, type: 2}
+  - {fileID: 2100000, guid: b62551002e258624dae359e156fb23f5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 4113476754821876401}
   - component: {fileID: 8476252205487096606}
   m_Layer: 0
-  m_Name: heatmap signal
+  m_Name: heatMap_Movement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

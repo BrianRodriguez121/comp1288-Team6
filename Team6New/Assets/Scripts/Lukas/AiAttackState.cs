@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AiAttackState : IAiState
 {
-    float timer = 1.5f;
     public AiStateId GetId()
     {
         return AiStateId.Attack;
@@ -30,12 +29,16 @@ public class AiAttackState : IAiState
         }*/
         
         //regular update
-        timer -= Time.deltaTime;
-        if (agent.SensorDetectPlayer() && timer < 0)
+        agent.shootTimer -= Time.deltaTime;
+        if (agent.SensorDetectPlayer())
         {
             agent.navMeshAgent.transform.LookAt(agent.playerTransform);
-            agent.weaponControl.ControlAiInput();
-            timer = 0.5f;
+
+            if (agent.shootTimer < 0)
+            {
+                agent.weaponControl.ControlAiInput();
+                agent.shootTimer = agent.shootTimerMax;
+            }
         }
 
 
@@ -43,7 +46,7 @@ public class AiAttackState : IAiState
         if (Vector3.Distance(agent.navMeshAgent.nextPosition, agent.playerTransform.position) < agent.config.attackStoppingDistance)
         {
             agent.navMeshAgent.destination = agent.navMeshAgent.nextPosition;
-            // once cloase enough agent will continue to look at player
+            // once close enough agent will continue to look at player
             agent.navMeshAgent.transform.LookAt(agent.playerTransform);
         }
 

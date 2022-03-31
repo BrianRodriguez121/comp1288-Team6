@@ -6,6 +6,8 @@ using UnityEngine.AI;
 public class AiAgent : MonoBehaviour
 {
     public float healthRegenAmount; 
+    public float shootTimer; 
+    public float shootTimerMax = 2; 
 
     public AiStateMachine stateMachine;
     public AiStateId intialState;
@@ -20,6 +22,7 @@ public class AiAgent : MonoBehaviour
 
     public GameObject heatMapPrefab;
 
+    [HideInInspector]
     public bool detechHealthChange;
 
     void Start()
@@ -41,6 +44,8 @@ public class AiAgent : MonoBehaviour
 
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         agentTransform = GetComponent<Transform>();
+
+        shootTimer = shootTimerMax;
 
         //InvokeRepeating(nameof(UpdateMethod), 0.05f, 0.1f);
         //InvokeRepeating(nameof(UpdateMethod), Random.Range(0.01f, 0.09f), 0.1f);

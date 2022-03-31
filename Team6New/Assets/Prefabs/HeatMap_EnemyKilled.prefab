@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2274350752828325704}
   - component: {fileID: 7601268200553094847}
   m_Layer: 0
-  m_Name: EnemyKilled
+  m_Name: HeatMap_EnemyKilled
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -174,7 +174,7 @@ public class Weapon : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.Alpha5) && !Input.GetKey(KeyCode.LeftControl)) // up
 		{
 			colorsIndex++;
-			if (colorsIndex > 7)
+			if (colorsIndex > colors.Length - 1)
 				colorsIndex = 0;
 			beamColor = colors[colorsIndex];
 		}
@@ -182,7 +182,7 @@ public class Weapon : MonoBehaviour
 		{
 			colorsIndex--;
 			if (colorsIndex < 0)
-				colorsIndex = 7;
+				colorsIndex = colors.Length - 1; 
 			beamColor = colors[colorsIndex];
 		}
 		

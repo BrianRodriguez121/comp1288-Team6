@@ -67,9 +67,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6268399792896121560, guid: 022e35002d0fe4a49a4f328c22949731, type: 3}
+      propertyPath: enemyColorMatch
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6268399792896121563, guid: 022e35002d0fe4a49a4f328c22949731, type: 3}
       propertyPath: m_Name
-      value: AI
+      value: AI_gre_2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 022e35002d0fe4a49a4f328c22949731, type: 3}

@@ -54,12 +54,6 @@ public class FPSController : MonoBehaviour
     }
     void Update()
     {
-        // temporary time scale change, later have UI
-        if (health.currentHealth < 0)
-        {
-            Time.timeScale = 0;
-        }
-
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
         
@@ -102,19 +96,6 @@ public class FPSController : MonoBehaviour
                 timer = timerMax;
                 GameObject movementMark = Instantiate(heatMapPrefabW, spawnPoint.position, spawnPoint.rotation);
                 movementMark.transform.parent = heatMapParent.transform;
-            }
-        }
-    }
-
-    public void SensorDetectHiding()
-    {
-        SeenHidingSpots.Clear();
-        if (sensor.AllHidingSpots.Count > 0)
-        {
-            foreach (var obj in sensor.AllHidingSpots)
-            {
-                print(obj);
-                SeenHidingSpots.Add(obj);
             }
         }
     }
