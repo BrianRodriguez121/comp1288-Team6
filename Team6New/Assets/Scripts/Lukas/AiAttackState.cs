@@ -32,7 +32,12 @@ public class AiAttackState : IAiState
         agent.shootTimer -= Time.deltaTime;
         if (agent.SensorDetectPlayer())
         {
-            agent.navMeshAgent.transform.LookAt(agent.playerTransform);
+            //prevents AI from rotating on y axis
+            var lookDirection = new Vector3(agent.playerTransform.position.x, agent.transform.position.y, agent.playerTransform.position.z);
+            agent.navMeshAgent.transform.LookAt(lookDirection);
+
+            //allows for weapon to aim at player (helps with height difference)
+            agent.weaponControl.transform.LookAt(agent.playerTransform);
 
             if (agent.shootTimer < 0)
             {
@@ -41,17 +46,14 @@ public class AiAttackState : IAiState
             }
         }
 
-
         // prevents enemy from walking into player when chasing
         if (Vector3.Distance(agent.navMeshAgent.nextPosition, agent.playerTransform.position) < agent.config.attackStoppingDistance)
         {
             agent.navMeshAgent.destination = agent.navMeshAgent.nextPosition;
-            // once close enough agent will continue to look at player
-            agent.navMeshAgent.transform.LookAt(agent.playerTransform);
         }
 
-        //if to far the AI will go closer to player, can change and improve to find the best place to attack from
-        if (Vector3.Distance(agent.navMeshAgent.nextPosition, agent.playerTransform.position) > 40)
+        //if too far the AI will go closer to player, can change and improve to find the best place to attack from
+        if (Vector3.Distance(agent.navMeshAgent.nextPosition, agent.playerTransform.position) > 34)
         {
             agent.navMeshAgent.destination = agent.playerTransform.position;
             // once cloase enough agent will continue to look at player

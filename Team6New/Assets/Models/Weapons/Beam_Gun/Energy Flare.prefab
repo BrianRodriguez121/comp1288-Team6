@@ -9672,7 +9672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 100
-  speed: 100
+  speed: 60
   initialForce: 0
   lifetime: 20
   explosion: {fileID: 100002, guid: 3a4a950f7dd9e8b4face0e82e104bab4, type: 3}

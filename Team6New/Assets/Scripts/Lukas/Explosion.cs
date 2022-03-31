@@ -16,7 +16,6 @@ public class Explosion : MonoBehaviour
 		Collider[] cols = Physics.OverlapSphere(transform.position, explosionRadius);
 
         // Apply damage to any nearby GameObjects with the Health component
-
 		foreach (Collider col in cols)
 		{
 			float damageAmount = damage * (1 / Vector3.Distance(transform.position, col.transform.position));
