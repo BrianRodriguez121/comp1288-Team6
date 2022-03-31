@@ -43,7 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a12c7169dfce4334fa02eabb9f8b75bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holder: 1
   distance: 62.54
   angle: 85.16
   height: 11
@@ -320,8 +319,8 @@ MonoBehaviour:
   healthAttached: 0
   enemyColorMatch: 0
   canDie: 1
-  startingHealth: 700
-  maxHealth: 700
+  startingHealth: 1500
+  maxHealth: 1500
   currentHealth: 0
 --- !u!114 &6268399792896121561
 MonoBehaviour:

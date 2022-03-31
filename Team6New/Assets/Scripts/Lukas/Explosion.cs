@@ -18,9 +18,18 @@ public class Explosion : MonoBehaviour
         // Apply damage to any nearby GameObjects with the Health component
 		foreach (Collider col in cols)
 		{
-			float damageAmount = damage * (1 / Vector3.Distance(transform.position, col.transform.position));
+			if (col.gameObject.layer != 8 && gameObject.layer == 8)
+            {
+				float damageAmount = damage * (1 / Vector3.Distance(transform.position, col.transform.position));
 
-			col.GetComponent<Collider>().gameObject.SendMessageUpwards("ChangeHealth", -damageAmount, SendMessageOptions.DontRequireReceiver);
+				col.GetComponent<Collider>().gameObject.SendMessageUpwards("ChangeHealth", -damageAmount, SendMessageOptions.DontRequireReceiver);
+            }
+			else if (col.gameObject.layer == 8 && gameObject.layer !=8)
+            {
+				float damageAmount = damage * (1 / Vector3.Distance(transform.position, col.transform.position));
+				col.GetComponent<Collider>().gameObject.SendMessageUpwards("ChangeHealth", -damageAmount, SendMessageOptions.DontRequireReceiver);
+			}
+
 		}
 
 		// A list to hold the nearby rigidbodies
