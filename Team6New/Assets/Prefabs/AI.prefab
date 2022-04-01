@@ -46,7 +46,7 @@ MonoBehaviour:
   distance: 62.54
   angle: 85.16
   height: 11
-  meshColor: {r: 1, g: 0, b: 0, a: 0.34117648}
+  meshColor: {r: 1, g: 0, b: 0, a: 0.1764706}
   scanFrequency: 5
   layers:
     serializedVersion: 2
