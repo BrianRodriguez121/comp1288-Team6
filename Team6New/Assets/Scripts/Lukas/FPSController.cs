@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 
 public class FPSController : MonoBehaviour
 {
-    public AiSensor sensor;
     public static List<GameObject> SeenHidingSpots = new List<GameObject>();
 
     public float walkingSpeed = 7.5f;
@@ -43,7 +42,6 @@ public class FPSController : MonoBehaviour
 
     void Start()
     {
-        sensor = GetComponent<AiSensor>();
         health = GetComponent<Health>();
         canMove = true;
         characterController = GetComponent<CharacterController>();
