@@ -84,14 +84,15 @@ public class Health : MonoBehaviour
 			//if colors are opposite increase enemys stats
 			else if(CheckColorMatch())
 			{
+				
 				print("oposite colors detected");
 				if(currentHealth <= maxHealth)
 					currentHealth += 1.0f;
 
-				if(agent.navMeshAgent.speed <= 30)
+				if(agent.navMeshAgent.speed <= 20)
 					agent.navMeshAgent.speed += 0.01f;
 
-				if(agent.shootTimerMax >= 0.1f)
+				if(agent.shootTimerMax >= 0.4f)
                     agent.shootTimerMax -= 0.001f;
 			}
 
