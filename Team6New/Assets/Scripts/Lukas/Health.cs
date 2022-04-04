@@ -119,7 +119,7 @@ public class Health : MonoBehaviour
 			}
             else
             {
-				print("player_Health 8==========D");
+				//print("player_Health 8==========D");
             }
 		}
 	}

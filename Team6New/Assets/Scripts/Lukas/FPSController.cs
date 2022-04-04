@@ -30,6 +30,8 @@ public class FPSController : MonoBehaviour
     [HideInInspector]
     public static bool canMove = true;
 
+    public bool canJump = true;
+
     [HideInInspector]
     public bool isGrounded;
 
@@ -61,7 +63,7 @@ public class FPSController : MonoBehaviour
         movementDirectionY = moveDirection.y;
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
 
-        if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
+        if (Input.GetButton("Jump") && canMove && characterController.isGrounded && canJump)
         {
             moveDirection.y = jumpSpeed;
         }
