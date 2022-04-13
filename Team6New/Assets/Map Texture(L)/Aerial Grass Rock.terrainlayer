@@ -7,9 +7,9 @@ TerrainLayer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Aerial Grass Rock
-  m_DiffuseTexture: {fileID: 2800000, guid: 37b74c15f65049444bde354ad4ab335c, type: 3}
-  m_NormalMapTexture: {fileID: 2800000, guid: fe0b99bb6828a7e4395ca79bc137817a, type: 3}
-  m_MaskMapTexture: {fileID: 2800000, guid: bcb71f953d366ef4093be7059fbc4525, type: 3}
+  m_DiffuseTexture: {fileID: 2800000, guid: 05d4d5579b8f33149a33e92e7d07f0e0, type: 3}
+  m_NormalMapTexture: {fileID: 2800000, guid: d1e68125926f0ce48bb4c0a28fa9bc96, type: 3}
+  m_MaskMapTexture: {fileID: 2800000, guid: ae814b6a05493eb4f9be64327b75de8c, type: 3}
   m_TileSize: {x: 20, y: 20}
   m_TileOffset: {x: 0, y: 0}
   m_Specular: {r: 0, g: 0, b: 0, a: 0}
