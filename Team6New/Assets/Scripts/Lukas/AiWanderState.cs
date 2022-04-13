@@ -43,7 +43,7 @@ public class AiWanderState : IAiState
             }
         }
 
-        if (agent.SensorDetectPlayer())
+        if (agent.SensorDetectPlayer()  || Vector3.Distance(agent.transform.position, agent.playerTransform.position) < 22)
         {
             agent.stateMachine.ChangeState(AiStateId.ChasePlayer);
         }

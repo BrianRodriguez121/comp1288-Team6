@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3950942682785866348
+--- !u!1001 &4562106200620822565
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -8,20 +8,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3709926604170634590, guid: 022e35002d0fe4a49a4f328c22949731, type: 3}
-      propertyPath: AllHidingSpots.Array.data[0]
-      value: 
+      propertyPath: angle
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 3709926604170634590, guid: 022e35002d0fe4a49a4f328c22949731, type: 3}
-      propertyPath: AllHidingSpots.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3709926604170634590, guid: 022e35002d0fe4a49a4f328c22949731, type: 3}
-      propertyPath: AllHidingSpots.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3709926604170634590, guid: 022e35002d0fe4a49a4f328c22949731, type: 3}
-      propertyPath: AllHidingSpots.Array.data[3]
-      value: 
+      propertyPath: distance
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 6268399792896121508, guid: 022e35002d0fe4a49a4f328c22949731, type: 3}
       propertyPath: m_RootOrder
@@ -29,15 +21,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6268399792896121508, guid: 022e35002d0fe4a49a4f328c22949731, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -291.97
+      value: 167.29912
       objectReference: {fileID: 0}
     - target: {fileID: 6268399792896121508, guid: 022e35002d0fe4a49a4f328c22949731, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -45.89
+      value: 7.23
       objectReference: {fileID: 0}
     - target: {fileID: 6268399792896121508, guid: 022e35002d0fe4a49a4f328c22949731, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 91.93
+      value: 176.4021
       objectReference: {fileID: 0}
     - target: {fileID: 6268399792896121508, guid: 022e35002d0fe4a49a4f328c22949731, type: 3}
       propertyPath: m_LocalRotation.w
@@ -67,13 +59,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6268399792896121560, guid: 022e35002d0fe4a49a4f328c22949731, type: 3}
-      propertyPath: enemyColorMatch
-      value: 2
-      objectReference: {fileID: 0}
+    - target: {fileID: 6268399792896121510, guid: 022e35002d0fe4a49a4f328c22949731, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a45b36792f75e494785dee43b7667b37, type: 2}
     - target: {fileID: 6268399792896121563, guid: 022e35002d0fe4a49a4f328c22949731, type: 3}
       propertyPath: m_Name
-      value: AI_gre_2
+      value: 0_red_AI Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 022e35002d0fe4a49a4f328c22949731, type: 3}

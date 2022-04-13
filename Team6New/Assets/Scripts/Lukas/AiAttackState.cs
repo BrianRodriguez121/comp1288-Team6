@@ -20,56 +20,104 @@ public class AiAttackState : IAiState
 
     public void Update(AiAgent agent)
     {
-        /*
-        //slowed update
-        if (agent.SensorDetectPlayer())
+        if(agent.enemyLevel == EnemyLevel.Normal)
         {
-            agent.navMeshAgent.destination = agent.playerTransform.position;
-            agent.weaponControl.ControlAiInput();
-        }*/
-        
-        //regular update
-        agent.shootTimer -= Time.deltaTime;
-        if (agent.SensorDetectPlayer())
-        {
-            //prevents AI from rotating on y axis
-            var lookDirection = new Vector3(agent.playerTransform.position.x, agent.transform.position.y, agent.playerTransform.position.z);
-            agent.navMeshAgent.transform.LookAt(lookDirection);
-
-            //allows for weapon to aim at player (helps with height difference)
-            agent.weaponControl.transform.LookAt(agent.playerTransform);
-
-            if (agent.shootTimer < 0)
+            /*
+            //slowed update
+            if (agent.SensorDetectPlayer())
             {
+                agent.navMeshAgent.destination = agent.playerTransform.position;
                 agent.weaponControl.ControlAiInput();
-                agent.shootTimer = agent.shootTimerMax;
+            }*/
+        
+            //regular update
+            agent.shootTimer -= Time.deltaTime;
+            if (agent.SensorDetectPlayer())
+            {
+                //prevents AI from rotating on y axis
+                var lookDirection = new Vector3(agent.playerTransform.position.x, agent.transform.position.y, agent.playerTransform.position.z);
+                agent.navMeshAgent.transform.LookAt(lookDirection);
+
+                //allows for weapon to aim at player (helps with height difference)
+                agent.weaponControl.transform.LookAt(agent.playerTransform);
+
+                if (agent.shootTimer < 0)
+                {
+                    agent.weaponControl.ControlAiInput();
+                    agent.shootTimer = agent.shootTimerMax;
+                }
+            }
+
+            // prevents enemy from walking into player when chasing
+            if (Vector3.Distance(agent.navMeshAgent.nextPosition, agent.playerTransform.position) < agent.config.attackStoppingDistance)
+            {
+                agent.navMeshAgent.destination = agent.navMeshAgent.nextPosition;
+            }
+
+            //if too far the AI will go closer to player, can change and improve to find the best place to attack from
+            if (Vector3.Distance(agent.navMeshAgent.nextPosition, agent.playerTransform.position) > 34)
+            {
+                agent.navMeshAgent.destination = agent.playerTransform.position;
+                // once cloase enough agent will continue to look at player
+                agent.navMeshAgent.transform.LookAt(agent.playerTransform);
+            }
+
+            // if sight with player lost - enter chase state
+            if (!agent.SensorDetectPlayer())
+            {
+                agent.stateMachine.ChangeState(AiStateId.ChasePlayer);
+            }
+
+            //condition to enter Hiding State -> hiding place detected within circle range and health above 25% max and below 50% max
+            if (agent.health.currentHealth < agent.health.maxHealth / 2 && agent.health.currentHealth > agent.health.maxHealth * 0.25 && agent.SensorDetectHiding())
+            {
+                agent.stateMachine.ChangeState(AiStateId.Hiding);
             }
         }
 
-        // prevents enemy from walking into player when chasing
-        if (Vector3.Distance(agent.navMeshAgent.nextPosition, agent.playerTransform.position) < agent.config.attackStoppingDistance)
+
+        //Attack behaviour for Boss AI
+        else if(agent.enemyLevel == EnemyLevel.Boss)
         {
-            agent.navMeshAgent.destination = agent.navMeshAgent.nextPosition;
+            Debug.Log("Boss Attack Currently being developed");
+
+            agent.shootTimer -= Time.deltaTime;
+            if (agent.SensorDetectPlayer())
+            {
+                //prevents AI from rotating on y axis
+                var lookDirection = new Vector3(agent.playerTransform.position.x, agent.transform.position.y, agent.playerTransform.position.z);
+                agent.navMeshAgent.transform.LookAt(lookDirection);
+
+                //allows for weapon to aim at player (helps with height difference)
+                agent.weaponControl.transform.LookAt(agent.playerTransform);
+
+                if (agent.shootTimer < 0)
+                {
+                    agent.weaponControl.ControlAiInput();
+                    agent.shootTimer = agent.shootTimerMax;
+                }
+            }
+
+            // prevents enemy from walking into player when chasing
+            if (Vector3.Distance(agent.navMeshAgent.nextPosition, agent.playerTransform.position) < agent.config.attackStoppingDistance)
+            {
+                agent.navMeshAgent.destination = agent.navMeshAgent.nextPosition;
+            }
+
+            //if too far the AI will go closer to player, can change and improve to find the best place to attack from
+            if (Vector3.Distance(agent.navMeshAgent.nextPosition, agent.playerTransform.position) > 70)
+            {
+                agent.navMeshAgent.destination = agent.playerTransform.position;
+                // once cloase enough agent will continue to look at player
+                agent.navMeshAgent.transform.LookAt(agent.playerTransform);
+            }
+
+            // if sight with player lost - enter chase state
+            if (!agent.SensorDetectPlayer())
+            {
+                agent.stateMachine.ChangeState(AiStateId.ChasePlayer);
+            }
         }
 
-        //if too far the AI will go closer to player, can change and improve to find the best place to attack from
-        if (Vector3.Distance(agent.navMeshAgent.nextPosition, agent.playerTransform.position) > 34)
-        {
-            agent.navMeshAgent.destination = agent.playerTransform.position;
-            // once cloase enough agent will continue to look at player
-            agent.navMeshAgent.transform.LookAt(agent.playerTransform);
-        }
-
-        // if sight with player lost - enter chase state
-        if (!agent.SensorDetectPlayer())
-        {
-            agent.stateMachine.ChangeState(AiStateId.ChasePlayer);
-        }
-
-        //condition to enter Hiding State -> hiding place detected within circle range and health above 25% max and below 50% max
-        if (agent.health.currentHealth < agent.health.maxHealth / 2 && agent.health.currentHealth > agent.health.maxHealth * 0.25 && agent.SensorDetectHiding())
-        {
-            agent.stateMachine.ChangeState(AiStateId.Hiding);
-        }
     }
 }

@@ -3,8 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+public enum EnemyLevel
+{
+    Normal,
+    Boss
+}
+
 public class AiAgent : MonoBehaviour
 {
+    public EnemyLevel enemyLevel = EnemyLevel.Normal;
+
     public float healthRegenAmount; 
     public float shootTimer; 
     public float shootTimerMax = 2; 
