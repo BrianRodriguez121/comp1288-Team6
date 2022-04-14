@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public enum EnemyLevel
+public enum EnemyType
 {
     Normal,
     Boss
@@ -11,7 +11,7 @@ public enum EnemyLevel
 
 public class AiAgent : MonoBehaviour
 {
-    public EnemyLevel enemyLevel = EnemyLevel.Normal;
+    public EnemyType enemyType = EnemyType.Normal;
 
     public float healthRegenAmount; 
     public float shootTimer; 
@@ -24,6 +24,8 @@ public class AiAgent : MonoBehaviour
     public Transform playerTransform;
     Transform agentTransform;
     public AiSensor sensor;
+    public WeaponSystem weaponSystem;
+
     public Weapon weaponControl;
     public Health health;
     public FPSController playerController;
@@ -39,7 +41,17 @@ public class AiAgent : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
         stateMachine = new AiStateMachine(this);
         sensor = GetComponentInChildren<AiSensor>();
-        weaponControl = GetComponentInChildren<Weapon>();
+        weaponSystem = GetComponentInChildren<WeaponSystem>();
+        
+        if(enemyType == EnemyType.Normal)
+        {
+            weaponControl = GetComponentInChildren<Weapon>();
+        }
+        else 
+        {
+            weaponControl = weaponSystem.GetWeaponCompenet(weaponSystem.weaponIndex);
+        }
+
         health = GetComponent<Health>();
 
         stateMachine.RegisterState(new AiIdleState());
@@ -62,6 +74,12 @@ public class AiAgent : MonoBehaviour
     void Update()
     {
         stateMachine.Update();
+        
+        //checks if the active weapon index has changed to update attached Weapon script
+        if(enemyType == EnemyType.Boss)
+        {
+            weaponControl = weaponSystem.GetWeaponCompenet(weaponSystem.weaponIndex);
+        }
     }
     /*
     void UpdateMethod()
@@ -69,19 +87,38 @@ public class AiAgent : MonoBehaviour
         stateMachine.Update();
     }
     */
-    // find a random location on the navmesh
-    public Vector3 RandomNavmeshLocation(float minRadius, float maxRadius)
+
+    // find a random location on the navmesh around AI if bool true, else finds random location around player for attack position
+    public Vector3 NewNavmeshLocationDestination(float minRadius, float maxRadius, bool randomWander)
     {
-        Vector3 randomDirection = Random.insideUnitSphere.normalized * Random.Range(minRadius, maxRadius);
-        randomDirection += transform.position;
-        NavMeshHit hit;
-        Vector3 finalPosition = Vector3.zero;
-        if (NavMesh.SamplePosition(randomDirection, out hit, maxRadius, 1))
+        //for random location around AI
+        if(randomWander == true)
         {
-            finalPosition = hit.position;
+            Vector3 randomDirection = Random.insideUnitSphere.normalized * Random.Range(minRadius, maxRadius);
+            randomDirection += transform.position;
+            NavMeshHit hit;
+            Vector3 finalPosition = Vector3.zero;
+            if (NavMesh.SamplePosition(randomDirection, out hit, maxRadius, 1))
+            {
+                finalPosition = hit.position;
+            }
+            return finalPosition;
         }
-        return finalPosition;
-    }
+        //for random location around player for Attack state
+        else if(randomWander == false)
+        {
+            Vector3 randomDirection = Random.insideUnitSphere.normalized * Random.Range(minRadius, maxRadius);
+            randomDirection += playerTransform.position;
+            NavMeshHit hit;
+            Vector3 finalPosition = Vector3.zero;
+            if (NavMesh.SamplePosition(randomDirection, out hit, maxRadius, 1))
+            {
+                finalPosition = hit.position;
+            }
+            return finalPosition;
+        }
+        return agentTransform.position;
+    } 
 
     //Using AiSensor - checks if Player can be seen
     public bool SensorDetectPlayer()

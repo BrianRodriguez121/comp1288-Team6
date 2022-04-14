@@ -144,8 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6c2e5139744eb4080a9dab561f4616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionForce: 5
-  explosionRadius: 10
+  explosionForce: 10
+  explosionRadius: 15
   damage: 400
 --- !u!114 &7096805951879698546
 MonoBehaviour:
@@ -364,7 +364,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.990566, g: 0.34109113, b: 0.34109113, a: 1}
+      maxColor: {r: 0.8773585, g: 0.59180313, b: 0.59180313, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -870,7 +870,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.40157887
+      value: 10
       mode: 0
       spread: 0
       speed:
@@ -1099,7 +1099,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 12
+        scalar: 6
         minScalar: 12
         maxCurve:
           serializedVersion: 2
@@ -5747,7 +5747,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.2469391
+      value: 10
       mode: 0
       spread: 0
       speed:
@@ -6382,9 +6382,9 @@ ParticleSystem:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
         key1: {r: 1, g: 0.9882353, b: 0.8784314, a: 0.8862745}
-        key2: {r: 1, g: 0.92941177, b: 0, a: 0.6509804}
+        key2: {r: 0.8773585, g: 0.85311186, b: 0.5338644, a: 0.6509804}
         key3: {r: 1, g: 0.68235296, b: 0, a: 0.4862745}
-        key4: {r: 0.8901961, g: 0.14901961, b: 0, a: 0}
+        key4: {r: 0.8584906, g: 0.5179593, b: 0.44949272, a: 0}
         key5: {r: 1, g: 0.9490196, b: 0.2784314, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}

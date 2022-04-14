@@ -117,11 +117,12 @@ public class Health : MonoBehaviour
 			if (currentHealth <= 0 && !dead && canDie)
 			{
 				Time.timeScale = 0;
+				print("player health zero");
 			}
             else
             {
-
-            }
+				print("player health has reached zero");
+			}
 		}
 	}
 	public void Die()

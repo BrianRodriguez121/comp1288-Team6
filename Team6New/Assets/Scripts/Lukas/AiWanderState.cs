@@ -33,7 +33,7 @@ public class AiWanderState : IAiState
             //Debug.Log(randumNum);
             if(randumNum >= 1)
             {
-                agent.navMeshAgent.SetDestination(agent.RandomNavmeshLocation(agent.config.minWanderRadius, agent.config.maxWanderRadius));
+                agent.navMeshAgent.SetDestination(agent.NewNavmeshLocationDestination(agent.config.minWanderRadius, agent.config.maxWanderRadius, true));
                 timer = agent.config.maxWanderTimer;
             }
             else if(randumNum == 0)
