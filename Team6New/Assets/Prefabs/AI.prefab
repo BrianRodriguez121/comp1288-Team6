@@ -334,6 +334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 729caec5a32c70e4b8025d47422e3076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyType: 0
   healthRegenAmount: 0
   shootTimer: 0
   shootTimerMax: 2
@@ -342,6 +343,7 @@ MonoBehaviour:
   config: {fileID: 11400000, guid: 7ccc9ef2f1c4c7a498354a34a71c241a, type: 2}
   playerTransform: {fileID: 0}
   sensor: {fileID: 0}
+  weaponSystem: {fileID: 0}
   weaponControl: {fileID: 0}
   health: {fileID: 0}
   playerController: {fileID: 0}
@@ -458,6 +460,7 @@ MonoBehaviour:
   type: 1
   auto: 1
   holder: 1
+  weaponName: 1
   weaponModel: {fileID: 100000, guid: 748a828cb7e834b498855a5041053ed8, type: 3}
   raycastStartSpot: {fileID: 6268399791044450575}
   projectile: {fileID: 100004, guid: 97135418e980cbc4f99bd0e7c7df4158, type: 3}
@@ -475,6 +478,7 @@ MonoBehaviour:
   range: 5
   ammoCapacity: 12
   shotPerRound: 1
+  currentAmmo: 0
   reloadTime: 1.6
   showCurrentAmmo: 0
   fireSound: {fileID: 0}

@@ -271,6 +271,7 @@ MonoBehaviour:
   type: 1
   auto: 1
   holder: 1
+  weaponName: 2
   weaponModel: {fileID: 100000, guid: 12ebcf8b5352e3a418536f7237626f64, type: 3}
   raycastStartSpot: {fileID: 3144283524656413158}
   projectile: {fileID: 100008, guid: c4b6e6452bc44c04c938b42da0f6607a, type: 3}
@@ -288,6 +289,7 @@ MonoBehaviour:
   range: 9999
   ammoCapacity: 15
   shotPerRound: 1
+  currentAmmo: 0
   reloadTime: 2
   showCurrentAmmo: 0
   fireSound: {fileID: 0}
@@ -487,6 +489,7 @@ MonoBehaviour:
   type: 1
   auto: 1
   holder: 1
+  weaponName: 1
   weaponModel: {fileID: 100000, guid: 748a828cb7e834b498855a5041053ed8, type: 3}
   raycastStartSpot: {fileID: 5887281020383696081}
   projectile: {fileID: 100004, guid: 97135418e980cbc4f99bd0e7c7df4158, type: 3}
@@ -504,6 +507,7 @@ MonoBehaviour:
   range: 5
   ammoCapacity: 12
   shotPerRound: 1
+  currentAmmo: 0
   reloadTime: 1.6
   showCurrentAmmo: 0
   fireSound: {fileID: 0}
