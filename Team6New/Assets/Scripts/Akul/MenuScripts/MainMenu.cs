@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour
 
     public void Options()
     {
-        SceneManager.LoadScene("OptionsScene");
+        SceneManager.LoadScene("OptionsMenu");
     }
 
 
@@ -31,7 +31,13 @@ public class MainMenu : MonoBehaviour
     }
 
 
-    
+    public void MMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+        Debug.Log("quit game pressed");
+    }
+
+
 
 }
 
