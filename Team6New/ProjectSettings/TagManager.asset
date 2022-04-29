@@ -5,11 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - cIndex_2
+  - Boids
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - PostProcesing
   - Water
   - UI
   - Player

@@ -11,6 +11,7 @@ public class TriggerAudio : MonoBehaviour
     {
         if (other.CompareTag("Player"))
             Vocals.instance.Say(ClipToPlay);
+        Debug.Log("player collision Audio");
     }
 
 

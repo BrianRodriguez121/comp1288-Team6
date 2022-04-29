@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 641ef3931cfdf7d4a8765b83e3f8d351
+  - enabled: 1
+    path: Assets/Scenes/Lukas.unity
+    guid: 37f2ab9ce22d0e048a0a578cc0c2fdac
+  - enabled: 1
+    path: Assets/Scenes/Akul.unity
+    guid: 7f7fe9f26f4147742a41b90a13f127c8
   m_configObjects: {}

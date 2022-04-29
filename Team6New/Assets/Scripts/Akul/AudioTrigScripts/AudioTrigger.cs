@@ -15,7 +15,7 @@ public class AudioTrigger : MonoBehaviour
 
     void OnTriggerEnter()//will trigger when any game Object passes though the objaect this is attached too.
     {
-        Debug.Log("Audio redirecting audio");
+        Debug.Log("Audio triggered on collision");
 
         audioSource.Play();
     }
