@@ -18,9 +18,9 @@ public class SubtitlesScript : MonoBehaviour
     IEnumerator TheSequence()
     {
         yield return new WaitForSeconds(1);//time the text one sceneen is showed before changing
-        textBox.GetComponent<Text>().text = "do ya nan";
-        yield return new WaitForSeconds(1);
-        textBox.GetComponent<Text>().text = "and do it again after";
+        textBox.GetComponent<Text>().text = "SUBTITLES ON";
+        yield return new WaitForSeconds(3);
+
     }
 
     // Update is called once per frame
