@@ -20,7 +20,6 @@ public enum Holder
 	Ai
 }
 
-
 public class Weapon : MonoBehaviour
 {
 	public FireType type = FireType.Beam;
@@ -56,9 +55,9 @@ public class Weapon : MonoBehaviour
 	public float range = 9999.0f;
 
 	// Ammo
-	public int ammoCapacity = 12;
+	public int ammoCapacity = 10;
 	public int shotPerRound = 1;
-	private int currentAmmo;
+	public int currentAmmo;
 	public float reloadTime = 2.0f;
 	public bool showCurrentAmmo = true;
 
@@ -70,8 +69,12 @@ public class Weapon : MonoBehaviour
 	[HideInInspector]
 	public bool canShoot;
 
+	private float timerCurrent;
+	private float timerTotal = 0.5f;
+
 	void Start()
 	{
+		timerCurrent = timerTotal;
 		canShoot = true;
 		currentAmmo = ammoCapacity; // start with full ammo
 
@@ -117,16 +120,29 @@ public class Weapon : MonoBehaviour
 			beamColor = colors[colorsIndex];
 			beamColor.a = newAlpha;
 		}
-
+		timerCurrent -= Time.deltaTime;
 	}
+	/*
+	////slowed down update speed
+	public void ControlAiInput()
+    {
+        if (timerCurrent < 0)
+        {
+			currentAmmo = ammoCapacity;
+			Launch();
+			timerCurrent = timerTotal;
+		}
+	}*/
 
+	
+	//regular update
     public void ControlAiInput()
     {
 		currentAmmo = ammoCapacity;
 		Launch();
 	}
-
-    void CheckForUserInput()
+	
+	void CheckForUserInput()
 	{
 		if (type == FireType.Beam)
 		{
@@ -157,7 +173,7 @@ public class Weapon : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.Alpha5) && !Input.GetKey(KeyCode.LeftControl)) // up
 		{
 			colorsIndex++;
-			if (colorsIndex > 7)
+			if (colorsIndex > colors.Length - 1)
 				colorsIndex = 0;
 			beamColor = colors[colorsIndex];
 		}
@@ -165,7 +181,7 @@ public class Weapon : MonoBehaviour
 		{
 			colorsIndex--;
 			if (colorsIndex < 0)
-				colorsIndex = 7;
+				colorsIndex = colors.Length - 1; 
 			beamColor = colors[colorsIndex];
 		}
 		
@@ -292,8 +308,9 @@ public class Weapon : MonoBehaviour
 							transform.position.y + UnityEngine.Random.Range(-projectRandomOffset, projectRandomOffset), transform.position.z);
 
 						GameObject proj = Instantiate(projectile, spawnRot, projectileSpawnSpot.rotation) as GameObject;
+						//setting the layer of the object , AI cant hit each other
+						proj.layer = 8;
 					}
-
 				}
 				else
 				{
@@ -306,25 +323,25 @@ public class Weapon : MonoBehaviour
 			GetComponent<AudioSource>().PlayOneShot(dryFireSound);
 	}
 
-	//Currently no plan to have Reload
 	/*
-	void Reload()
+	public void Reload()
 	{
-		currentAmmo = ammoCapacity;
-		GetComponent<AudioSource>().PlayOneShot(reloadSound);
-
-		SendMessageUpwards("OnEasyWeaponsReload", SendMessageOptions.DontRequireReceiver);
 	}
 	*/
 
 	public void OnGUI()
 	{
-		if (showCurrentAmmo)
+		if (showCurrentAmmo && gameObject.activeInHierarchy)
 		{
 			if (type == FireType.Beam)
+            {
 				GUI.Label(new Rect(10, Screen.height - 30, 100, 20), "Heat: " + (int)(beamHeat * 100) + "/" + (int)(maxBeamHeat * 100));
-			if (type == FireType.Projectile)
-				GUI.Label(new Rect(10, Screen.height - 30, 100, 20), "Ammo: " + currentAmmo);
+            }
+				
+			else if (type == FireType.Projectile)
+            {
+				GUI.Label(new Rect(10, Screen.height - 30, 300, 20), "Ammo: " + currentAmmo);
+            }
 		}
 	}
 }

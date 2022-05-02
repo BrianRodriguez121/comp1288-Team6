@@ -4,18 +4,19 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - cIndex_2
-  - Boids
+  - LaserWeapon
+  - BeamWeapon
+  - GrenadeWeapon
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - PostProcesing
+  - PostProcessing
   - Water
   - UI
   - Player
   - EnemyHiding
-  - 
+  - AI_Enemy
   - 
   - 
   - 

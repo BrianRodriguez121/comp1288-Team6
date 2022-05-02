@@ -13,12 +13,12 @@ public class AiWanderState : IAiState
 
     public void Enter(AiAgent agent)
     {
-
+        agent.detechHealthChange = true;
     }
 
     public void Exit(AiAgent agent)
     {
-
+        agent.detechHealthChange = false;
     }
 
     public void Update(AiAgent agent)
@@ -29,11 +29,11 @@ public class AiWanderState : IAiState
         if (!agent.navMeshAgent.hasPath || timer <= 0.0f)
         {
             //random chance for AI to Idle
-            int randumNum = Random.Range(0, 5);
+            int randumNum = Random.Range(0, 25);
             //Debug.Log(randumNum);
             if(randumNum >= 1)
             {
-                agent.navMeshAgent.SetDestination(agent.RandomNavmeshLocation(agent.config.wanderRadius));
+                agent.navMeshAgent.SetDestination(agent.NewNavmeshLocationDestination(agent.config.minWanderRadius, agent.config.maxWanderRadius, true));
                 timer = agent.config.maxWanderTimer;
             }
             else if(randumNum == 0)
@@ -43,7 +43,7 @@ public class AiWanderState : IAiState
             }
         }
 
-        if (agent.SensorDetectPlayer())
+        if (agent.SensorDetectPlayer()  || Vector3.Distance(agent.transform.position, agent.playerTransform.position) < 22)
         {
             agent.stateMachine.ChangeState(AiStateId.ChasePlayer);
         }

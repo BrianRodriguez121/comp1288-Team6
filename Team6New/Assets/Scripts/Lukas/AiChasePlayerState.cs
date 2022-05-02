@@ -51,17 +51,6 @@ public class AiChasePlayerState : IAiState
             agent.navMeshAgent.destination = agent.playerTransform.position;
         }
 
-        /* Obsolute with attack State
-        // prevents enemy from walking into player when chasing
-        if(Vector3.Distance(agent.navMeshAgent.nextPosition, agent.playerTransform.position) < agent.config.stoppingDistance)
-        {
-            agent.navMeshAgent.destination = agent.navMeshAgent.nextPosition;
-
-            // once cloase enough agent will continue to look at player
-            agent.navMeshAgent.transform.LookAt(agent.playerTransform);
-        }
-        */
-
         //how often the AI will update the player position to chase after
         if (timer < 0.0f)
         {

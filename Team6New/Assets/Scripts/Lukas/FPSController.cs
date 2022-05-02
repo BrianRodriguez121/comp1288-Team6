@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 
 public class FPSController : MonoBehaviour
 {
-    public AiSensor sensor;
     public static List<GameObject> SeenHidingSpots = new List<GameObject>();
 
     public float walkingSpeed = 7.5f;
@@ -22,7 +21,7 @@ public class FPSController : MonoBehaviour
     float curSpeedX;
     float curSpeedY;
     float movementDirectionY;
-    private Health health;
+    public Health health;
 
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;
@@ -31,12 +30,20 @@ public class FPSController : MonoBehaviour
     [HideInInspector]
     public static bool canMove = true;
 
+    public bool canJump = true;
+
     [HideInInspector]
     public bool isGrounded;
 
+    public bool heatMap;
+    public GameObject heatMapPrefabW;
+    public GameObject heatMapParent;
+    public Transform spawnPoint;
+    private float timer = 2.5f;
+    public float timerMax = 2.5f;
+
     void Start()
     {
-        sensor = GetComponent<AiSensor>();
         health = GetComponent<Health>();
         canMove = true;
         characterController = GetComponent<CharacterController>();
@@ -47,12 +54,6 @@ public class FPSController : MonoBehaviour
     }
     void Update()
     {
-        // temporary time scale change, later have UI
-        if (health.currentHealth < 0)
-        {
-            Time.timeScale = 0;
-        }
-
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
         
@@ -62,7 +63,7 @@ public class FPSController : MonoBehaviour
         movementDirectionY = moveDirection.y;
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
 
-        if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
+        if (Input.GetButton("Jump") && canMove && characterController.isGrounded && canJump)
         {
             moveDirection.y = jumpSpeed;
         }
@@ -86,17 +87,15 @@ public class FPSController : MonoBehaviour
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
         }
-    }
-
-    public void SensorDetectHiding()
-    {
-        SeenHidingSpots.Clear();
-        if (sensor.AllHidingSpots.Count > 0)
+        
+        if (heatMap)
         {
-            foreach (var obj in sensor.AllHidingSpots)
+            timer -= Time.deltaTime;
+            if(timer < 0 && heatMap)
             {
-                print(obj);
-                SeenHidingSpots.Add(obj);
+                timer = timerMax;
+                GameObject movementMark = Instantiate(heatMapPrefabW, spawnPoint.position, spawnPoint.rotation);
+                movementMark.transform.parent = heatMapParent.transform;
             }
         }
     }

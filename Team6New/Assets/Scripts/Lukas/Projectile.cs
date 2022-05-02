@@ -44,7 +44,11 @@ public class Projectile : MonoBehaviour
 	{
 		if (explosion != null)
 		{
-			Instantiate(explosion, position, Quaternion.identity);
+			GameObject proj = Instantiate(explosion, position, Quaternion.identity);
+			if(gameObject.layer == 8)
+            {
+				proj.layer = 8;
+            }
 		}
 		Destroy(gameObject);
 	}
