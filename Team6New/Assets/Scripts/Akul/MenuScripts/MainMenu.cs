@@ -97,5 +97,22 @@ public class MainMenu : MonoBehaviour
         }
     }
 
+
+    //Grphics levels
+
+    public void SetQuality (int qualityIndex)
+    {
+        QualitySettings.SetQualityLevel(qualityIndex);
+    }
+
+
+    //FULL SCREEN
+
+    public void SetFullscreen (bool isFullscreen)
+    {
+        Screen.fullScreen = isFullscreen;
+        Debug.Log("fullscreen selected");
+    }
+
 }
 
