@@ -17,24 +17,21 @@ public class GlobalData : MonoBehaviour
     public GameObject player;
 
     //Keys colours for door/key varables
-    static public bool NoteOne = false;
-    static public bool NoteThree = false;
-    static public bool NoteTwoKey = false;
-    static public bool NoteFour = false;
+    static public bool Stage1Key = false;
+    static public bool Stage2 = false;
+    static public bool Stage3 = false;
+    static public bool Stage4 = false;
+    static public bool Stage5 = false;
 
-    //Lives left and points varables
-    static public int Points;
-    public int Health = 3;
-
+    
     //parts that apply to UI
     static public bool paused = false;
     static public bool gameOver = false;
     public GameObject endGame;
 
-    //Array
-    public GameObject[] lives;
+    
     public GameObject pauseMenu;
-    public Text PointsText;
+    
 
     //starts before first playthrough
     void Start()
@@ -43,43 +40,16 @@ public class GlobalData : MonoBehaviour
         //sends player to start point
         lastCheckPoint = startPos.position;
         player.transform.position = lastCheckPoint;
-        // Sets starting points to 1000
-        Points = 0000;
-        UpdateLives();
+                
         pauseMenu.SetActive(false);
         player.SetActive(true);
-        SetPoints();
+        
         gameOver = false;
     }
 
 
-    // writes into the points text box
-    public void SetPoints()
-    {
-        PointsText.text = Points.ToString();
-    }
-
-    //When player "dies" number of UI "hearts" decrease.
-    public void UpdateLives()
-    {
-        for (int i = 0; i < lives.Length; i++)
-        {
-            if (Health > i)
-            {
-                lives[i].SetActive(true);
-
-            }
-            else
-            {
-                lives[i].SetActive(false);
-            }
-
-        }
-        if (Health <= 0)
-        {
-            GameOver();
-        }
-    }
+     
+    
 
     //Pause game when Menue open Code
     public void PauseMenu()
