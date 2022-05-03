@@ -13,7 +13,8 @@ public enum ColorID: int
 	two_green = 2,
 	three_Pruple = 3,
 	four_blue = 4,
-	five_cyan = 5 
+	five_cyan = 5, 
+	boss = 6
 }
 
 public class Health : MonoBehaviour
@@ -116,23 +117,14 @@ public class Health : MonoBehaviour
 			if (currentHealth <= 0 && !dead && canDie)
 			{
 				Time.timeScale = 0;
+				print("player health zero");
 			}
             else
             {
-				//print("player_Health 8==========D");
-            }
+				print("player health has reached zero");
+			}
 		}
 	}
-	/*
-	public void TakeHit(float amount)
-	{
-		currentHealth -= amount;
-		if (currentHealth <= 0)
-		{
-			Debug.Log(currentHealth);
-		}
-	}
-	*/
 	public void Die()
 	{
 		dead = true;

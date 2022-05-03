@@ -33,7 +33,7 @@ public class AiWanderState : IAiState
             //Debug.Log(randumNum);
             if(randumNum >= 1)
             {
-                agent.navMeshAgent.SetDestination(agent.RandomNavmeshLocation(agent.config.minWanderRadius, agent.config.maxWanderRadius));
+                agent.navMeshAgent.SetDestination(agent.NewNavmeshLocationDestination(agent.config.minWanderRadius, agent.config.maxWanderRadius, true));
                 timer = agent.config.maxWanderTimer;
             }
             else if(randumNum == 0)
@@ -43,7 +43,7 @@ public class AiWanderState : IAiState
             }
         }
 
-        if (agent.SensorDetectPlayer())
+        if (agent.SensorDetectPlayer()  || Vector3.Distance(agent.transform.position, agent.playerTransform.position) < 22)
         {
             agent.stateMachine.ChangeState(AiStateId.ChasePlayer);
         }

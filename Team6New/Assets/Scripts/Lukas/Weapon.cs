@@ -20,7 +20,6 @@ public enum Holder
 	Ai
 }
 
-
 public class Weapon : MonoBehaviour
 {
 	public FireType type = FireType.Beam;
@@ -58,7 +57,7 @@ public class Weapon : MonoBehaviour
 	// Ammo
 	public int ammoCapacity = 10;
 	public int shotPerRound = 1;
-	private int currentAmmo;
+	public int currentAmmo;
 	public float reloadTime = 2.0f;
 	public bool showCurrentAmmo = true;
 
@@ -324,14 +323,9 @@ public class Weapon : MonoBehaviour
 			GetComponent<AudioSource>().PlayOneShot(dryFireSound);
 	}
 
-	//Currently no plan to have Reload
 	/*
-	void Reload()
+	public void Reload()
 	{
-		currentAmmo = ammoCapacity;
-		GetComponent<AudioSource>().PlayOneShot(reloadSound);
-
-		SendMessageUpwards("OnEasyWeaponsReload", SendMessageOptions.DontRequireReceiver);
 	}
 	*/
 

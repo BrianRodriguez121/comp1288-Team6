@@ -21,7 +21,7 @@ public class FPSController : MonoBehaviour
     float curSpeedX;
     float curSpeedY;
     float movementDirectionY;
-    private Health health;
+    public Health health;
 
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;

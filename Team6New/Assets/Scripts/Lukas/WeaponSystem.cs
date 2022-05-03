@@ -1,11 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum WeaponSystemAttached
+{
+	Player,
+	Enemy
+}
+
 public class WeaponSystem : MonoBehaviour
 {
+	public WeaponSystemAttached weaponAttached = WeaponSystemAttached.Player;
+
 	public GameObject[] weapons;
 	public int startingWeaponIndex = 0;
-	private int weaponIndex;
+	[HideInInspector]
+	public int weaponIndex;
+	public Weapon activeWeapon;
 
 	void Start()
 	{
@@ -15,25 +25,22 @@ public class WeaponSystem : MonoBehaviour
 	
 	void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.Alpha1))
-			SetActiveWeapon(0);
-		if (Input.GetKeyDown(KeyCode.Alpha2))
-			SetActiveWeapon(1);
-		if (Input.GetKeyDown(KeyCode.Alpha3))
-			SetActiveWeapon(2);
+		if(weaponAttached == WeaponSystemAttached.Player)
+        {
+			if (Input.GetKeyDown(KeyCode.Alpha1))
+				SetActiveWeapon(0);
+			if (Input.GetKeyDown(KeyCode.Alpha2))
+				SetActiveWeapon(1);
+			if (Input.GetKeyDown(KeyCode.Alpha3))
+				SetActiveWeapon(2);
 
 
-		// Allow the user to scroll through the weapons
-		if (Input.GetAxis("Mouse ScrollWheel") > 0)
-			NextWeapon();
-		if (Input.GetAxis("Mouse ScrollWheel") < 0)
-			PreviousWeapon();
-	}
-
-	void OnGUI()
-	{
-
-
+			// Allow the user to scroll through the weapons
+			if (Input.GetAxis("Mouse ScrollWheel") > 0)
+				NextWeapon();
+			if (Input.GetAxis("Mouse ScrollWheel") < 0)
+				PreviousWeapon();
+        }
 	}
 
 	public void SetActiveWeapon(int index)
@@ -46,12 +53,26 @@ public class WeaponSystem : MonoBehaviour
 		}
 
 		weaponIndex = index;
-		weapons[index].GetComponent<Weapon>().StopBeam();
+		if (weaponAttached == WeaponSystemAttached.Player) //despawns beam that player may of fired
+		{
+			weapons[index].GetComponent<Weapon>().StopBeam();
+		}
+
 		for (int i = 0; i < weapons.Length; i++)
 		{
 			weapons[i].SetActive(false);
 		}
 		weapons[index].SetActive(true);
+		if(weaponAttached == WeaponSystemAttached.Enemy)
+        {
+			GetWeaponCompenet(index);
+        }
+	}
+
+	public Weapon GetWeaponCompenet(int index)
+    {
+		activeWeapon = weapons[index].GetComponent<Weapon>();
+		return activeWeapon;
 	}
 
 	public void NextWeapon()

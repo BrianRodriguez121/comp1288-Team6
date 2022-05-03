@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxTimer: 1
   maxDistance: 1
-  minWanderRadius: 15
-  maxWanderRadius: 40
-  attackStoppingDistance: 16
+  minWanderRadius: 25
+  maxWanderRadius: 60
+  attackStoppingDistance: 50
   findPlayerTimer: 7
-  distanceAttackPlayer: 30
+  distanceAttackPlayer: 60
   healthRegenPercent: 1.75
   healthRegenDuration: 0.3
