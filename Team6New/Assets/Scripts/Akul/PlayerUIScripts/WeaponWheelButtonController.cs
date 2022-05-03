@@ -34,13 +34,16 @@ public class WeaponWheelButtonController : MonoBehaviour
 
     public void Selected()
     {
-        selected = false;
+        selected = true;
+        WeaponWheelController.weaponID = ID;
     }
 
 
     public void Deselected()
     {
-        selected = true;
+        selected = false;
+        WeaponWheelController.weaponID = 0;
+
     }
 
     public void HoverEnter()

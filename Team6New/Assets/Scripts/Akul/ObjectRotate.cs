@@ -8,7 +8,7 @@ public class ObjectRotate : MonoBehaviour
     [SerializeField]
     GameObject target;
     [SerializeField]
-    float speed = 50.0f;
+    /*float speed = 50.0f;*/
 
     // Start is called before the first frame update
     void Start()

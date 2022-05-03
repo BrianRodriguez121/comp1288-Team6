@@ -14,7 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OptionsMenu.unity
     guid: c8c8339a56da51a47ac3c264f4dad70b
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Lukas.unity
-    guid: 37f2ab9ce22d0e048a0a578cc0c2fdac
+    path: Assets/Scenes/Lukas_Map_AI.unity
+    guid: bf8fc5a0e91bb204d8c75b5441b2c80e
   m_configObjects: {}
