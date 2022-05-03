@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: distance
       value: 35
       objectReference: {fileID: 0}
+    - target: {fileID: 6268399792665766827, guid: 022e35002d0fe4a49a4f328c22949731, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6268399792896121508, guid: 022e35002d0fe4a49a4f328c22949731, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -58,6 +62,10 @@ PrefabInstance:
     - target: {fileID: 6268399792896121508, guid: 022e35002d0fe4a49a4f328c22949731, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268399792896121510, guid: 022e35002d0fe4a49a4f328c22949731, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6268399792896121510, guid: 022e35002d0fe4a49a4f328c22949731, type: 3}
       propertyPath: m_Materials.Array.data[0]
