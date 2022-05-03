@@ -12,7 +12,10 @@ public class WeaponWheelController : MonoBehaviour
     public Sprite noImage;
     public static int weaponID;
 
+    public FPSController fpsController;
 
+    
+    
 
     // Start is called before the first frame update
     void Start()
@@ -25,8 +28,17 @@ public class WeaponWheelController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            weaponWheelSelected = !weaponWheelSelected;
-
+            weaponWheelSelected = true;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            fpsController.lookSpeed = 0;
+        }
+        else if (Input.GetKeyUp(KeyCode.Tab))
+        {
+            weaponWheelSelected = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            fpsController.lookSpeed = 2;
         }
 
 
@@ -38,6 +50,7 @@ public class WeaponWheelController : MonoBehaviour
         else
         {
             anim.SetBool("OpenWeaponWheel", false);
+            
         }
 
 
@@ -51,7 +64,8 @@ public class WeaponWheelController : MonoBehaviour
 
             case 1://LAZER GUN 1 selected
                 
-                Debug.Log("LAZER GUN 2 selected");
+                Debug.Log("black selected");
+
                 break;
 
 

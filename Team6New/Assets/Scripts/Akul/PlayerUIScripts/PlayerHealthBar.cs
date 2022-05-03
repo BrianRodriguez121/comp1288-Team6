@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerHealthBar : MonoBehaviour
 {
     //to be merged with lucas health code
-    public int MaxHealth = 100;
+    public int MaxHealth = 10000;
     public int CurrentHealth;
 
     public HealthBar healthBar;

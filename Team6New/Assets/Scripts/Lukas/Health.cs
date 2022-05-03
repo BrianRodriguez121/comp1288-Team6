@@ -21,11 +21,11 @@ public class Health : MonoBehaviour
 {
 	public HealthAttached healthAttached = HealthAttached.Enemy;
 	public ColorID enemyColorMatch = ColorID.zero_red;
-	
-	public bool canDie = true;					
-	
-	public float startingHealth = 100.0f;		
-	public float maxHealth = 100.0f;			
+
+	public bool canDie = true;
+
+	public float startingHealth = 100.0f;
+	public float maxHealth = 100.0f;
 	public float currentHealth;
 	private static int colorsIndex;
 	AiAgent agent;
@@ -33,13 +33,33 @@ public class Health : MonoBehaviour
 
 	float lastHealthVal;
 
+
+
+	//Akul health bar code
+	
+	
+
+	public HealthBar healthBar;
+
+	
+	
+
 	void Start()
 	{
 		agent = GetComponent<AiAgent>();
-		currentHealth = startingHealth;
+        currentHealth = startingHealth;
 
-		lastHealthVal = maxHealth;
-	}
+        lastHealthVal = maxHealth;
+
+        //Akul Code
+
+        if (healthAttached == HealthAttached.Player)
+        {
+            healthBar.SetMaxHealth(maxHealth);
+            Debug.Log("healthbar start function");
+        }
+
+    }
 
     private void Update()
     {
@@ -113,6 +133,7 @@ public class Health : MonoBehaviour
 		else if (healthAttached == HealthAttached.Player)
         {
 			currentHealth += amount;
+			TakeDamage(amount);
 
 			if (currentHealth <= 0 && !dead && canDie)
 			{
@@ -121,7 +142,7 @@ public class Health : MonoBehaviour
 			}
             else
             {
-				print("player health has reached zero");
+				
 			}
 		}
 	}
@@ -149,4 +170,14 @@ public class Health : MonoBehaviour
         else
 			return false;
     }
+
+
+
+	//Akul Health
+	void TakeDamage(float damage)
+	{
+		
+		healthBar.SetHealth(currentHealth);
+	}
+
 }
