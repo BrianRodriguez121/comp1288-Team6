@@ -10,6 +10,10 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pausMenuUI;
 
+
+
+    public FPSController fpsController;
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -33,10 +37,11 @@ public class PauseMenu : MonoBehaviour
         pausMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
-        Debug.Log("RESUME PRESSED");
+        
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        fpsController.lookSpeed = 2;
     }
 
 
@@ -48,5 +53,23 @@ public class PauseMenu : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        fpsController.lookSpeed = 0;
     }
+
+
+    public void Restart()
+    {
+        SceneManager.LoadScene("Lukas_Map_AI");
+        
+    }
+
+    public void Objectives()
+    {
+
+
+    }
+
+
+
+
 }
