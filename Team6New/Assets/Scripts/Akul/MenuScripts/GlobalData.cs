@@ -17,13 +17,12 @@ public class GlobalData : MonoBehaviour
     public GameObject player;
 
     //Keys colours for door/key varables
-    static public bool Stage1Key = false;
-    static public bool Stage2 = false;
-    static public bool Stage3 = false;
-    static public bool Stage4 = false;
-    static public bool Stage5 = false;
+    static public bool Coin = false;
+    static public bool Coin1 = false;
+    static public bool Coin2 = false;
+    static public bool Coin3 = false;
 
-    
+
     //parts that apply to UI
     static public bool paused = false;
     static public bool gameOver = false;
@@ -48,23 +47,6 @@ public class GlobalData : MonoBehaviour
     }
 
 
-     
-    
-
-    //Pause game when Menue open Code
-    public void PauseMenu()
-    {
-        pauseMenu.SetActive(true);
-        Time.timeScale = 0f;
-        paused = true;
-    }
-
-    public void Unpause()
-    {
-        pauseMenu.SetActive(false);
-        Time.timeScale = 1f;
-        paused = false;
-    }
 
     //When "esc" key pressed UI menu opens
     private void Update()
@@ -81,6 +63,24 @@ public class GlobalData : MonoBehaviour
             }
         }
     }
+
+    //Pause game when Menue open Code
+    public void PauseMenu()
+    {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+        paused = true;
+    }
+
+    public void Unpause()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+        paused = false;
+        Debug.Log("resume button pressed");
+    }
+
+    
 
     //UI Quit to menu button
     public void QuitToMenu() //will change the game to the quit to menu is clicked.

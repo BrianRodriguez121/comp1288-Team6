@@ -56,7 +56,7 @@ public class Health : MonoBehaviour
         if (healthAttached == HealthAttached.Player)
         {
             healthBar.SetMaxHealth(maxHealth);
-            Debug.Log("healthbar start function");
+            /*Debug.Log("healthbar start function");*/
         }
 
     }

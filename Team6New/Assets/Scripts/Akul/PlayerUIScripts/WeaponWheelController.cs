@@ -26,12 +26,12 @@ public class WeaponWheelController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKey(KeyCode.Tab))
         {
             weaponWheelSelected = true;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            fpsController.lookSpeed = 0;
+            fpsController.lookSpeed = 2;
         }
         else if (Input.GetKeyUp(KeyCode.Tab))
         {
@@ -63,9 +63,7 @@ public class WeaponWheelController : MonoBehaviour
                 
 
             case 1://LAZER GUN 1 selected
-                
-                Debug.Log("black selected");
-
+                anim.SetBool("OpenWeaponWheel", false);
                 break;
 
 
@@ -73,6 +71,7 @@ public class WeaponWheelController : MonoBehaviour
             case 2://GranadeLauncher
 
                 Debug.Log("GranadeLauncher selected");
+                anim.SetBool("OpenWeaponWheel", false);
                 break;
 
 
@@ -80,12 +79,13 @@ public class WeaponWheelController : MonoBehaviour
             case 3://LAZER GUN 2 selected
 
                 Debug.Log("BeamGun selected");
+                anim.SetBool("OpenWeaponWheel", false);
                 break;
 
 
             case 4://BEAM GUN selected
-                
                 Debug.Log("BeamGun selected");
+                anim.SetBool("OpenWeaponWheel", false);
                 break;
 
 

@@ -5,6 +5,8 @@ using UnityEngine;
 public class Key : MonoBehaviour
 {
 
+    /*public AudioSource Veiler_spookygong;*/
+
     public string keyColour;
     // Start is called before the first frame update
     //When player tag collides with "key" player picks up item. Each key is unique
@@ -12,56 +14,49 @@ public class Key : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("stage one key collide");
-            if (keyColour == "Stage1Key")
+            if (keyColour == "Coin")
             {
-                GlobalData.Stage1Key = true;
-                print("Stage1 picked up");
+                GlobalData.Coin = true;
+                print("Coin picked up");
+                /*Veiler_spookygong.Play();*/
             }
 
             Destroy(gameObject);
         }
         if (collision.gameObject.tag == "Player")
         {
-            if (keyColour == "Stage2Key")
+            if (keyColour == "Coin1")
             {
-                GlobalData.Stage2 = true;
-                print("Stage2 Key picked up");
+                GlobalData.Coin1 = true;
+                print("Coin1 Key picked up");
+                /*Veiler_spookygong.Play();*/
             }
 
             Destroy(gameObject);
         }
         if (collision.gameObject.tag == "Player")
         {
-            if (keyColour == "Stage3Key")
+            if (keyColour == "Coin2")
             {
-                GlobalData.Stage3 = true;
-                print("Stage3 picked up");
+                GlobalData.Coin2 = true;
+                print("Coin2 picked up");
+                /*Veiler_spookygong.Play();*/
             }
 
             Destroy(gameObject);
+
         }
         if (collision.gameObject.tag == "Player")
         {
-            if (keyColour == "Stage4Key")
+            if (keyColour == "Coin3")
             {
-                GlobalData.Stage4 = true;
-                print("Stage4 picked up");
+                GlobalData.Coin3 = true;
+                print("Coin4 picked up");
+               /* Veiler_spookygong.Play();*/
             }
 
             Destroy(gameObject);
-        }
 
-
-        if (collision.gameObject.tag == "Player")
-        {
-            if (keyColour == "Stage5Key")
-            {
-                GlobalData.Stage5 = true;
-                print("Stage5 picked up");
-            }
-
-            Destroy(gameObject);
         }
 
     }
