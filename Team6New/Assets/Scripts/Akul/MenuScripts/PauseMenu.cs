@@ -70,6 +70,17 @@ public class PauseMenu : MonoBehaviour
     }
 
 
+    public void QuitToMenu() //will change the game to the quit to menu is clicked.
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
 
 
 }
