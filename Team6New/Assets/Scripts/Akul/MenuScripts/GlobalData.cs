@@ -24,12 +24,12 @@ public class GlobalData : MonoBehaviour
 
 
     //parts that apply to UI
-    static public bool paused = false;
+    /*static public bool paused = false;*/
     static public bool gameOver = false;
     public GameObject endGame;
-
     
-    public GameObject pauseMenu;
+    
+    /*public GameObject pauseMenu;*/
     
 
     //starts before first playthrough
@@ -40,15 +40,15 @@ public class GlobalData : MonoBehaviour
         lastCheckPoint = startPos.position;
         player.transform.position = lastCheckPoint;
                 
-        pauseMenu.SetActive(false);
-        player.SetActive(true);
+        /*pauseMenu.SetActive(false);*/
+        /*player.SetActive(true);*/
         
         gameOver = false;
     }
 
 
 
-    //When "esc" key pressed UI menu opens
+    /*//When "esc" key pressed UI menu opens
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -78,9 +78,9 @@ public class GlobalData : MonoBehaviour
         Time.timeScale = 1f;
         paused = false;
         Debug.Log("resume button pressed");
-    }
+    }*/
 
-    
+
 
     //UI Quit to menu button
     public void QuitToMenu() //will change the game to the quit to menu is clicked.

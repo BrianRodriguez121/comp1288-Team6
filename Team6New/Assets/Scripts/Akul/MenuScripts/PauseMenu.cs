@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool GameIsPaused = false;
+    public static bool GameIsPaused = true;
 
     public GameObject pausMenuUI;
 
@@ -12,6 +14,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            
             if (GameIsPaused)
             {
                 Resume();
@@ -25,18 +28,25 @@ public class PauseMenu : MonoBehaviour
     }
 
 
-    void Resume()
+    public void Resume()
     {
         pausMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        Debug.Log("RESUME PRESSED");
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
 
-    void Pause()
+    public void Pause()
     {
         pausMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }
