@@ -76,6 +76,11 @@ public class Health : MonoBehaviour
         {
 			currentHealth = maxHealth;
         }
+		if (healthAttached == HealthAttached.Player)
+        {
+			healthBar.SetHealth(currentHealth);
+		}
+		
 	}
 
     public void ChangeHealth(float amount)
