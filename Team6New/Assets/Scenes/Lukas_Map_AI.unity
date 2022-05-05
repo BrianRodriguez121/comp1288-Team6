@@ -13056,7 +13056,7 @@ MonoBehaviour:
   itemName: GRANADE LAUNCHER
   itemText: {fileID: 119191515}
   selectedItem: {fileID: 771448518}
-  icon: {fileID: 21300000, guid: 26324afdb3f7163479c4b1f3c7f47cb7, type: 3}
+  icon: {fileID: 21300000, guid: c54bbf93ab7fe8740915f80a0ebdf75f, type: 3}
 --- !u!114 &323872871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26613,7 +26613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6850286, g: 0.3255162, b: 0.7264151, a: 0.7372549}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7647059}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -44742,7 +44742,7 @@ MonoBehaviour:
   itemName: BEAM GUN
   itemText: {fileID: 119191515}
   selectedItem: {fileID: 771448518}
-  icon: {fileID: 21300000, guid: 26324afdb3f7163479c4b1f3c7f47cb7, type: 3}
+  icon: {fileID: 21300000, guid: 4b05f19d6f67e6148a5ec2275c81c0e3, type: 3}
 --- !u!114 &1506424058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49958,7 +49958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 1
-  itemName: LAZER GUN
+  itemName: LASER GUN
   itemText: {fileID: 119191515}
   selectedItem: {fileID: 771448518}
   icon: {fileID: 21300000, guid: 26324afdb3f7163479c4b1f3c7f47cb7, type: 3}
