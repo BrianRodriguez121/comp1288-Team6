@@ -76,7 +76,7 @@ public class Weapon : MonoBehaviour
 
 	//Akul Ammo HUD Code
 	public Text AmmoText;
-	
+	public GameObject pauseMenu;
 	
 
 
@@ -109,6 +109,15 @@ public class Weapon : MonoBehaviour
 
 	void Update()
 	{
+		if(holder == Holder.Player && pauseMenu.activeSelf == true)
+        {
+			canShoot = false;
+        }
+        else
+        {
+			canShoot = true;
+        }
+
 		if (holder == Holder.Player && canShoot)
         {
 			CheckForUserInput();
