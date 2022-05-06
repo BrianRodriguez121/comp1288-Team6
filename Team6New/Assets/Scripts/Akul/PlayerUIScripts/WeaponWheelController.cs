@@ -13,6 +13,7 @@ public class WeaponWheelController : MonoBehaviour
     public static int weaponID;
 
     public FPSController fpsController;
+    public WeaponSystem weaponSystem;
 
     
     
@@ -31,7 +32,7 @@ public class WeaponWheelController : MonoBehaviour
             weaponWheelSelected = true;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            fpsController.lookSpeed = 2;
+            fpsController.lookSpeed = 1;
         }
         else if (Input.GetKeyUp(KeyCode.Tab))
         {
@@ -64,30 +65,26 @@ public class WeaponWheelController : MonoBehaviour
 
             case 1://LAZER GUN 1 selected
                 anim.SetBool("OpenWeaponWheel", false);
-
+                weaponSystem.SetActiveWeapon(0);
                 break;
 
 
 
-            case 2://GranadeLauncher
+            case 2://BeamGun selected
+                weaponSystem.SetActiveWeapon(1);
+                Debug.Log("BeamGun selected");
+                anim.SetBool("OpenWeaponWheel", false);
+                break;
 
+
+            case 3://GranadeLauncher
+                weaponSystem.SetActiveWeapon(2);
                 Debug.Log("GranadeLauncher selected");
                 anim.SetBool("OpenWeaponWheel", false);
                 break;
 
 
 
-            case 3://LAZER GUN 2 selected
-
-                Debug.Log("BeamGun selected");
-                anim.SetBool("OpenWeaponWheel", false);
-                break;
-
-
-            case 4://BEAM GUN selected
-                Debug.Log("BeamGun selected");
-                anim.SetBool("OpenWeaponWheel", false);
-                break;
 
 
 

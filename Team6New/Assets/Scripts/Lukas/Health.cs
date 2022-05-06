@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public enum HealthAttached
 {
@@ -144,6 +145,7 @@ public class Health : MonoBehaviour
 			{
 				Time.timeScale = 0;
 				print("player health zero");
+				SceneManager.LoadScene("Lukas_Map_AI");
 			}
             else
             {

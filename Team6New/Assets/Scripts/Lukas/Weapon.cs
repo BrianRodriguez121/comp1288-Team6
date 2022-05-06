@@ -76,8 +76,8 @@ public class Weapon : MonoBehaviour
 
 	//Akul Ammo HUD Code
 	public Text AmmoText;
-	public Text BeamHeat;
-	public bool isFiring;
+	
+	
 
 
 	void Start()
@@ -215,8 +215,11 @@ public class Weapon : MonoBehaviour
 	{
 		beaming = true;
 		beamHeat += Time.deltaTime;
-		BeamHeat.text = ((int)(beamHeat * 100) + "/" + (int)(maxBeamHeat * 100)).ToString();
-		
+		if (showCurrentAmmo && gameObject.activeInHierarchy)
+		{
+			AmmoText.text = ((int)(beamHeat * 100) + "/" + (int)(maxBeamHeat * 100)).ToString();
+		}
+
 
 		if (beamGO == null)
 		{
@@ -289,7 +292,11 @@ public class Weapon : MonoBehaviour
 	public void StopBeam()
 	{
 		beamHeat -= Time.deltaTime;
-		BeamHeat.text = ((int)(beamHeat * 100) + "/" + (int)(maxBeamHeat * 100)).ToString();
+		if (showCurrentAmmo && gameObject.activeInHierarchy)
+        {
+			AmmoText.text = ((int)(beamHeat * 100) + "/" + (int)(maxBeamHeat * 100)).ToString();
+		}
+			
 		if (beamHeat < 0)
 			beamHeat = 0;
 		GetComponent<AudioSource>().Stop();
@@ -314,7 +321,11 @@ public class Weapon : MonoBehaviour
                     {
 						GameObject proj = Instantiate(projectile, projectileSpawnSpot.position, projectileSpawnSpot.rotation) as GameObject;
 						currentAmmo -= 1;
-						AmmoText.text = currentAmmo.ToString();
+						if (showCurrentAmmo && gameObject.activeInHierarchy)
+						{
+							AmmoText.text = currentAmmo.ToString();
+						}
+						
 					}
 					//adds random offset to shooting by moving projectile spawn points position
 					else if (holder == Holder.Ai)
@@ -345,13 +356,7 @@ public class Weapon : MonoBehaviour
 	}
 	*/
 
-
-	//Will need to edit this to effect the HUD UI - Akul
-	
-
-
-
-	public void OnGUI()
+	/*public void OnGUI()
 	{
 		if (showCurrentAmmo && gameObject.activeInHierarchy)
 		{
@@ -365,5 +370,5 @@ public class Weapon : MonoBehaviour
 				GUI.Label(new Rect(10, Screen.height - 30, 300, 30), "Ammo: " + currentAmmo);
             }
 		}
-	}
+	}*/
 }
