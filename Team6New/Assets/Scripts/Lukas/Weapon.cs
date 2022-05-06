@@ -325,6 +325,7 @@ public class Weapon : MonoBehaviour
 						{
 							AmmoText.text = currentAmmo.ToString();
 						}
+						proj.layer = 6;
 						
 					}
 					//adds random offset to shooting by moving projectile spawn points position
