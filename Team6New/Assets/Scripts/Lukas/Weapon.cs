@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using System;
 
+
 public enum FireType
 {
 	Beam,
@@ -72,6 +73,13 @@ public class Weapon : MonoBehaviour
 	private float timerCurrent;
 	private float timerTotal = 0.5f;
 
+
+	//Akul Ammo HUD Code
+	public Text AmmoText;
+	
+	
+
+
 	void Start()
 	{
 		timerCurrent = timerTotal;
@@ -121,7 +129,9 @@ public class Weapon : MonoBehaviour
 			beamColor.a = newAlpha;
 		}
 		timerCurrent -= Time.deltaTime;
+
 	}
+
 	/*
 	////slowed down update speed
 	public void ControlAiInput()
@@ -134,9 +144,9 @@ public class Weapon : MonoBehaviour
 		}
 	}*/
 
-	
+
 	//regular update
-    public void ControlAiInput()
+	public void ControlAiInput()
     {
 		currentAmmo = ammoCapacity;
 		Launch();
@@ -170,21 +180,23 @@ public class Weapon : MonoBehaviour
 			Launch();
 		}
 		
-		if (Input.GetKeyDown(KeyCode.Alpha5) && !Input.GetKey(KeyCode.LeftControl)) // up
+				
+		if (Input.GetKeyDown(KeyCode.F) && !Input.GetKey(KeyCode.LeftControl)) // up
 		{
 			colorsIndex++;
 			if (colorsIndex > colors.Length - 1)
 				colorsIndex = 0;
 			beamColor = colors[colorsIndex];
 		}
-		if (Input.GetKeyDown(KeyCode.Alpha6) && !Input.GetKey(KeyCode.LeftControl)) // down
+		if (Input.GetKeyDown(KeyCode.C) && !Input.GetKey(KeyCode.LeftControl)) // down
 		{
 			colorsIndex--;
 			if (colorsIndex < 0)
-				colorsIndex = colors.Length - 1; 
+				colorsIndex = colors.Length - 1;
 			beamColor = colors[colorsIndex];
 		}
-		
+
+
 		if (Input.GetKeyDown(KeyCode.LeftShift))
 		{
 			newAlpha += 0.1f;
@@ -203,6 +215,11 @@ public class Weapon : MonoBehaviour
 	{
 		beaming = true;
 		beamHeat += Time.deltaTime;
+		if (showCurrentAmmo && gameObject.activeInHierarchy)
+		{
+			AmmoText.text = ((int)(beamHeat * 100) + "/" + (int)(maxBeamHeat * 100)).ToString();
+		}
+
 
 		if (beamGO == null)
 		{
@@ -275,6 +292,11 @@ public class Weapon : MonoBehaviour
 	public void StopBeam()
 	{
 		beamHeat -= Time.deltaTime;
+		if (showCurrentAmmo && gameObject.activeInHierarchy)
+        {
+			AmmoText.text = ((int)(beamHeat * 100) + "/" + (int)(maxBeamHeat * 100)).ToString();
+		}
+			
 		if (beamHeat < 0)
 			beamHeat = 0;
 		GetComponent<AudioSource>().Stop();
@@ -299,6 +321,11 @@ public class Weapon : MonoBehaviour
                     {
 						GameObject proj = Instantiate(projectile, projectileSpawnSpot.position, projectileSpawnSpot.rotation) as GameObject;
 						currentAmmo -= 1;
+						if (showCurrentAmmo && gameObject.activeInHierarchy)
+						{
+							AmmoText.text = currentAmmo.ToString();
+						}
+						
 					}
 					//adds random offset to shooting by moving projectile spawn points position
 					else if (holder == Holder.Ai)
@@ -329,19 +356,19 @@ public class Weapon : MonoBehaviour
 	}
 	*/
 
-	public void OnGUI()
+	/*public void OnGUI()
 	{
 		if (showCurrentAmmo && gameObject.activeInHierarchy)
 		{
 			if (type == FireType.Beam)
             {
-				GUI.Label(new Rect(10, Screen.height - 30, 100, 20), "Heat: " + (int)(beamHeat * 100) + "/" + (int)(maxBeamHeat * 100));
+				GUI.Label(new Rect(10, Screen.height - 100, 70, 100), "Heat: " + (int)(beamHeat * 100) + "/" + (int)(maxBeamHeat * 100));
             }
 				
 			else if (type == FireType.Projectile)
             {
-				GUI.Label(new Rect(10, Screen.height - 30, 300, 20), "Ammo: " + currentAmmo);
+				GUI.Label(new Rect(10, Screen.height - 30, 300, 30), "Ammo: " + currentAmmo);
             }
 		}
-	}
+	}*/
 }
