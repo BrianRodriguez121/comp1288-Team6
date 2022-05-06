@@ -74,13 +74,10 @@ public class Weapon : MonoBehaviour
 	private float timerTotal = 0.5f;
 
 
-
 	//Akul Ammo HUD Code
 	public Text AmmoText;
+	public Text BeamHeat;
 	public bool isFiring;
-
-
-
 
 
 	void Start()
@@ -133,19 +130,8 @@ public class Weapon : MonoBehaviour
 		}
 		timerCurrent -= Time.deltaTime;
 
-		//-------------------------------------------
-
-		//Akul Ammo HUD Code
-		AmmoText.text = currentAmmo.ToString();
-		if (Input.GetMouseButtonDown(0) && !isFiring && currentAmmo>0)
-        {
-			isFiring = true;
-			currentAmmo--;
-			isFiring = false;
-        }
-		//----------------------------------------Go over and try to implement better
-
 	}
+
 	/*
 	////slowed down update speed
 	public void ControlAiInput()
@@ -194,22 +180,7 @@ public class Weapon : MonoBehaviour
 			Launch();
 		}
 		
-		if (Input.GetKeyDown(KeyCode.Alpha5) && !Input.GetKey(KeyCode.LeftControl)) // up
-		{
-			colorsIndex++;
-			if (colorsIndex > colors.Length - 1)
-				colorsIndex = 0;
-			beamColor = colors[colorsIndex];
-		}
-		if (Input.GetKeyDown(KeyCode.Alpha6) && !Input.GetKey(KeyCode.LeftControl)) // down
-		{
-			colorsIndex--;
-			if (colorsIndex < 0)
-				colorsIndex = colors.Length - 1; 
-			beamColor = colors[colorsIndex];
-		}
-
-		//Akul- Just added it so you can use f/c or the numbers. To be changed maybe
+				
 		if (Input.GetKeyDown(KeyCode.F) && !Input.GetKey(KeyCode.LeftControl)) // up
 		{
 			colorsIndex++;
@@ -244,6 +215,8 @@ public class Weapon : MonoBehaviour
 	{
 		beaming = true;
 		beamHeat += Time.deltaTime;
+		BeamHeat.text = ((int)(beamHeat * 100) + "/" + (int)(maxBeamHeat * 100)).ToString();
+		
 
 		if (beamGO == null)
 		{
@@ -316,6 +289,7 @@ public class Weapon : MonoBehaviour
 	public void StopBeam()
 	{
 		beamHeat -= Time.deltaTime;
+		BeamHeat.text = ((int)(beamHeat * 100) + "/" + (int)(maxBeamHeat * 100)).ToString();
 		if (beamHeat < 0)
 			beamHeat = 0;
 		GetComponent<AudioSource>().Stop();
@@ -340,6 +314,7 @@ public class Weapon : MonoBehaviour
                     {
 						GameObject proj = Instantiate(projectile, projectileSpawnSpot.position, projectileSpawnSpot.rotation) as GameObject;
 						currentAmmo -= 1;
+						AmmoText.text = currentAmmo.ToString();
 					}
 					//adds random offset to shooting by moving projectile spawn points position
 					else if (holder == Holder.Ai)
@@ -372,7 +347,7 @@ public class Weapon : MonoBehaviour
 
 
 	//Will need to edit this to effect the HUD UI - Akul
-	//Akul Ammo HUD Code
+	
 
 
 
@@ -382,12 +357,12 @@ public class Weapon : MonoBehaviour
 		{
 			if (type == FireType.Beam)
             {
-				GUI.Label(new Rect(10, Screen.height - 30, 100, 20), "Heat: " + (int)(beamHeat * 100) + "/" + (int)(maxBeamHeat * 100));
+				GUI.Label(new Rect(10, Screen.height - 100, 70, 100), "Heat: " + (int)(beamHeat * 100) + "/" + (int)(maxBeamHeat * 100));
             }
 				
 			else if (type == FireType.Projectile)
             {
-				GUI.Label(new Rect(10, Screen.height - 30, 300, 20), "Ammo: " + currentAmmo);
+				GUI.Label(new Rect(10, Screen.height - 30, 300, 30), "Ammo: " + currentAmmo);
             }
 		}
 	}

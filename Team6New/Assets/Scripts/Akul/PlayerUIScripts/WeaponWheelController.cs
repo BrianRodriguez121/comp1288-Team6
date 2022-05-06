@@ -12,9 +12,6 @@ public class WeaponWheelController : MonoBehaviour
     public Sprite noImage;
     public static int weaponID;
 
-
-    public GameObject WeaponWheelLink; //Find better name
-    public WeaponSystem weaponSystem;
     public FPSController fpsController;
 
     
