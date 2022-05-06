@@ -6,13 +6,15 @@ using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
+
+    //Press K to pause the game dueing presentation
     public static bool GameIsPaused = true;
 
     public GameObject pausMenuUI;
 
-
-
     public FPSController fpsController;
+    
+
 
     private void Update()
     {
@@ -30,7 +32,19 @@ public class PauseMenu : MonoBehaviour
             }
         }
 
-        
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+
+            if (GameIsPaused)
+            {
+                PresentationResume();
+            }
+            else
+            {
+                PresentationPause();
+
+            }
+        }
     }
 
 
@@ -58,6 +72,28 @@ public class PauseMenu : MonoBehaviour
         fpsController.lookSpeed = 0;
     }
 
+
+    //Pause Button For Presentation use
+    public void PresentationResume()
+    {
+        
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+              
+       
+        fpsController.lookSpeed = 2;
+    }
+
+
+    public void PresentationPause()
+    {
+       
+        Time.timeScale = 0f;
+        GameIsPaused = true;
+               
+        
+        fpsController.lookSpeed = 0;
+    }
 
     public void Restart()
     {

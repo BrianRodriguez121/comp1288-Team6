@@ -14,6 +14,7 @@ public class TeleportationPad : MonoBehaviour
             player.transform.position = spawnPoint.transform.position;
             player.transform.rotation = spawnPoint.transform.rotation;
             player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            Debug.Log("player teleported");
         }
     }
 }
