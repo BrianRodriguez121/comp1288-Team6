@@ -215,7 +215,7 @@ public class Weapon : MonoBehaviour
 	{
 		beaming = true;
 		beamHeat += Time.deltaTime;
-		if (showCurrentAmmo && gameObject.activeInHierarchy)
+		if (showCurrentAmmo && gameObject.activeInHierarchy && holder == Holder.Player)
 		{
 			AmmoText.text = ((int)(beamHeat * 100) + "/" + (int)(maxBeamHeat * 100)).ToString();
 		}
@@ -292,7 +292,7 @@ public class Weapon : MonoBehaviour
 	public void StopBeam()
 	{
 		beamHeat -= Time.deltaTime;
-		if (showCurrentAmmo && gameObject.activeInHierarchy)
+		if (showCurrentAmmo && gameObject.activeInHierarchy && holder == Holder.Player)
         {
 			AmmoText.text = ((int)(beamHeat * 100) + "/" + (int)(maxBeamHeat * 100)).ToString();
 		}
@@ -321,7 +321,7 @@ public class Weapon : MonoBehaviour
                     {
 						GameObject proj = Instantiate(projectile, projectileSpawnSpot.position, projectileSpawnSpot.rotation) as GameObject;
 						currentAmmo -= 1;
-						if (showCurrentAmmo && gameObject.activeInHierarchy)
+						if (showCurrentAmmo && gameObject.activeInHierarchy && holder == Holder.Player)
 						{
 							AmmoText.text = currentAmmo.ToString();
 						}

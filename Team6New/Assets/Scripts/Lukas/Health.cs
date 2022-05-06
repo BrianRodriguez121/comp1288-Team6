@@ -102,7 +102,7 @@ public class Health : MonoBehaviour
 			else if(colorsIndex != (int)enemyColorMatch && !CheckColorMatch())
 			{
 				currentHealth += amount;
-				print("colors not match, base damage");
+				//print("colors not match, base damage");
 
 				if (currentHealth <= 0 && !dead && canDie)
 					Die();

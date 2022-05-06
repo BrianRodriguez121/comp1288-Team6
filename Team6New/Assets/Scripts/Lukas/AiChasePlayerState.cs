@@ -83,7 +83,7 @@ public class AiChasePlayerState : IAiState
             {
                 searchedForPlayer = false;
                 agent.stateMachine.ChangeState(AiStateId.Wander);
-                Debug.Log("Timer ran out and no longer chasing");
+                //Debug.Log("Timer ran out and no longer chasing");
             }
         }
     }
