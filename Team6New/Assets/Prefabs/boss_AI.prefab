@@ -295,6 +295,7 @@ MonoBehaviour:
   reloadSound: {fileID: 0}
   dryFireSound: {fileID: 0}
   canShoot: 0
+  AmmoText: {fileID: 0}
 --- !u!1 &1683204872112270907
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,6 +527,7 @@ MonoBehaviour:
   reloadSound: {fileID: 0}
   dryFireSound: {fileID: 0}
   canShoot: 0
+  AmmoText: {fileID: 0}
 --- !u!1 &5887281019601311493
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,7 +559,7 @@ Transform:
   m_GameObject: {fileID: 5887281019601311493}
   m_LocalRotation: {x: -0, y: 0.31928486, z: -0, w: 0.94765884}
   m_LocalPosition: {x: 113.61136, y: 104.92, z: 604.3295}
-  m_LocalScale: {x: 6, y: 7, z: 6}
+  m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children:
   - {fileID: 5887281019839669875}
   - {fileID: 6819011859850650263}
@@ -666,9 +668,10 @@ MonoBehaviour:
   healthAttached: 0
   enemyColorMatch: 6
   canDie: 1
-  startingHealth: 5000
-  maxHealth: 5000
+  startingHealth: 4500
+  maxHealth: 4500
   currentHealth: 0
+  healthBar: {fileID: 0}
 --- !u!114 &5887281019601311495
 MonoBehaviour:
   m_ObjectHideFlags: 0

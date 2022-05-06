@@ -49,6 +49,10 @@ public class Projectile : MonoBehaviour
             {
 				proj.layer = 8;
             }
+			else if(gameObject.layer == 6)
+            {
+				proj.layer = 6;
+            }
 		}
 		Destroy(gameObject);
 	}

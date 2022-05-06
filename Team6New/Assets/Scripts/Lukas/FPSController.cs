@@ -51,6 +51,8 @@ public class FPSController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
+        Time.timeScale = 0.2f;
+
     }
     void Update()
     {
