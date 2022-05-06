@@ -13,7 +13,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pausMenuUI;
 
     public FPSController fpsController;
-    
+    public WeaponSystem weaponsystem;
 
 
     private void Update()
@@ -24,10 +24,14 @@ public class PauseMenu : MonoBehaviour
             if (GameIsPaused)
             {
                 Resume();
+                Weapon weapon = weaponsystem.GetWeaponCompenet(weaponsystem.weaponIndex);
+                weapon.canShoot = true;
             }
             else
             {
                 Pause();
+                Weapon weapon = weaponsystem.GetWeaponCompenet(weaponsystem.weaponIndex);
+                weapon.canShoot = false;
 
             }
         }

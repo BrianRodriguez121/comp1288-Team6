@@ -20,32 +20,21 @@ public class MainMenu : MonoBehaviour
     public void LoadNextLevel()
     {
 
-        /*StartCoroutine( SceneManager.LoadScene("Lukas"));*/
+        
 
-        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+        
     }
 
-    IEnumerator LoadLevel(int levelIndex)
-    {
-        transition.SetTrigger("Start");
-
-        yield return new WaitForSeconds(transitionTime);
-
-
-        SceneManager.LoadScene(levelIndex);
-
-
-
-    }
+    
 
 
     //Menu buttons
 
     public void PlayGame()
     {
-        /*SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);*/
+        
         SceneManager.LoadScene("Lukas_Map_AI");
-        LoadNextLevel();
+        
 
     }
 
