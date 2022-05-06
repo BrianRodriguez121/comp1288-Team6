@@ -14,11 +14,15 @@ public class WeaponWheelButtonController : MonoBehaviour
     private bool selected = false;
     public Sprite icon;
 
+    public FPSController fpsController;
+
+    public WeaponSystem weaponSystem;
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
@@ -36,6 +40,8 @@ public class WeaponWheelButtonController : MonoBehaviour
     {
         selected = true;
         WeaponWheelController.weaponID = ID;
+        
+
     }
 
 

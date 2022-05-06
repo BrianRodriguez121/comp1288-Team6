@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using System;
 
+
 public enum FireType
 {
 	Beam,
@@ -72,6 +73,16 @@ public class Weapon : MonoBehaviour
 	private float timerCurrent;
 	private float timerTotal = 0.5f;
 
+
+
+	//Akul Ammo HUD Code
+	public Text AmmoText;
+	public bool isFiring;
+
+
+
+
+
 	void Start()
 	{
 		timerCurrent = timerTotal;
@@ -121,6 +132,19 @@ public class Weapon : MonoBehaviour
 			beamColor.a = newAlpha;
 		}
 		timerCurrent -= Time.deltaTime;
+
+		//-------------------------------------------
+
+		//Akul Ammo HUD Code
+		AmmoText.text = currentAmmo.ToString();
+		if (Input.GetMouseButtonDown(0) && !isFiring && currentAmmo>0)
+        {
+			isFiring = true;
+			currentAmmo--;
+			isFiring = false;
+        }
+		//----------------------------------------Go over and try to implement better
+
 	}
 	/*
 	////slowed down update speed
@@ -134,9 +158,9 @@ public class Weapon : MonoBehaviour
 		}
 	}*/
 
-	
+
 	//regular update
-    public void ControlAiInput()
+	public void ControlAiInput()
     {
 		currentAmmo = ammoCapacity;
 		Launch();
@@ -184,7 +208,24 @@ public class Weapon : MonoBehaviour
 				colorsIndex = colors.Length - 1; 
 			beamColor = colors[colorsIndex];
 		}
-		
+
+		//Akul- Just added it so you can use f/c or the numbers. To be changed maybe
+		if (Input.GetKeyDown(KeyCode.F) && !Input.GetKey(KeyCode.LeftControl)) // up
+		{
+			colorsIndex++;
+			if (colorsIndex > colors.Length - 1)
+				colorsIndex = 0;
+			beamColor = colors[colorsIndex];
+		}
+		if (Input.GetKeyDown(KeyCode.C) && !Input.GetKey(KeyCode.LeftControl)) // down
+		{
+			colorsIndex--;
+			if (colorsIndex < 0)
+				colorsIndex = colors.Length - 1;
+			beamColor = colors[colorsIndex];
+		}
+
+
 		if (Input.GetKeyDown(KeyCode.LeftShift))
 		{
 			newAlpha += 0.1f;
@@ -328,6 +369,12 @@ public class Weapon : MonoBehaviour
 	{
 	}
 	*/
+
+
+	//Will need to edit this to effect the HUD UI - Akul
+	//Akul Ammo HUD Code
+
+
 
 	public void OnGUI()
 	{

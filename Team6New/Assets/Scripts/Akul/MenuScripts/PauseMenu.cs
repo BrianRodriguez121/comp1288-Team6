@@ -29,6 +29,8 @@ public class PauseMenu : MonoBehaviour
 
             }
         }
+
+        
     }
 
 
@@ -68,6 +70,8 @@ public class PauseMenu : MonoBehaviour
 
 
     }
+
+
 
 
     public void QuitToMenu() //will change the game to the quit to menu is clicked.

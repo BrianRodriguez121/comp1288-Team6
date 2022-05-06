@@ -23,7 +23,7 @@ public class WeaponSystem : MonoBehaviour
 		SetActiveWeapon(weaponIndex);
 	}
 	
-	void Update()
+	public void Update()
 	{
 		if(weaponAttached == WeaponSystemAttached.Player)
         {

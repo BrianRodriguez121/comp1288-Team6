@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class WeaponWheelController : MonoBehaviour
+public class WeaponWheelController : MonoBehaviour 
 {
 
     public Animator anim;
@@ -12,6 +12,9 @@ public class WeaponWheelController : MonoBehaviour
     public Sprite noImage;
     public static int weaponID;
 
+
+    public GameObject WeaponWheelLink; //Find better name
+    public WeaponSystem weaponSystem;
     public FPSController fpsController;
 
     
@@ -64,6 +67,7 @@ public class WeaponWheelController : MonoBehaviour
 
             case 1://LAZER GUN 1 selected
                 anim.SetBool("OpenWeaponWheel", false);
+
                 break;
 
 
