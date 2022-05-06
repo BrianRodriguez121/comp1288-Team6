@@ -31,6 +31,7 @@ public class AiAgent : MonoBehaviour
     public FPSController playerController;
 
     public GameObject heatMapPrefab;
+    public GameObject bossKeyDropPrefab;
 
     [HideInInspector]
     public bool detechHealthChange;
@@ -187,10 +188,17 @@ public class AiAgent : MonoBehaviour
 
     public void DestroyAgent()
     {
-        if (playerController.heatMap)
+        if (playerController.heatMap && playerController.heatMap)
         {
             GameObject killMark = Instantiate(heatMapPrefab, agentTransform.position, agentTransform.rotation);
             killMark.transform.parent = playerController.heatMapParent.transform;
+        }
+
+        if(enemyType == EnemyType.Boss)
+        {
+            print("key drop");
+            GameObject killMarkBoss = Instantiate(bossKeyDropPrefab, agentTransform.position, agentTransform.rotation);
+            //killMarkBoss.transform.parent = playerController.heatMapParent.transform;
         }
 
         Destroy(gameObject);

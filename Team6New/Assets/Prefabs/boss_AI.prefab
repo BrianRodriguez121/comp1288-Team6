@@ -695,6 +695,7 @@ MonoBehaviour:
   health: {fileID: 0}
   playerController: {fileID: 0}
   heatMapPrefab: {fileID: 4969038051017144744, guid: 09ae300766140f640b0f82f4be77344f, type: 3}
+  bossKeyDropPrefab: {fileID: 0}
   detechHealthChange: 0
 --- !u!1 &5887281019839669872
 GameObject:
