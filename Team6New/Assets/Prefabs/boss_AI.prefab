@@ -295,6 +295,11 @@ MonoBehaviour:
   reloadSound: {fileID: 0}
   dryFireSound: {fileID: 0}
   canShoot: 0
+<<<<<<< Updated upstream
+=======
+  AmmoText: {fileID: 0}
+  pauseMenu: {fileID: 0}
+>>>>>>> Stashed changes
 --- !u!1 &1683204872112270907
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,6 +352,23 @@ MonoBehaviour:
   startingWeaponIndex: 1
   weaponIndex: 0
   activeWeapon: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+--- !u!136 &6090061060089679619
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2632611167721394927}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  m_Radius: 0.8929777
+  m_Height: 2.058983
+  m_Direction: 1
+  m_Center: {x: 0.06619693, y: 0.8048794, z: 0.13847499}
+>>>>>>> Stashed changes
 --- !u!1 &3639079053064411016
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,6 +534,11 @@ MonoBehaviour:
   reloadSound: {fileID: 0}
   dryFireSound: {fileID: 0}
   canShoot: 0
+<<<<<<< Updated upstream
+=======
+  AmmoText: {fileID: 0}
+  pauseMenu: {fileID: 0}
+>>>>>>> Stashed changes
 --- !u!1 &5887281019601311493
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,8 +638,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.44, y: 1.43, z: 0.57}
+  m_Center: {x: 0, y: 0.27, z: 0}
 --- !u!195 &5887281019601311492
 NavMeshAgent:
   m_ObjectHideFlags: 0

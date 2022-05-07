@@ -49,6 +49,13 @@ public class Projectile : MonoBehaviour
             {
 				proj.layer = 8;
             }
+<<<<<<< Updated upstream
+=======
+/*			else if(gameObject.layer == 6)
+            {
+				proj.layer = 6;
+            }*/
+>>>>>>> Stashed changes
 		}
 		Destroy(gameObject);
 	}

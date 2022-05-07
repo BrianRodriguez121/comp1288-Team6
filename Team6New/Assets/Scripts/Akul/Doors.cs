@@ -10,7 +10,7 @@ public class Doors : MonoBehaviour
     // Update is called once per frame
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "DoorCol")
         {
             Debug.Log("coll with door");
             if (doorKey == "Coin" && GlobalData.Coin)
@@ -18,21 +18,21 @@ public class Doors : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "DoorCol")
         {
             if (doorKey == "Coin1" && GlobalData.Coin1)
             {
                 Destroy(gameObject);
             }
         }
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "DoorCol")
         {
             if (doorKey == "Coin2" && GlobalData.Coin2)
             {
                 Destroy(gameObject);
             }
         }
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "DoorCol")
         {
             if (doorKey == "Coin3" && GlobalData.Coin3)
                 Destroy(gameObject);

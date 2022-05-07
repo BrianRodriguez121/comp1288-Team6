@@ -143,8 +143,6 @@ public class Health : MonoBehaviour
 
 			if (currentHealth <= 0 && !dead && canDie)
 			{
-				Time.timeScale = 0;
-				print("player health zero");
 				SceneManager.LoadScene("Lukas_Map_AI");
 			}
             else
@@ -183,7 +181,6 @@ public class Health : MonoBehaviour
 	//Akul Health
 	void TakeDamage(float damage)
 	{
-		
 		healthBar.SetHealth(currentHealth);
 	}
 
