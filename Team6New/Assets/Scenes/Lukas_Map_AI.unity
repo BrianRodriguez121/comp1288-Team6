@@ -8,7 +8,7 @@ OcclusionCullingSettings:
     smallestOccluder: 10
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: bf8fc5a0e91bb204d8c75b5441b2c80e
+  m_SceneGUID: 85feac64faa539a4db29440b1b1e3634
   m_OcclusionCullingData: {fileID: 36300000, guid: 3da67d7537c5d7e4398bc95349fbd9ac, type: 2}
 --- !u!104 &2
 RenderSettings:
@@ -11338,7 +11338,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.79, y: 0.03082001}
   m_AnchorMax: {x: 0.9912501, y: 0.098000005}
-  m_AnchoredPosition: {x: 6.000122, y: -2.0999756}
+  m_AnchoredPosition: {x: 6.000183, y: -2.0999756}
   m_SizeDelta: {x: -1, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &149139601
@@ -38544,22 +38544,21 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'W/ UpArrow - Forward
 
-    
+
 
     S/DownArrow - Backwards
 
-    
+
 
     A/LeftArrow
     - Turn Left
 
-    
+
 
     D/RightArrow - Turn Right
 
 
-    Mouse Movement - Look
-    around'
+    Mouse Movement - Look around'
 --- !u!222 &1134852665
 CanvasRenderer:
   m_ObjectHideFlags: 0
