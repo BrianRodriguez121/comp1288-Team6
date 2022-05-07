@@ -5,23 +5,25 @@ using UnityEngine;
 public class PanelOpener : MonoBehaviour
 {
 
-    public GameObject Panel;
+    public GameObject ObjectivesPanel;
 
     public GameObject OptionsPanel;
+    public GameObject ControlsPanel;
+
 
     public void OpenPanel()
     {
-        if (Panel != null)
+        if (ObjectivesPanel != null)
         {
-            Panel.SetActive(true);
+            ObjectivesPanel.SetActive(true);
         }
     }
 
     public void ClosePanel()
     {
-        if (Panel != null)
+        if (ObjectivesPanel != null)
         {
-            Panel.SetActive(false);
+            ObjectivesPanel.SetActive(false);
         }
     }
 
@@ -40,6 +42,24 @@ public class PanelOpener : MonoBehaviour
         if (OptionsPanel != null)
         {
             OptionsPanel.SetActive(false);
+        }
+    }
+
+
+
+    public void OpenControlsPanel()
+    {
+        if (ControlsPanel != null)
+        {
+            ControlsPanel.SetActive(true);
+        }
+    }
+
+    public void CloseControlsPanel()
+    {
+        if (ControlsPanel != null)
+        {
+            ControlsPanel.SetActive(false);
         }
     }
 }
