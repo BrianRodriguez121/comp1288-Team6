@@ -11355,7 +11355,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.79, y: 0.03082001}
   m_AnchorMax: {x: 0.9912501, y: 0.098000005}
-  m_AnchoredPosition: {x: 6.000183, y: -2.0999756}
+  m_AnchoredPosition: {x: 6.0002136, y: -2.0999756}
   m_SizeDelta: {x: -1, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &149139601
@@ -11796,7 +11796,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 164143246}
   selectedItem: {fileID: 771448518}
-  noImage: {fileID: 0}
+  noImage: {fileID: 21300000, guid: 3c59671d258c0e04391e5dc02de55631, type: 3}
   fpsController: {fileID: 389435585}
   weaponSystem: {fileID: 1215379785}
 --- !u!95 &164143246
@@ -13869,7 +13869,7 @@ AudioSource:
   MaxDistance: 41.24565
   Pan2D: 0
   rolloffMode: 0
-  BypassEffects: 0
+  BypassEffects: 1
   BypassListenerEffects: 0
   BypassReverbZones: 0
   rolloffCustomCurve:
@@ -14692,7 +14692,7 @@ MonoBehaviour:
   itemName: GRANADE LAUNCHER
   itemText: {fileID: 119191515}
   selectedItem: {fileID: 771448518}
-  icon: {fileID: 21300000, guid: c54bbf93ab7fe8740915f80a0ebdf75f, type: 3}
+  icon: {fileID: 21300000, guid: baa2e032f22ebbf4c96d13b7f5dd879a, type: 3}
   fpsController: {fileID: 389435585}
   weaponSystem: {fileID: 1215379785}
 --- !u!114 &323872871
@@ -20193,7 +20193,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 26324afdb3f7163479c4b1f3c7f47cb7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 86a5079200cd6574b92043fac87fdf48, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -24597,7 +24597,7 @@ AudioSource:
   MaxDistance: 41.321716
   Pan2D: 0
   rolloffMode: 0
-  BypassEffects: 0
+  BypassEffects: 1
   BypassListenerEffects: 0
   BypassReverbZones: 0
   rolloffCustomCurve:
@@ -24781,14 +24781,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -30651,14 +30651,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.7647059}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 26324afdb3f7163479c4b1f3c7f47cb7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3c59671d258c0e04391e5dc02de55631, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -32352,7 +32352,7 @@ AudioSource:
   MaxDistance: 41.321716
   Pan2D: 0
   rolloffMode: 0
-  BypassEffects: 0
+  BypassEffects: 1
   BypassListenerEffects: 0
   BypassReverbZones: 0
   rolloffCustomCurve:
@@ -34196,7 +34196,7 @@ AudioSource:
   MaxDistance: 41.321716
   Pan2D: 0
   rolloffMode: 0
-  BypassEffects: 0
+  BypassEffects: 1
   BypassListenerEffects: 0
   BypassReverbZones: 0
   rolloffCustomCurve:
@@ -44740,7 +44740,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1410986476}
   serializedVersion: 7
-  lengthInSec: 5
+  lengthInSec: 3
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -45300,7 +45300,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 500
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -45565,7 +45565,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 1
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -51435,7 +51435,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4b05f19d6f67e6148a5ec2275c81c0e3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 76e6ba149c006a34baa8569b36dcfad2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -51722,7 +51722,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -132.6, y: 2.1}
+  m_AnchoredPosition: {x: -132.6, y: 2.8}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1506424057
@@ -51741,7 +51741,7 @@ MonoBehaviour:
   itemName: BEAM GUN
   itemText: {fileID: 119191515}
   selectedItem: {fileID: 771448518}
-  icon: {fileID: 21300000, guid: 4b05f19d6f67e6148a5ec2275c81c0e3, type: 3}
+  icon: {fileID: 21300000, guid: 76e6ba149c006a34baa8569b36dcfad2, type: 3}
   fpsController: {fileID: 389435585}
   weaponSystem: {fileID: 1215379785}
 --- !u!114 &1506424058
@@ -58021,7 +58021,7 @@ MonoBehaviour:
   itemName: LASER GUN
   itemText: {fileID: 119191515}
   selectedItem: {fileID: 771448518}
-  icon: {fileID: 21300000, guid: 26324afdb3f7163479c4b1f3c7f47cb7, type: 3}
+  icon: {fileID: 21300000, guid: 86a5079200cd6574b92043fac87fdf48, type: 3}
   fpsController: {fileID: 389435585}
   weaponSystem: {fileID: 1215379785}
 --- !u!114 &1720011232
@@ -60668,7 +60668,7 @@ AudioSource:
   MaxDistance: 41.24565
   Pan2D: 0
   rolloffMode: 0
-  BypassEffects: 0
+  BypassEffects: 1
   BypassListenerEffects: 0
   BypassReverbZones: 0
   rolloffCustomCurve:
@@ -65680,7 +65680,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 7e4b9f250a4bb5e41935f666459561b0, type: 2}
   m_audioClip: {fileID: 8300000, guid: 05c1e8272c0c8ce4b8eff648ca3a133f, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -65941,35 +65941,32 @@ Transform:
   - {fileID: 1660392782}
   - {fileID: 1841663297}
   - {fileID: 73572321}
+  - {fileID: 1540451431}
+  - {fileID: 35959044}
   - {fileID: 142910922}
   - {fileID: 1434338843}
-  - {fileID: 130450195}
-  - {fileID: 948873637}
-  - {fileID: 658431337}
-  - {fileID: 1491022024}
-  - {fileID: 530969793}
-  - {fileID: 35959044}
-  - {fileID: 1540451431}
-  - {fileID: 649947715}
-  - {fileID: 1451327695}
-  - {fileID: 993163579}
-  - {fileID: 527583265}
   - {fileID: 873243799}
+  - {fileID: 130450195}
   - {fileID: 350068495}
   - {fileID: 37216338}
-  - {fileID: 1970475173}
+  - {fileID: 948873637}
   - {fileID: 1386212273}
-  - {fileID: 1803532297}
-  - {fileID: 1201402042}
+  - {fileID: 1491022024}
+  - {fileID: 530969793}
+  - {fileID: 1970475173}
   - {fileID: 687770538}
   - {fileID: 560645771}
   - {fileID: 1842434542}
   - {fileID: 181765449}
   - {fileID: 1683827732}
+  - {fileID: 658431337}
   - {fileID: 371590061}
   - {fileID: 267157027}
+  - {fileID: 1803532297}
   - {fileID: 140441192}
-  - {fileID: 1739675638}
+  - {fileID: 993163579}
+  - {fileID: 527583265}
+  - {fileID: 1201402042}
   - {fileID: 248937978}
   - {fileID: 1884987767}
   - {fileID: 1946970246}
@@ -65979,12 +65976,15 @@ Transform:
   - {fileID: 1911162713}
   - {fileID: 943188427}
   - {fileID: 372145644}
+  - {fileID: 1451327695}
   - {fileID: 455935604}
   - {fileID: 1170929277}
   - {fileID: 2020101145}
   - {fileID: 862828845}
   - {fileID: 117231983}
+  - {fileID: 649947715}
   - {fileID: 399987973}
+  - {fileID: 1739675638}
   - {fileID: 308468724}
   - {fileID: 1745079738}
   - {fileID: 346894771}
@@ -67632,7 +67632,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c54bbf93ab7fe8740915f80a0ebdf75f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: baa2e032f22ebbf4c96d13b7f5dd879a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -70153,7 +70153,7 @@ AudioSource:
   MaxDistance: 41.321716
   Pan2D: 0
   rolloffMode: 0
-  BypassEffects: 0
+  BypassEffects: 1
   BypassListenerEffects: 0
   BypassReverbZones: 0
   rolloffCustomCurve:
