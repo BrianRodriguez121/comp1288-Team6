@@ -146,7 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionForce: 10
   explosionRadius: 15
-  damage: 400
+  damage: 600
 --- !u!114 &7096805951879698546
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5019,7 +5019,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionForce: 14
   explosionRadius: 8
-  damage: 200
+  damage: 500
 --- !u!1 &100004
 GameObject:
   m_ObjectHideFlags: 0
