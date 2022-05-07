@@ -127,20 +127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cc2c4eec83d3b448a0fc951767e783c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!136 &4565037781050400906
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7708575762586306861}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.9454976
-  m_Height: 2.376024
-  m_Direction: 1
-  m_Center: {x: 0.01883932, y: 0.8913764, z: 0.14737819}
 --- !u!1001 &143358985838696897
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -225,11 +211,6 @@ PrefabInstance:
 --- !u!1 &953700911539790992 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a646adf1655a81641b0bca5472a03245, type: 3}
-  m_PrefabInstance: {fileID: 143358985838696897}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &7708575762586306861 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -1511224939936345876, guid: a646adf1655a81641b0bca5472a03245, type: 3}
   m_PrefabInstance: {fileID: 143358985838696897}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &586144230195695377
@@ -336,16 +317,36 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 704e203387f24e143ac1c7c4aa74abb6, type: 2}
     - target: {fileID: 6268399792896121511, guid: 022e35002d0fe4a49a4f328c22949731, type: 3}
+      propertyPath: m_Size.x
+      value: 1.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268399792896121511, guid: 022e35002d0fe4a49a4f328c22949731, type: 3}
+      propertyPath: m_Size.y
+      value: 1.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268399792896121511, guid: 022e35002d0fe4a49a4f328c22949731, type: 3}
+      propertyPath: m_Size.z
+      value: 0.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268399792896121511, guid: 022e35002d0fe4a49a4f328c22949731, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268399792896121511, guid: 022e35002d0fe4a49a4f328c22949731, type: 3}
+      propertyPath: m_Center.y
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268399792896121560, guid: 022e35002d0fe4a49a4f328c22949731, type: 3}
+      propertyPath: canDie
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6268399792896121560, guid: 022e35002d0fe4a49a4f328c22949731, type: 3}
       propertyPath: maxHealth
-      value: 1250
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6268399792896121560, guid: 022e35002d0fe4a49a4f328c22949731, type: 3}
       propertyPath: startingHealth
-      value: 1250
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6268399792896121560, guid: 022e35002d0fe4a49a4f328c22949731, type: 3}
       propertyPath: enemyColorMatch

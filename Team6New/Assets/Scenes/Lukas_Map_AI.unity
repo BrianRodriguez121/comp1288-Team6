@@ -451,6 +451,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2078362117}
     m_Modifications:
+    - target: {fileID: 6848790343112405516, guid: 3d578fd6785235449a976e698d506f3c, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 6848790343112405519, guid: 3d578fd6785235449a976e698d506f3c, type: 3}
       propertyPath: m_Name
       value: 1_Orange_AI Variant
@@ -1642,6 +1646,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7616166470194096893, guid: bc27b5d64c23f384eac9399ef07feb2b, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 7616166470194096894, guid: bc27b5d64c23f384eac9399ef07feb2b, type: 3}
       propertyPath: m_Name
       value: 0_red_AI Variant (2)
@@ -1787,6 +1795,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2_Green_AI Variant (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7734824280651341311, guid: d25182cb8d5c3c84c9b4d38516bdeaba, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d25182cb8d5c3c84c9b4d38516bdeaba, type: 3}
 --- !u!1 &34333048
@@ -1925,6 +1937,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7616166470194096893, guid: 2497792037bbb344ea038825ea873508, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 7616166470194096894, guid: 2497792037bbb344ea038825ea873508, type: 3}
       propertyPath: m_Name
       value: 3_purple_AI
@@ -3300,6 +3316,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6836380070542644681, guid: 8686ab97c0d72504eb9080371a70eed8, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 6836380070542644682, guid: 8686ab97c0d72504eb9080371a70eed8, type: 3}
       propertyPath: m_Name
       value: 5_Cyan_AI Variant
@@ -11355,7 +11375,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.79, y: 0.03082001}
   m_AnchorMax: {x: 0.9912501, y: 0.098000005}
-  m_AnchoredPosition: {x: 6.0002136, y: -2.0999756}
+  m_AnchoredPosition: {x: 6.000183, y: -2.0999756}
   m_SizeDelta: {x: -1, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &149139601
@@ -11939,6 +11959,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2_Green_AI Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7734824280651341311, guid: d25182cb8d5c3c84c9b4d38516bdeaba, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d25182cb8d5c3c84c9b4d38516bdeaba, type: 3}
 --- !u!1 &173216650
@@ -12358,6 +12382,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2_Green_AI Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7734824280651341311, guid: d25182cb8d5c3c84c9b4d38516bdeaba, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d25182cb8d5c3c84c9b4d38516bdeaba, type: 3}
 --- !u!1 &186460786
@@ -13730,6 +13758,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7616166470194096893, guid: bc27b5d64c23f384eac9399ef07feb2b, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 7616166470194096894, guid: bc27b5d64c23f384eac9399ef07feb2b, type: 3}
       propertyPath: m_Name
       value: 0_red_AI Variant
@@ -19086,6 +19118,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6836380070542644681, guid: 8686ab97c0d72504eb9080371a70eed8, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 6836380070542644682, guid: 8686ab97c0d72504eb9080371a70eed8, type: 3}
       propertyPath: m_Name
       value: 5_Cyan_AI Variant (1)
@@ -19143,6 +19179,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 266243137734332885, guid: 8cd663a9297c0c4409de82a6ae01931f, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 266243137734332886, guid: 8cd663a9297c0c4409de82a6ae01931f, type: 3}
       propertyPath: m_Name
       value: 4_Blue_AI Variant (1)
@@ -20467,6 +20507,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7616166470194096893, guid: bc27b5d64c23f384eac9399ef07feb2b, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 7616166470194096894, guid: bc27b5d64c23f384eac9399ef07feb2b, type: 3}
       propertyPath: m_Name
       value: 0_red_AI Variant
@@ -23451,6 +23495,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 266243137734332885, guid: 8cd663a9297c0c4409de82a6ae01931f, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 266243137734332886, guid: 8cd663a9297c0c4409de82a6ae01931f, type: 3}
       propertyPath: m_Name
       value: 4_Blue_AI Variant
@@ -24125,6 +24173,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1014593538}
     m_Modifications:
+    - target: {fileID: 6848790343112405516, guid: 3d578fd6785235449a976e698d506f3c, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 6848790343112405519, guid: 3d578fd6785235449a976e698d506f3c, type: 3}
       propertyPath: m_Name
       value: 1_Orange_AI Variant (4)
@@ -24861,6 +24913,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2_Green_AI Variant (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7734824280651341311, guid: d25182cb8d5c3c84c9b4d38516bdeaba, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d25182cb8d5c3c84c9b4d38516bdeaba, type: 3}
 --- !u!1001 &608615319
@@ -25433,6 +25489,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7616166470194096893, guid: bc27b5d64c23f384eac9399ef07feb2b, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 7616166470194096894, guid: bc27b5d64c23f384eac9399ef07feb2b, type: 3}
       propertyPath: m_Name
       value: 0_red_AI Variant (1)
@@ -26038,6 +26098,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6836380070542644681, guid: 8686ab97c0d72504eb9080371a70eed8, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 6836380070542644682, guid: 8686ab97c0d72504eb9080371a70eed8, type: 3}
       propertyPath: m_Name
       value: 5_Cyan_AI Variant (1)
@@ -28801,6 +28865,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 266243137734332885, guid: 8cd663a9297c0c4409de82a6ae01931f, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 266243137734332886, guid: 8cd663a9297c0c4409de82a6ae01931f, type: 3}
       propertyPath: m_Name
       value: 4_Blue_AI Variant (1)
@@ -32275,6 +32343,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7616166470194096893, guid: bc27b5d64c23f384eac9399ef07feb2b, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 7616166470194096894, guid: bc27b5d64c23f384eac9399ef07feb2b, type: 3}
       propertyPath: m_Name
       value: 0_red_AI Variant (4)
@@ -34976,6 +35048,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1014593538}
     m_Modifications:
+    - target: {fileID: 6848790343112405516, guid: 3d578fd6785235449a976e698d506f3c, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 6848790343112405519, guid: 3d578fd6785235449a976e698d506f3c, type: 3}
       propertyPath: m_Name
       value: 1_Orange_AI Variant (3)
@@ -35988,6 +36064,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2_Green_AI Variant (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7734824280651341311, guid: d25182cb8d5c3c84c9b4d38516bdeaba, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d25182cb8d5c3c84c9b4d38516bdeaba, type: 3}
 --- !u!4 &977857792 stripped
@@ -36644,6 +36724,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2_Green_AI Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7734824280651341311, guid: d25182cb8d5c3c84c9b4d38516bdeaba, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d25182cb8d5c3c84c9b4d38516bdeaba, type: 3}
 --- !u!1 &1028215285
@@ -37630,6 +37714,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2_Green_AI Variant (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7734824280651341311, guid: d25182cb8d5c3c84c9b4d38516bdeaba, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d25182cb8d5c3c84c9b4d38516bdeaba, type: 3}
 --- !u!1 &1055028560
@@ -38460,6 +38548,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7616166470194096893, guid: 2497792037bbb344ea038825ea873508, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 7616166470194096894, guid: 2497792037bbb344ea038825ea873508, type: 3}
       propertyPath: m_Name
       value: 3_purple_AI
@@ -39321,6 +39413,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6836380070542644681, guid: 8686ab97c0d72504eb9080371a70eed8, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 6836380070542644682, guid: 8686ab97c0d72504eb9080371a70eed8, type: 3}
       propertyPath: m_Name
       value: 5_Cyan_AI Variant
@@ -39514,6 +39610,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6836380070542644681, guid: 8686ab97c0d72504eb9080371a70eed8, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 6836380070542644682, guid: 8686ab97c0d72504eb9080371a70eed8, type: 3}
       propertyPath: m_Name
       value: 5_Cyan_AI Variant
@@ -40224,6 +40324,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7616166470194096893, guid: 2497792037bbb344ea038825ea873508, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 7616166470194096894, guid: 2497792037bbb344ea038825ea873508, type: 3}
       propertyPath: m_Name
       value: 3_purple_AI (2)
@@ -40281,6 +40385,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 266243137734332885, guid: 8cd663a9297c0c4409de82a6ae01931f, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 266243137734332886, guid: 8cd663a9297c0c4409de82a6ae01931f, type: 3}
       propertyPath: m_Name
       value: 4_Blue_AI Variant
@@ -40412,6 +40520,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 266243137734332885, guid: 8cd663a9297c0c4409de82a6ae01931f, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 266243137734332886, guid: 8cd663a9297c0c4409de82a6ae01931f, type: 3}
       propertyPath: m_Name
       value: 4_Blue_AI Variant (3)
@@ -40474,6 +40586,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7616166470194096893, guid: 2497792037bbb344ea038825ea873508, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 7616166470194096894, guid: 2497792037bbb344ea038825ea873508, type: 3}
       propertyPath: m_Name
       value: 3_purple_AI
@@ -43871,6 +43987,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1665061322}
     m_Modifications:
+    - target: {fileID: 6848790343112405516, guid: 3d578fd6785235449a976e698d506f3c, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 6848790343112405519, guid: 3d578fd6785235449a976e698d506f3c, type: 3}
       propertyPath: m_Name
       value: 1_Orange_AI Variant
@@ -44514,6 +44634,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1014593538}
     m_Modifications:
+    - target: {fileID: 6848790343112405516, guid: 3d578fd6785235449a976e698d506f3c, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 6848790343112405519, guid: 3d578fd6785235449a976e698d506f3c, type: 3}
       propertyPath: m_Name
       value: 1_Orange_AI Variant
@@ -52323,6 +52447,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1014593538}
     m_Modifications:
+    - target: {fileID: 6848790343112405516, guid: 3d578fd6785235449a976e698d506f3c, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 6848790343112405519, guid: 3d578fd6785235449a976e698d506f3c, type: 3}
       propertyPath: m_Name
       value: 1_Orange_AI Variant (1)
@@ -56979,6 +57107,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6836380070542644681, guid: 8686ab97c0d72504eb9080371a70eed8, type: 3}
+      propertyPath: canDie
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836380070542644681, guid: 8686ab97c0d72504eb9080371a70eed8, type: 3}
+      propertyPath: maxHealth
+      value: 1200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836380070542644681, guid: 8686ab97c0d72504eb9080371a70eed8, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
+    - target: {fileID: 6836380070542644681, guid: 8686ab97c0d72504eb9080371a70eed8, type: 3}
+      propertyPath: startingHealth
+      value: 1200
+      objectReference: {fileID: 0}
     - target: {fileID: 6836380070542644682, guid: 8686ab97c0d72504eb9080371a70eed8, type: 3}
       propertyPath: m_Name
       value: 5_Cyan_AI Variant
@@ -57565,6 +57709,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2_Green_AI Variant (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7734824280651341311, guid: d25182cb8d5c3c84c9b4d38516bdeaba, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d25182cb8d5c3c84c9b4d38516bdeaba, type: 3}
 --- !u!1001 &1709614422
@@ -57961,6 +58109,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2_Green_AI Variant (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7734824280651341311, guid: d25182cb8d5c3c84c9b4d38516bdeaba, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d25182cb8d5c3c84c9b4d38516bdeaba, type: 3}
 --- !u!1 &1720011229
@@ -60922,6 +61074,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 266243137734332885, guid: 8cd663a9297c0c4409de82a6ae01931f, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 266243137734332886, guid: 8cd663a9297c0c4409de82a6ae01931f, type: 3}
       propertyPath: m_Name
       value: 4_Blue_AI Variant (2)
@@ -61653,6 +61809,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7616166470194096893, guid: 2497792037bbb344ea038825ea873508, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 7616166470194096894, guid: 2497792037bbb344ea038825ea873508, type: 3}
       propertyPath: m_Name
       value: 3_purple_AI
@@ -64000,6 +64160,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1014593538}
     m_Modifications:
+    - target: {fileID: 6848790343112405516, guid: 3d578fd6785235449a976e698d506f3c, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 6848790343112405519, guid: 3d578fd6785235449a976e698d506f3c, type: 3}
       propertyPath: m_Name
       value: 1_Orange_AI Variant (2)
@@ -65320,6 +65484,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7616166470194096893, guid: 2497792037bbb344ea038825ea873508, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 7616166470194096894, guid: 2497792037bbb344ea038825ea873508, type: 3}
       propertyPath: m_Name
       value: 3_purple_AI (1)
@@ -65549,6 +65717,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 266243137734332885, guid: 8cd663a9297c0c4409de82a6ae01931f, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 266243137734332886, guid: 8cd663a9297c0c4409de82a6ae01931f, type: 3}
       propertyPath: m_Name
       value: 4_Blue_AI Variant (1)
@@ -66851,6 +67023,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7616166470194096893, guid: bc27b5d64c23f384eac9399ef07feb2b, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 7616166470194096894, guid: bc27b5d64c23f384eac9399ef07feb2b, type: 3}
       propertyPath: m_Name
       value: 0_red_AI Variant (3)
@@ -67406,6 +67582,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 266243137734332885, guid: 8cd663a9297c0c4409de82a6ae01931f, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 266243137734332886, guid: 8cd663a9297c0c4409de82a6ae01931f, type: 3}
       propertyPath: m_Name
       value: 4_Blue_AI Variant
@@ -68403,6 +68583,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 5000
       objectReference: {fileID: 0}
+    - target: {fileID: 5887281019601311494, guid: 1b3ab23377cb9a14aa31c2f6337108ad, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 5887281019601311494, guid: 1b3ab23377cb9a14aa31c2f6337108ad, type: 3}
       propertyPath: startingHealth
       value: 2000
@@ -70338,6 +70522,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 266243137734332885, guid: 8cd663a9297c0c4409de82a6ae01931f, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 266243137734332886, guid: 8cd663a9297c0c4409de82a6ae01931f, type: 3}
       propertyPath: m_Name
       value: 4_Blue_AI Variant
@@ -70876,12 +71064,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7514105378747017754, guid: 84f2941fff532dc4184f6c1681701a55, type: 3}
       propertyPath: canDie
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7514105378747017754, guid: 84f2941fff532dc4184f6c1681701a55, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1058928019}
+    - target: {fileID: 7514105378747017754, guid: 84f2941fff532dc4184f6c1681701a55, type: 3}
+      propertyPath: weaponSystem
+      value: 
+      objectReference: {fileID: 1215379785}
     - target: {fileID: 7514105378747017754, guid: 84f2941fff532dc4184f6c1681701a55, type: 3}
       propertyPath: startingHealth
       value: 10000

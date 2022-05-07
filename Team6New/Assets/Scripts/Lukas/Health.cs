@@ -34,16 +34,10 @@ public class Health : MonoBehaviour
 
 	float lastHealthVal;
 
-
+	public WeaponSystem weaponSystem;
 
 	//Akul health bar code
-	
-	
-
 	public HealthBar healthBar;
-
-	
-	
 
 	void Start()
 	{
@@ -64,6 +58,10 @@ public class Health : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+			print(weaponSystem.weaponIndex);
+        }
 		colorsIndex = Weapon.colorsIndex;
 
 		//enemy detecting if it has received damage to change states
@@ -86,6 +84,7 @@ public class Health : MonoBehaviour
 
     public void ChangeHealth(float amount)
 	{
+
 		//if laser color match enemy color more damage is dealt
 		if(healthAttached == HealthAttached.Enemy)
         {
@@ -109,7 +108,7 @@ public class Health : MonoBehaviour
 			}
 		
 			//if colors are opposite increase enemys stats
-			else if(CheckColorMatch())
+			else if(CheckColorMatch() && weaponSystem.weaponIndex == 0)
 			{
 				
 				print("oposite colors detected");
@@ -143,8 +142,6 @@ public class Health : MonoBehaviour
 
 			if (currentHealth <= 0 && !dead && canDie)
 			{
-				Time.timeScale = 0;
-				print("player health zero");
 				SceneManager.LoadScene("Lukas_Map_AI");
 			}
             else
