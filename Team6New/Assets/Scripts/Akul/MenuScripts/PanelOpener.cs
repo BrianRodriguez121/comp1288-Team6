@@ -8,14 +8,17 @@ public class PanelOpener : MonoBehaviour
     public GameObject ObjectivesPanel;
 
     public GameObject OptionsPanel;
-    public GameObject ControlsPanel;
 
+    public GameObject ControlsPanel;
+    public GameObject MovementControlsPanel;
+    public GameObject WeaponsControlsPanel;
 
     public void OpenPanel()
     {
         if (ObjectivesPanel != null)
         {
             ObjectivesPanel.SetActive(true);
+            /*FindObjectOfType<AudioManager>().Play(ButtonAudio);*/
         }
     }
 
@@ -46,7 +49,7 @@ public class PanelOpener : MonoBehaviour
     }
 
 
-
+    //
     public void OpenControlsPanel()
     {
         if (ControlsPanel != null)
@@ -60,6 +63,54 @@ public class PanelOpener : MonoBehaviour
         if (ControlsPanel != null)
         {
             ControlsPanel.SetActive(false);
+        }
+    }
+
+    //MovementControlsPanel
+    public void OpenMovementControlsPanel()
+    {
+        if (MovementControlsPanel != null)
+        {
+            MovementControlsPanel.SetActive(true);
+        }
+    }
+
+    public void CloseMovementControlsPanel()
+    {
+        if (MovementControlsPanel != null)
+        {
+            MovementControlsPanel.SetActive(false);
+        }
+    }
+
+    //WeaponsControlsPanel
+    public void OpenWeaponsControlsPanel()
+    {
+        if (WeaponsControlsPanel != null)
+        {
+            WeaponsControlsPanel.SetActive(true);
+        }
+    }
+
+    public void CloseWeaponsControlsPanel()
+    {
+        if (WeaponsControlsPanel != null)
+        {
+            WeaponsControlsPanel.SetActive(false);
+        }
+    }
+
+    //Close all controller panels
+    public void CloseAllControlsPanel()
+    {
+        if (WeaponsControlsPanel != null)
+        {
+            WeaponsControlsPanel.SetActive(false);
+        }
+
+        if (MovementControlsPanel != null)
+        {
+            MovementControlsPanel.SetActive(false);
         }
     }
 }

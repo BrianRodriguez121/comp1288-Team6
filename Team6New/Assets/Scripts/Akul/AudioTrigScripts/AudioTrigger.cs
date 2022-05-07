@@ -13,7 +13,7 @@ public class AudioTrigger : MonoBehaviour
         audioSource = GetComponent<AudioSource>(); //is finding the audio attached to the game object this script is attached too.
     }
 
-    void OnTriggerEnter()//will trigger when any game Object passes though the objaect this is attached too.
+    void OnCollisionEnter()//will trigger when any game Object passes though the objaect this is attached too.
     {
         Debug.Log("Audio triggered on collision");
 
