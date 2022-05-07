@@ -90,7 +90,7 @@ public class Health : MonoBehaviour
         {
 			if (colorsIndex == (int)enemyColorMatch)
 			{
-				currentHealth += amount * 2;
+				currentHealth += amount * 1.65f;
 				print("colors matching, double damage");
 
 				if (currentHealth <= 0 && !dead && canDie) 

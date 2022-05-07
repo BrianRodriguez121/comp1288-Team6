@@ -5,8 +5,8 @@ OcclusionCullingSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_OcclusionBakeSettings:
-    smallestOccluder: 10
-    smallestHole: 0.25
+    smallestOccluder: 15
+    smallestHole: 2
     backfaceThreshold: 100
   m_SceneGUID: 85feac64faa539a4db29440b1b1e3634
   m_OcclusionCullingData: {fileID: 36300000, guid: 3da67d7537c5d7e4398bc95349fbd9ac, type: 2}
@@ -11374,7 +11374,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.79, y: 0.03082001}
   m_AnchorMax: {x: 0.9912501, y: 0.098000005}
-  m_AnchoredPosition: {x: 6.000183, y: -2.0999756}
+  m_AnchoredPosition: {x: 6.0002136, y: -2.0999756}
   m_SizeDelta: {x: -1, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &149139601
