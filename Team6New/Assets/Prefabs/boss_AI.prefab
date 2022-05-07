@@ -655,9 +655,10 @@ MonoBehaviour:
   healthAttached: 0
   enemyColorMatch: 6
   canDie: 1
-  startingHealth: 4500
-  maxHealth: 4500
+  startingHealth: 6500
+  maxHealth: 6500
   currentHealth: 0
+  weaponSystem: {fileID: 0}
   healthBar: {fileID: 0}
 --- !u!114 &5887281019601311495
 MonoBehaviour:

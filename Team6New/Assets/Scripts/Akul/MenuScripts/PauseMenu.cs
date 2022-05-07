@@ -98,7 +98,7 @@ public class PauseMenu : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene("Lukas_Map_AI");
-        
+        Time.timeScale = 1f;
     }
 
     public void Objectives()
