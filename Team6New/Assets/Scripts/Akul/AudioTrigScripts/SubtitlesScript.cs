@@ -32,8 +32,9 @@ public class SubtitlesScript : MonoBehaviour
         yield return new WaitForSeconds(6);
         textBox.GetComponent<Text>().text = "Do not trust indiginus species. Keep moving.";
         yield return new WaitForSeconds(3);
-        textBox.GetComponent<Text>().text = "Weapons system active. Hold Tab to Select";
+        textBox.GetComponent<Text>().text = "Weapons system active. Hold Tab to Select. F & C to control Spectrum";
         yield return new WaitForSeconds(3);
+        
 
     }
 
