@@ -1818,7 +1818,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &34333049
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12075,7 +12075,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &173509729
 Transform:
   m_ObjectHideFlags: 0
@@ -14980,7 +14980,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: LOW
+  m_Text: High
 --- !u!222 &325519474
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -53119,11 +53119,11 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: LOW
+    - m_Text: High
       m_Image: {fileID: 0}
-    - m_Text: MEDIUM
+    - m_Text: Medium
       m_Image: {fileID: 0}
-    - m_Text: HIGH
+    - m_Text: Low
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -53131,7 +53131,7 @@ MonoBehaviour:
       - m_Target: {fileID: 702508256}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: SetQuality
-        m_Mode: 3
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

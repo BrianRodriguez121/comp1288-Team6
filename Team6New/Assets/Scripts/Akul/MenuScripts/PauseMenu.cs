@@ -8,7 +8,7 @@ public class PauseMenu : MonoBehaviour
 {
 
     //Press K to pause the game dueing presentation
-    public static bool GameIsPaused = true;
+    public static bool GameIsPaused = false;
 
     public GameObject pausMenuUI;
 
