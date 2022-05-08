@@ -12,6 +12,8 @@ public class OnColBackToMenu : MonoBehaviour
         {
             SceneManager.LoadScene("MainMenu");
             Debug.Log("End Creddit Trigger");
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 

@@ -17,16 +17,19 @@ public class MainMenu : MonoBehaviour
     //Subtitles code
     public GameObject SubPanel;
 
-    public void LoadNextLevel()
+    void start()
     {
 
-        
+        if (Input.GetMouseButtonDown(0))
+        {
 
-        
+           Cursor.lockState = CursorLockMode.None;
+           Cursor.visible = true;
+        }
     }
 
     
-
+       
 
     //Menu buttons
 

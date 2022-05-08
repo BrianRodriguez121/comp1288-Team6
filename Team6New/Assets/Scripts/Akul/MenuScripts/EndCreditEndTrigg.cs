@@ -11,6 +11,8 @@ public class EndCreditEndTrigg : MonoBehaviour
         {
 
             SceneManager.LoadScene(0);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 
